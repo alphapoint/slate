@@ -1,566 +1,110 @@
 ---
-title: APEX API Reference
+title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - javascript
+  - json
 
 toc_footers:
+  - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
 
-includes:
-  - errors
+includes: # api - group - category - call
+  - background/api_bkg_background
+  - users/api_users_divider
+  - users/api_users_act_activate2fa
+  - users/api_users_user_adduseraffiliatetag
+  - users/api_users_auth_authenticate2fa
+  - users/api_users_auth_authenticateuser
+  - users/api_users_user_canceluserreport
+  - users/api_users_user_getl2snapshot
+  - users/api_users_user_getlevel1
+  - users/api_users_user_getuseraccountinfos
+  - users/api_users_user_getuseraccounts
+  - users/api_users_user_getuseraffiliatecount
+  - users/api_users_user_getuseraffiliatetag
+  - users/api_users_user_getuserreporttickets
+  - users/api_users_auth_logout
+  - users/api_users_user_subscribeaccountevents
+  - users/api_users_user_subscribelevel1
+  - users/api_users_user_subscribelevel2
+  - users/api_users_user_subscribeticker
+  - users/api_users_user_subscribetrades
+  - users/api_users_user_unsubscribelevel1
+  - users/api_users_user_unsubscribelevel2
+  - users/api_users_user_unsubscribeticker
+  - users/api_users_user_unsubscribetrades
+  - users/api_users_user_updateuseraffiliatetag
+  - accounts/api_accts_divider
+  - accounts/api_accts_user_generatetradeactivityreport
+  - accounts/api_accts_user_generatetransactionactivityreport
+  - accounts/api_accts_user_generatetreasuryactivityreport
+  - accounts/api_accts_user_getaccountinfo
+  - accounts/api_accts_user_getaccountpositions
+  - accounts/api_accts_user_scheduletradeactivityreport
+  - accounts/api_accts_user_scheduletransactionactivityreport
+  - accounts/api_accts_user_scheduletreasuryactivityreport
+  - trades/api_trades_divider
+  - trades/api_trades_user_getaccounttrades
+  - trades/api_trades_user_getaccounttransactions
+  - trades/api_trades_user_getopentradereports
+  - trades/api_trades_user_gettickerhistory
+  - trades/api_trades_user_gettradeshistory
+  - oms_orders/api_omsord_divider
+  - oms_orders/api_omsord_user_cancelallorders
+  - oms_orders/api_omsord_user_cancelorder
+  - oms_orders/api_omsord_user_cancelquote
+  - oms_orders/api_omsord_user_cancelreplaceorder
+  - oms_orders/api_omsord_user_createquote
+  - oms_orders/api_omsord_user_getopenorders
+  - oms_orders/api_omsord_user_getopenquotes
+  - oms_orders/api_omsord_user_getorderfee
+  - oms_orders/api_omsord_user_getorderhistory
+  - oms_orders/api_omsord_user_getorderhistorybyorderid
+  - oms_orders/api_omsord_user_getordershistory
+  - oms_orders/api_omsord_user_modifyorder
+  - oms_orders/api_omsord_user_sendorder
+  - oms_orders/api_omsord_user_submitblocktrade
+  - oms_orders/api_omsord_user_updatequote
+  - products/api_products_divider
+  - products/api_prods_user_getproduct
+  - products/api_prods_user_getproducts
+  - instrs/api_instrs_divider
+  - instrs/api_instrs_user_getinstrument
+  - instrs/api_instrs_user_getinstruments
+  - tickets/api_tickets_divider
+  - tickets/api_tix_user_getaccountdeposittransactions
+  - tickets/api_tix_user_getaccountwithdrawtransactions
+  - tickets/api_tix_user_getwithdrawfee
+  - user_verification/api_userverification_divider
+  - uncertain/api_uncertain_divider
+  - uncertain/api_uncert_user_getearliestticktime
+  - uncertain/api_uncert_user_ping
+
+
+
 
 search: true
 ---
 
 # Introduction
 
-The AlphaPoint Exchange (APEX) is a high-performance exchange technology built for blockchain. All exchanges built on APEX support the APEX API, which is based on RPC over WebSockets. 
-
-## Message Frame
-
-> When sending a request in the frame to the software using JavaScript, a call looks like:
-
-```javascript
-var frame = {
-  "m":0,
-  "i":0,
-  "n":"endpoint",
-  "o":""
-};
-var requestPayload = {
-  "Parameter1":"Value",
-  "Parameter2":0
-};
-frame.o = json.Stringify(requestPayload);
-// Stringify escapes the payload’s quotation marks automatically.
-WS.Send(json.Stringify(frame)); // WS.Send escapes the frame.
-```
-
-> When receiving a frame from the software, use the frame to determine the context, and then unwrap the content:
-
-```javascript
-if (frame.m == 1) { // Message of type reply 
-  // This is a Reply
-  if (frame.n == “WebAuthenticateUser”) {
-    var LoginReply = json.Parse(frame.o);
-    if (LoginReply.Authenticated)
-    {
-      var user = LoginReply.User;
-    }
-  }
-}
-```
-
-Wrap all calls to APEX in a JSON-formated frame object. Responses from the software are similarly wrapped. 
-
-`{ 
-  "m":0,
-  "i":0,
-  "n":"endpoint",
-  "o":"payload"
-}`
-
-Where:
-
-Key | Description | Value
---- | ----------- | -----
-_m_ | message type | **integer.** The type of message <br><br>0 request<br>1 reply<br>2 subscribe to event<br>3 event<br>4 unsubscribe from event<br>5 error 
-_i_ | sequence number | **long integer.** The sequence number identies an individual request, or request- and-response pair, to your application.<br><br>A non-zero sequence number is required, but the numbering scheme you useis up to you. No arbitrary sequence numbering scheme is enforced by AlphaPoint.<br><br>**Best practices**: A client-generated API call (of message types 0, 2, and 4) should:<br><br>Carry an even sequence number.<br>Begin at the start of each user session.<br>Be unique within each user session.<br>Begin with 2 (2, 4, 6, 8).<br><br>Message types 1 (reply), 3 (event), and 5 (error) are generated by the server. These messages echo the sequence number of the message to which they respond. See Example, below...
-_n_ | function name | **string.** The function name is the name of the function that you are calling or that the server responds to. The server echoes your call. See Example, below.
-_o_ | payload | **string.** Payload is a JSON-formatted string containing the data being sent with the message. Payload may consist of request parameters (string-value pairs) or response parameters.
-
-<aside><strong>Note:</strong> You can send the string-value pairs inside the payload in any order; the server controls the order of the response.</aside>
-
-# Authentication
-
-> To authorize, use this code:
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-```
-
-```shell
-# With shell, you can just pass the correct header with each request
-curl "api_endpoint_here"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-```
-
-> Make sure to replace `meowmeowmeow` with your API key.
-
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
-
-Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
-
-`Authorization: meowmeowmeow`
-
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
-
-# Kittens
-
-## Get All Kittens
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
-
-```shell
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
-```
-
-> The above command returns JSON structured like this:
-
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
-
-This endpoint retrieves all kittens.
-
-### HTTP Request
-
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
-</aside>
-
-## Get a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
-
-This endpoint retrieves a specific kitten.
-
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
-
-### HTTP Request
-
-`GET http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
-
-```ruby
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
-  -H "Authorization: meowmeowmeow"
-```
-
-```javascript
-const kittn = require('kittn');
-
-let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
-```
-
-> The above command returns JSON structured like this:
-
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
-```
-
-This endpoint deletes a specific kitten.
-
-### HTTP Request
-
-`DELETE http://example.com/kittens/<ID>`
-
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
-
-
-# Authentication
-
-## Authenticate2FA
-
-`{"Code":"YourCode"}`
-
-## Disable2FA
-
-`{}`
-
-## EnableGoogle2FA
-
-`{}`
-
-## GetOMSs
-
-`{"OperatorId":1}`
-
-## WebAuthenticateUser
-
-`[{"SessionToken":"a29ee77f-f513-43d7-a7a2-c73e246e8b62"},{"UserName":"demo","Password":"1234"}]`
-
-## ResetPassword
-
-`{"UserId":"jsmith"}`
-
-# Account and User Information
-
-## GetAccountInfo
-
-`{"AccountId":0,"OMSId":0}`
-
-## GetUserAccounts
-
-`{"OMSId":1}`
-
-## GetUserConfig
-
-`{"UserId":1,"UserName":"jsmith"}`
-
-## GetUserInfo
-
-`{"OMSId":1,"UserId":1}`
-
-## GetUserPermissions
-
-`{"UserId":1}`
-
-## SetUserConfig
-
-`{"UserId":1,"UserName":"jsmith","Config":[{"Key":"Street Name","Value":"Hillside Road"},{"Key":"Suite Number","Value":158}]}`
-
-## SetUserInfo
-
-`{"UserId":1,"UserName":"John Smith","Password":"password","Email":"email@company.com","EmailVerified":true,"AccountId":1,"Use2FA":false}`
-
-# Affiliate Tags
-
-## AddUserAffiliateTag
-
-`{"OMSId":0,"UserId":1,"AffiliateId":1,"AffiliateTag":"TagName"}`
-
-## GetUserAffiliateCount
-
-`{"OMSId":1,"UserId":1}`
-
-## GetUserAffiliateTag
-
-`{"OMSId":1,"UserId":1}`
-
-# API Key Access
-
-## AuthenticateUser
-
-`{"APIKey":"9a515521c9791cd9aa8728920c3e0b13","Signature":"ca8ec71060567a2eea229e11d3da17f72ae0cbe89f236c664fde71d08ba737a4","UserId":"106","Nonce":"147509354"}`
-
-## AddUserAPIKey
-
-`{"UserId":859,"Permissions":["Trading","Withdraw","Deposit"]}`
-
-## GetUserAPIKeys
-
-`{"UserId":1}`
-
-## RemoveUserAPIKey
-
-`{"UserId":1,"APIKey":"2020a3968d71a90eb67dd3b639352d79"}`
-
-
-# Balances
-
-## GetAccountPositions
-
-`{"OMSId":1,"AccountId":1}`
-
-
-# Deposits and Withdrawals
-
-## CreateDepositTicket
-
-`{"AccountId":1,"AssetId":2,"AssetName":"USD","Amount":60,"OMSId":1,"RequestUser":5,"OperatorId":1,"Status":"New","DepositInfo":{"Full Name":"John Smith","language":"en","Bank Name":"","Comment":"initial deposit"}}`
-
-## CreateWithdrawTicket
-
-`{"OMSId":1,"AccountId":4,"ProductId":1,"Amount":1,"TemplateType":"ToExternalBitcoinAddress","TemplateForm":{"TemplateType":"ToExternalBitcoinAddress","Comment":"","ExternalAddress":"54123214"}}`
-
-## GetDepositInfo
-
-`{"OMSId":1,"AccountId":4,"ProductId":1,"GenerateNewKey":true}`
-
-## GetDepositRequestInfoTemplate
-
-`{"OMSId":1,"ProductId":8,"AccountId":4,"AccountProviderId":10}`
-
-## GetDepositTickets
-
-`{"OMSId":1,"OperatorId":1,"RequestCode":"866f21fe-3461-41d1-91aa-5689bc38503f","AccountId":4}`
-
-## GetWithdrawFee
-
-`{"OMSId":1,"ProductId":1,"AccountId":1,"Amount":1}`
-
-## GetWithdrawTemplate
-
-`{"OMSId":1,"AccountId":1,"ProductId":1}`
-
-## GetWithdrawTemplateTypes
-
-`{"OMSId":1,"AccountId":4,"ProductId":2}`
-
-## GetWithdrawTicket
-
-`{"OMSId":1,"accountId":139,"productId":1,"amount":1,"templateForm":{"TemplateType":"ToExternalBitcoinAddress","Comment":"","ExternalAddress":""},"TemplateType":"ToExternalBitcoinAddress"}`
-
-
-# Instruments and Products
-
-## GetInstruments
-
-`{"OMSId":1,"InstrumentId":1}`
-
-## GetProducts
-
-`{"OMSId":1}`
-
-# Orders and Trade History
-
-## CancelAllOrders
-
-`[{"AccountId":0,"OMSId":0},{"UserId":0,"OMSId":0},{"AccountId":0,"UserId":0,"OMSId":0},{"AccountId":0,"OMSId":0,"InstrumentId":0},{"UserId":0,"OMSId":0,"InstrumentId":0},{"AccountId":0,"UserId":0,"OMSId":0,"InstrumentId":0}]`
-
-## CancelOrder
-
-`[{"OMSId":0,"OrderId":0},{"OMSId":0,"AccountId":0,"ClientOrderId":0}]`
-
-## GetAccountTrades
-
-`{"AccountId":4,"OMSId":1,"StartIndex":0,"Count":2}`
-
-## GetOpenOrders
-
-`{"AccountId":4,"OMSId":1}`
-
-## GetOrderFee
-
-`{"OMSId":1,"AccountId":664,"InstrumentId":1,"Amount":0,"Price":0,"OrderType":{"Options":["Unknown","Market","Limit","StopMarket","TrailingStopMarket","TrailingStopLimit","BlockTrade"]},"MarketTaker":{"Options":["Taker","Maker","Unknown"]}}`
-
-## SendOrder
-
-`{}`
-
-## SubmitBlockTrade
-
-`{}`
-
-# Registration and Verification
-
-## RegisterNewUser
-
-`{"UserInfo":{"UserName":"jsmith","passwordHash":"1234","Email":"john.smith@alphapoint.com"},"UserConfig":[],"AffiliateTag":"","OperatorId":1}`
-
-## ResendVerificationEmail
-
-`{}`
-
-## ValidateUserRegistration
-
-`{"requestIdentifier":"a407a1fb64b5462cbbdc7dc1a2c7f615","clientInfo":{"alphaPointSessiontoken":"e4fe7f96-41a7-487a-8a1a-69f1accfc89c","alphaPointUserID":"1","validationStage":1,"validator":"greenId"},"userInfo":{"firstName":"John","middleName":"Jacob","lastName":"Smith","dob":"01/01/1970","accountName":"1","billingStreetAddress":"500 7th Ave","billingCountry":"USA","billingCity":"NYC","billingZip":"11018","phone":"+12122561231","billingFlatNumber":"12","billingStreetNumber":"500","billingStreetType":"2","billingSuburb":"1","salutation":"","MerchAccountName":"AlphaPoint","MerchAccountTaxID":null,"MerchPhone":"2122561231"}}`
-
-# Reports
-
-## CancelUserReport
-
-`{"result":true,"errormsg":"","errorcode":0,"detail":""}`
-
-## GenerateTradeActivityReport
-
-`{"accountIdList":[0],"omsId":0,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z"}`
-
-## GenerateTransactionActivityReport
-
-`{"accountIdList":[0],"omsId":0,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z"}`
-
-## GenerateTreasuryActivityReport
-
-`{"accountIdList":[0],"omsId":0,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z"}`
-
-## GetOpenTradeReports
-
-`{"OMSId":1,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
-
-## GetUserReportTickets
-
-`{"UserId":1}`
-
-## ScheduleTradeActivityReport
-
-`{"OMSId":1,"frequency":"Daily","beginTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
-
-## ScheduleTransactionActivityReport
-
-`{"OMSId":1,"frequency":"Daily","beginTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
-
-## ScheduleTreasuryActivityReport
-
-`{"OMSId":1,"frequency":"Daily","beginTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
-
-
-# Subscriptions
-
-## SubscribeAccountEvents
-
-`{"AccountId":1,"OMSId":1}`
-
-## SubscribeLevel1
-
-`[{"OMSId":"1","InstrumentId":"1"},{"OMSId":"1","Symbol":"BTCUSD"}]`
-
-## SubscribeLevel2
-
-`[{"OMSId":"1","InstrumentId":"1","Depth":"10"},{"OMSId":"1","Symbol":"BTCUSD","Depth":"10"}]`
-
-## SubscribeTicker
-
-`{"OMSId":1,"InstrumentId":1,"Interval":60,"IncludeLastCount":100}`
-
-## SubscribeTrades
-
-`{"OMSId":1,"InstrumentId":1,"IncludeLastCount":40}`
-
-## UnSubscribeLevel1
-
-`{"OMSId":1,"InstrumentId":1}`
-
-## UnsubscribeLevel2
-
-`{"OMSId":1,"InstrumentId":1}`
-
-## UnSubscribeTicker
-
-`{"OMSId":1,"InstrumentId":1}`
-
-## UnSubscribeTrades
-
-`{"OMSId":1,"InstrumentId":1}`
-
-# Transfers
-
-## GetTransfers
-
-`{"OMSId":1,"OperatorId":1,"AccountId":1}`
-
-## RequestTransferFunds
-
-`{"OMSId":1,"ProductId":1,"Notes":"","ReceiverUsername":"john.smith@alphapoint.com","Amount":1}`
-
-## TransferFunds
-
-`{}`
+This API covers **version 3.1** of the AlphaPoint Exchange software. It includes calls in the "User" category, as well as a few others required for log-in and authentication.
+
+The calls have been organized roughly to correspond to similar functions you would find in the AlphaPoint Admin. For example, in the Admin you manage users in the Users function. So calls that manage users have been gathered in the Users section of the API.
+
+###Changed calls in this revision:
+Generally, upper- and lowercase is not important for the key-value pairs inside a request or response. If an otherwise well formed call returns an unexpected error, check the case of the key-value pairs in the request.
+
+- **CreateQuote:** The number of fields in the response has been reduced.
+- **GetInstrument:** The quantityIncrement field has been changed from a long to a real.
+- **GetInstruments:** The quantityIncrement field has been changed from a long to a real.
+- **GetOpenQuotes:** Simplified response.
+- **GetOrderHistory:** Major reduction in the number and fields of the response.
+- **GetOrderHistoryByOrderId:** Major reduction in number of fields in the response.
+- **GetOrdersHistory:** Reduction in number of fields in the response.
+- **GetProduct:** TickSize changed from a long to a real.
+- **GetProducts:** TickSize changed from a long to a real.
+- **GetTickerHistory:** Permission revised to *Public.*
+- **SendOrder:** Reduction in number of fields in the request.
+- **SubscribeLevel2:** Added the ability to subscribe by specifying a product symbol.
+- **UpdateQuote:** The number of fields in the response has been reduced.
