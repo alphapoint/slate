@@ -284,3 +284,283 @@ Parameter | Description
 --------- | -----------
 ID | The ID of the kitten to delete
 
+
+# Authentication
+
+## Authenticate2FA
+
+`{"Code":"YourCode"}`
+
+## Disable2FA
+
+`{}`
+
+## EnableGoogle2FA
+
+`{}`
+
+## GetOMSs
+
+`{"OperatorId":1}`
+
+## WebAuthenticateUser
+
+`[{"SessionToken":"a29ee77f-f513-43d7-a7a2-c73e246e8b62"},{"UserName":"demo","Password":"1234"}]`
+
+## ResetPassword
+
+`{"UserId":"jsmith"}`
+
+# Account and User Information
+
+## GetAccountInfo
+
+`{"AccountId":0,"OMSId":0}`
+
+## GetUserAccounts
+
+`{"OMSId":1}`
+
+## GetUserConfig
+
+`{"UserId":1,"UserName":"jsmith"}`
+
+## GetUserInfo
+
+`{"OMSId":1,"UserId":1}`
+
+## GetUserPermissions
+
+`{"UserId":1}`
+
+## SetUserConfig
+
+`{"UserId":1,"UserName":"jsmith","Config":[{"Key":"Street Name","Value":"Hillside Road"},{"Key":"Suite Number","Value":158}]}`
+
+## SetUserInfo
+
+`{"UserId":1,"UserName":"John Smith","Password":"password","Email":"email@company.com","EmailVerified":true,"AccountId":1,"Use2FA":false}`
+
+# Affiliate Tags
+
+## AddUserAffiliateTag
+
+`{"OMSId":0,"UserId":1,"AffiliateId":1,"AffiliateTag":"TagName"}`
+
+## GetUserAffiliateCount
+
+`{"OMSId":1,"UserId":1}`
+
+## GetUserAffiliateTag
+
+`{"OMSId":1,"UserId":1}`
+
+# API Key Access
+
+## AuthenticateUser
+
+`{"APIKey":"9a515521c9791cd9aa8728920c3e0b13","Signature":"ca8ec71060567a2eea229e11d3da17f72ae0cbe89f236c664fde71d08ba737a4","UserId":"106","Nonce":"147509354"}`
+
+## AddUserAPIKey
+
+`{"UserId":859,"Permissions":["Trading","Withdraw","Deposit"]}`
+
+## GetUserAPIKeys
+
+`{"UserId":1}`
+
+## RemoveUserAPIKey
+
+`{"UserId":1,"APIKey":"2020a3968d71a90eb67dd3b639352d79"}`
+
+
+# Balances
+
+## GetAccountPositions
+
+`{"OMSId":1,"AccountId":1}`
+
+
+# Deposits and Withdrawals
+
+## CreateDepositTicket
+
+`{"AccountId":1,"AssetId":2,"AssetName":"USD","Amount":60,"OMSId":1,"RequestUser":5,"OperatorId":1,"Status":"New","DepositInfo":{"Full Name":"John Smith","language":"en","Bank Name":"","Comment":"initial deposit"}}`
+
+## CreateWithdrawTicket
+
+`{"OMSId":1,"AccountId":4,"ProductId":1,"Amount":1,"TemplateType":"ToExternalBitcoinAddress","TemplateForm":{"TemplateType":"ToExternalBitcoinAddress","Comment":"","ExternalAddress":"54123214"}}`
+
+## GetDepositInfo
+
+`{"OMSId":1,"AccountId":4,"ProductId":1,"GenerateNewKey":true}`
+
+## GetDepositRequestInfoTemplate
+
+`{"OMSId":1,"ProductId":8,"AccountId":4,"AccountProviderId":10}`
+
+## GetDepositTickets
+
+`{"OMSId":1,"OperatorId":1,"RequestCode":"866f21fe-3461-41d1-91aa-5689bc38503f","AccountId":4}`
+
+## GetWithdrawFee
+
+`{"OMSId":1,"ProductId":1,"AccountId":1,"Amount":1}`
+
+## GetWithdrawTemplate
+
+`{"OMSId":1,"AccountId":1,"ProductId":1}`
+
+## GetWithdrawTemplateTypes
+
+`{"OMSId":1,"AccountId":4,"ProductId":2}`
+
+## GetWithdrawTicket
+
+`{"OMSId":1,"accountId":139,"productId":1,"amount":1,"templateForm":{"TemplateType":"ToExternalBitcoinAddress","Comment":"","ExternalAddress":""},"TemplateType":"ToExternalBitcoinAddress"}`
+
+
+# Instruments and Products
+
+## GetInstruments
+
+`{"OMSId":1,"InstrumentId":1}`
+
+## GetProducts
+
+`{"OMSId":1}`
+
+# Orders and Trade History
+
+## CancelAllOrders
+
+`[{"AccountId":0,"OMSId":0},{"UserId":0,"OMSId":0},{"AccountId":0,"UserId":0,"OMSId":0},{"AccountId":0,"OMSId":0,"InstrumentId":0},{"UserId":0,"OMSId":0,"InstrumentId":0},{"AccountId":0,"UserId":0,"OMSId":0,"InstrumentId":0}]`
+
+## CancelOrder
+
+`[{"OMSId":0,"OrderId":0},{"OMSId":0,"AccountId":0,"ClientOrderId":0}]`
+
+## GetAccountTrades
+
+`{"AccountId":4,"OMSId":1,"StartIndex":0,"Count":2}`
+
+## GetOpenOrders
+
+`{"AccountId":4,"OMSId":1}`
+
+## GetOrderFee
+
+`{"OMSId":1,"AccountId":664,"InstrumentId":1,"Amount":0,"Price":0,"OrderType":{"Options":["Unknown","Market","Limit","StopMarket","TrailingStopMarket","TrailingStopLimit","BlockTrade"]},"MarketTaker":{"Options":["Taker","Maker","Unknown"]}}`
+
+## SendOrder
+
+`{}`
+
+## SubmitBlockTrade
+
+`{}`
+
+# Registration and Verification
+
+## RegisterNewUser
+
+`{"UserInfo":{"UserName":"jsmith","passwordHash":"1234","Email":"john.smith@alphapoint.com"},"UserConfig":[],"AffiliateTag":"","OperatorId":1}`
+
+## ResendVerificationEmail
+
+`{}`
+
+## ValidateUserRegistration
+
+`{"requestIdentifier":"a407a1fb64b5462cbbdc7dc1a2c7f615","clientInfo":{"alphaPointSessiontoken":"e4fe7f96-41a7-487a-8a1a-69f1accfc89c","alphaPointUserID":"1","validationStage":1,"validator":"greenId"},"userInfo":{"firstName":"John","middleName":"Jacob","lastName":"Smith","dob":"01/01/1970","accountName":"1","billingStreetAddress":"500 7th Ave","billingCountry":"USA","billingCity":"NYC","billingZip":"11018","phone":"+12122561231","billingFlatNumber":"12","billingStreetNumber":"500","billingStreetType":"2","billingSuburb":"1","salutation":"","MerchAccountName":"AlphaPoint","MerchAccountTaxID":null,"MerchPhone":"2122561231"}}`
+
+# Reports
+
+## CancelUserReport
+
+`{"result":true,"errormsg":"","errorcode":0,"detail":""}`
+
+## GenerateTradeActivityReport
+
+`{"accountIdList":[0],"omsId":0,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z"}`
+
+## GenerateTransactionActivityReport
+
+`{"accountIdList":[0],"omsId":0,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z"}`
+
+## GenerateTreasuryActivityReport
+
+`{"accountIdList":[0],"omsId":0,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z"}`
+
+## GetOpenTradeReports
+
+`{"OMSId":1,"startTime":"0001-01-01T05:00:00Z","endTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
+
+## GetUserReportTickets
+
+`{"UserId":1}`
+
+## ScheduleTradeActivityReport
+
+`{"OMSId":1,"frequency":"Daily","beginTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
+
+## ScheduleTransactionActivityReport
+
+`{"OMSId":1,"frequency":"Daily","beginTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
+
+## ScheduleTreasuryActivityReport
+
+`{"OMSId":1,"frequency":"Daily","beginTime":"0001-01-01T05:00:00Z","accountIdList":[1]}`
+
+
+# Subscriptions
+
+## SubscribeAccountEvents
+
+`{"AccountId":1,"OMSId":1}`
+
+## SubscribeLevel1
+
+`[{"OMSId":"1","InstrumentId":"1"},{"OMSId":"1","Symbol":"BTCUSD"}]`
+
+## SubscribeLevel2
+
+`[{"OMSId":"1","InstrumentId":"1","Depth":"10"},{"OMSId":"1","Symbol":"BTCUSD","Depth":"10"}]`
+
+## SubscribeTicker
+
+`{"OMSId":1,"InstrumentId":1,"Interval":60,"IncludeLastCount":100}`
+
+## SubscribeTrades
+
+`{"OMSId":1,"InstrumentId":1,"IncludeLastCount":40}`
+
+## UnSubscribeLevel1
+
+`{"OMSId":1,"InstrumentId":1}`
+
+## UnsubscribeLevel2
+
+`{"OMSId":1,"InstrumentId":1}`
+
+## UnSubscribeTicker
+
+`{"OMSId":1,"InstrumentId":1}`
+
+## UnSubscribeTrades
+
+`{"OMSId":1,"InstrumentId":1}`
+
+# Transfers
+
+## GetTransfers
+
+`{"OMSId":1,"OperatorId":1,"AccountId":1}`
+
+## RequestTransferFunds
+
+`{"OMSId":1,"ProductId":1,"Notes":"","ReceiverUsername":"john.smith@alphapoint.com","Amount":1}`
+
+## TransferFunds
+
+`{}`
