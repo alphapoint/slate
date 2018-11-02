@@ -57,9 +57,9 @@ The response returns an array of transaction objects.
 | cr              | **real.** Credit entry for the account on the order book. Funds entering an account. |
 | dr              | **real.** Debit entry for the account on the order book. Funds leaving an account. |
 | counterparty    | **long integer.** The corresponding party in a trade.        |
-| transactionType | **integer.** A number representing the type of transaction:<br />1 Fee<br />2 Trade<br />3 Other<br />4 Reverse<br />5 Hold<br />6 Rebate<br />7 MarginAcquisition<br />8 MarginRelinquish |
+| transactionType | **integer.** A number representing the type of transaction:<br />**1** Fee<br />**2** Trade<br />**3** Other<br />**4** Reverse<br />**5** Hold<br />**6** Rebate<br />**7** MarginAcquisition<br />**8** MarginRelinquish |
 | referenceId     | **long integer.** The ID of the action or event that triggered this transaction. |
-| referenceType   | **integer.** A number representing the type of action or event that triggered this transaction. One of:<br />1 Trade<br />2 Deposit<br />3 Withdraw<br />4 Transfer<br />5 OrderHold<br />6 WithdrawHold<br />7 DepositHold<br />8 MarginHold<br />9 ManualHold<br />10 ManualEntry<br />11 MarginAcquisition<br />12 MarginRelinquish<br />13 MarginQuoteHold |
+| referenceType   | **integer.** A number representing the type of action or event that triggered this transaction. One of:<br />**1** Trade<br />**2** Deposit<br />**3** Withdraw<br />**4** Transfer<br />**5** OrderHold<br />**6** WithdrawHold<br />**7** DepositHold<br />**8** MarginHold<br />**9** ManualHold<br />**10** ManualEntry<br />**11** MarginAcquisition<br />**12** MarginRelinquish<br />**13** MarginQuoteHold |
 | productId       | **integer.** The ID of the product in which the deposit was made. Use **GetProduct** to return information about a product based on its ID. |
 | balance         | **real.** The balance in the account after the transaction.  |
 | timeStamp       | **long integer.** Time at which the transaction took place, in POSIX format. |

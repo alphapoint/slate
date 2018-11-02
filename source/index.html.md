@@ -71,10 +71,18 @@ includes: # api - group - category - call
   - instrs/api_instrs_divider
   - instrs/api_instrs_user_getinstrument
   - instrs/api_instrs_user_getinstruments
-  - tickets/api_tickets_divider
-  - tickets/api_tix_user_getaccountdeposittransactions
-  - tickets/api_tix_user_getaccountwithdrawtransactions
-  - tickets/api_tix_user_getwithdrawfee
+  - tickets/_api_tickets_divider.md
+  - tickets/_api_tix_system_createdepositticket.md
+  - tickets/_api_tix_system_createwithdrawticket.md
+  - tickets/_api_tix_system_getalldeposittickets.md
+  - tickets/_api_tix_system_getallwithdrawtickets.md
+  - tickets/_api_tix_system_getdeposits.md
+  - tickets/_api_tix_system_getdepositinfo.md
+  - tickets/_api_tix_system_getdepositticket.md
+  - tickets/_api_tix_system_getdeposittickets.md
+  - tickets/_api_tix_user_getwithdrawfee.md
+  - tickets/_api_tix_system_getwithdrawtemplate.md
+  - tickets/_api_tix_system_getwithdrawtemplatetypes.md
   - user_verification/api_userverification_divider
   - uncertain/api_uncertain_divider
   - uncertain/api_uncert_user_getearliestticktime
