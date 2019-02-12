@@ -8,6 +8,8 @@ Subscribes an authenticated user to the Trades Market Data Feed for a specific i
 
 **SubscribeTrades** returns the response documented here for your immediate information, then periodically sends the *OrderTradeEvent* documented in **SubscribeAccountEvents.**
 
+Only a user with Operator permission can issue the permission Level1MarketData using the call **AddUserMarketDataPermission.**
+
 ### Request
 
 ```json

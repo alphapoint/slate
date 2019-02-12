@@ -21,21 +21,22 @@ Retrieves a list of instruments available on the exchange. An instrument is a pa
 ```json
 [
     {
-        "omsId":0,
-        "instrumentId":0,
-        "symbol":"",
-        "product1":0,
-        "product1Symbol":"",
-        "product2":0,
-        "product2Symbol":"",
-        "instrumentType":0,
-        "venueInstrumentId":0,
-        "venueId":0,"sortIndex":0,
-        "sessionStatus":0,
-        "previousSessionStatus":0,
-        "sessionStatusDateTime":"0001-01-01T00:00:00",
-        "selfTradePrevention":false,
-        "quantityIncrement":0.0
+        "omsId":0 ,
+        "instrumentId": 0,
+        "symbol": "",
+        "product1": 0,
+        "product1Symbol": "",
+        "product2": 0,
+        "product2Symbol": "",
+        "instrumentType": 0,
+        "venueInstrumentId": 0,
+        "venueId":0,"sortIndex": 0,
+        "sessionStatus": 0,
+        "previousSessionStatus": 0,
+        "sessionStatusDateTime": "0001-01-01T00:00:00",
+        "selfTradePrevention": false,
+        "quantityIncrement": 0.0,
+        "priceIncrement": 0.0
     },
 ]
 ```
@@ -60,4 +61,5 @@ The response for **GetInstruments** is an array of objects listing all the instr
 | sessionStatusDateTime | **string.**  The time and date at which the session status was reported, in Microsoft Ticks format. |
 | selfTradePrevention   | **Boolean.** An account that is trading with itself still incurs fees. If this instrument prevents an account from trading the instrument with itself, the value returns *true*; otherwise defaults to *false*. |
 | quantityIncrement     | **real.** The smallest tradeable increment of the instrument. For example, for BTCUSD, the quantity increment might be 0.0005, but for ETHUSD, the quantity increment might be 50. |
+| priceIncrement        | **real.** The amount by which the instrument can rise or fall in the market.  |
 

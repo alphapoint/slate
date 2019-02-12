@@ -1,0 +1,3 @@
+[submodule "source/includes/apad-markdown-documentation"]
+	path = source/includes/apad-markdown-documentation
+	url = https://github.com/alphapoint/apad-markdown-documentation.git

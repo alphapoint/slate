@@ -19,7 +19,7 @@ Users with Trading permission can return deposit ticket information only for acc
 | Key        | Value                                                        |
 | ---------- | ------------------------------------------------------------ |
 | OMSId      | **integer.** The ID of the Order Management System on which the account operates whose tickets you want to return. |
-| OperatorId | **integer.** The value for this key can be either the user's OperatorId (for those with Operator permission), or the user's user ID (for those with Trading permission). **TK** check. |
+| OperatorId | **integer.** A user with Operator permission should put the Operator's ID here; a user with Trading permission should put the value 1 here. |
 | AccountId  | **integer.** The account whose deposit tickets you want to return. |
 
 ### Response
@@ -33,15 +33,15 @@ Users with Trading permission can return deposit ticket information only for acc
         "assetName": null,
         "amount": 0.0,
         "omsId": 0,
-        "requestCode": null,
-        "requestIP": null,
+        "requestCode": "",
+        "requestIP": "",
         "requestUser": 0,
-        "requestUserName": null,
+        "requestUserName": "",
         "operatorId": 0,
         "Status": 0,
         "feeAmt": 0.0,
         "updatedByUser": 0,
-        "updatedByUserName": null,
+        "updatedByUserName": "",
         "ticketNumber": 0,
         "depositInfo": null,
         "createdTimestamp": "0001-01-01T00:00:00",

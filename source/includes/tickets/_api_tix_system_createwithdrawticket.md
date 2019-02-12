@@ -13,9 +13,9 @@ A user with Withdraw permission can create a withdraw ticket only for an account
     "OMSId": 1,
     "AccountId": 1,
     "ProductId": 1,
-    "Amount":100.00,
-    "TemplateForm":{},
-    "TemplateType":"Template Form Type"
+    "Amount": 100.00,
+    "TemplateForm": {},
+    "TemplateType": "Template Form Type"
 }
 ```
 
@@ -50,10 +50,10 @@ Example 1 shows a typical withdrawal template.
 
 ```json
 {
-    "result":true,
-    "errormsg":"Invalid Request",
-    "errorcode":100,
-    "detail":"Insufficient Balance"
+    "result": true,
+    "errormsg": "Invalid Request",
+    "errorcode": 100,
+    "detail": "Insufficient Balance"
 }
 ```
 
