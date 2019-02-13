@@ -10,8 +10,8 @@ Returns an array of affiliate tags associated with the identified user. The exch
 
 ```json
 {
-  "userId": 0,
-  "omsId": 0
+  "userId":0,
+  "omsId":0
 }
 ```
 
@@ -27,11 +27,11 @@ The response is an array of affiliate tag information, with an object for each a
 ```json
 [
   {
-     "omsId": 0,
-     "userId": 0,
-     "affiliateId": 0,
-     "affiliateTag": ""
-  },
+     "omsId":0,
+     "userId":0,
+     "affiliateId":0,
+     "affiliateTag":""
+  }
 ]
 ```
 

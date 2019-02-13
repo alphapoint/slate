@@ -4,7 +4,7 @@
 
 Returns an array of all withdrawal tickets from the specified Order Management System. All withdrawal tickets from all accounts and all users are returned from the start of the Exchange to the present, subject only to the restrictions set by the *StartIndex* and *Limit* values.
 
-The user must have Operator permission to issue **GetAllWithdrawTickets.** A similar call, **GetWithdrawTickets** can be used with Operator or Trading permissions, and returns withdraw tickets from a single account.
+The user must have Operator permission to issue **GetAllWithdrawTickets.**
 
 ### Request
 
@@ -17,67 +17,65 @@ The user must have Operator permission to issue **GetAllWithdrawTickets.** A sim
 }
 ```
 
-The key-value pairs *StartIndex* and *Limit* are optional. The oldest ticket is ticket *0*. This differs from other calls where the newest ticket or transaction is *0.* The value of *StartIndex* is a pointer into the stream of withdrawal tickets, and the value of *Limit* shows how far into the past (towards ticket *0*) to return tickets. For example, if there are 1500 current tickets (oldest ticket *0* through newest ticket *1499*), *StartIndex* = 100, and *Limit* = 100; then **GetAllWithdrawTickets** would return ticket numbers 1399 through 1300.
-
 | Key        | Value                                                        |
 | ---------- | ------------------------------------------------------------ |
 | OMSId      | **integer.** REQUIRED The ID of the Order Management System where the withdraw tickets were created. |
 | OperatorId | **integer.** REQUIRED The ID of the admin (operator) requesting **GetAllWithdrawTickets.** |
-| StartIndex | **integer.** OPTIONAL The location in the series of withdrawal tickets at which to begin returning tickets. Tickets are returned from that location towards ticket *0* (the oldest ticket). If you do not include a *StartIndex* key and value in the request, all tickets will be returned (subject to the value of *Limit*.) |
-| Limit      | **integer.** OPTIONAL The count of withdrawal tickets you want returned. For example, if you set the value of *Limit* to 50, a maximum of 50 withdrawal tickets will be returned. That maximum may be further restricted by the position of *StartIndex.* For example, if your *StartIndex* is only ten tickets from ticket *0*, and you include a *Limit* value of 50, you're still only going to get ten tickets. |
+| StartIndex | **integer.** OPTIONAL The earliest location in the series of withdrawal tickets at which to begin returning tickets. Tickets are returned from that location forward (that is, from then toward now). The most recent withdrawal ticket is ticket 0. If you do not include a *StartIndex* key and value in the request, tickets from the beginning of the Exchange will be returned (subject to *Limit*.) |
+| Limit      | **integer.** OPTIONAL The count of withdrawal tickets you want returned. For example, if you set the value of *Limit* to 50, a maximum of 50 withdrawal tickets will be returned. That maximum may be further restricted by the position of *StartIndex.* For example, if your *StartIndex* is only ten tickets back, and you include a *Limit* value of 50, you're still only going to get ten tickets. |
 
 ### Response
 
 ```json
 [
     {
-        "assetManagerId": 0,
-        "accountId": 0,
-        "assetId": 0,
-        "assetName": "",
-        "amount": 0.0,
-        "templateForm": "{
+        "assetManagerId":0,
+        "accountId":0,
+        "assetId":0,
+        "assetName":"",
+        "amount":0.0,
+        "templateForm":"{
 			“TemplateType”: “TetherRPCWithdraw”,
             “Comment”: “TestWithdraw”,
             “ExternalAddress”: “ms6C3pKAAr8gRCcnVebs8VRkVrjcvqNYv3”, 
  			}",
         "templateFormType": "TetherRPCWithdraw",
-        "omsId": 0,
+        "omsId":0,
         "requestCode": "490b4fa3-53fc-44f4-bd29-7e16be86fba3",
-        "requestIP": "",
-        "requestUserId": 0,
-        "requestUserName": "",
-        "operatorId": 0,
-        "Status": 0,
-        "feeAmt": 0.0,
-        "updatedByUser": 0,
-        "updatedByUserName": "",
-        "ticketNumber": 0,
-        "createdTimestamp": "0001-01-01T00:00:00",
-        "lastUpdateTimestamp": "0001-01-01T00:00:00",
-        "Comments": "[
+        "requestIP":"",
+        "requestUserId":0,
+        "requestUserName":"",
+        "operatorId":0,
+        "Status":0,
+        "feeAmt":0.0,
+        "updatedByUser":0,
+        "updatedByUserName":"",
+        "ticketNumber":0,
+        "createdTimestamp":"0001-01-01T00:00:00",
+        "lastUpdateTimestamp":"0001-01-01T00:00:00",
+        "Comments":"[
         	{
-            "commentId": 0,
-            "enteredBy": 0,
-            "enteredDateTime": "0001-01-01T00:00:00",
-            "comment": "",
-            "operatorId": 0,
-            "omsId": 0,
-            "ticketCode": "",
-            "ticketId": 0
+            "commentId":0,
+            "enteredBy":0,
+            "enteredDateTime":"0001-01-01T00:00:00",
+            "comment":"",
+            "operatorId":0,
+            "omsId":0,
+            "ticketCode":"",
+            "ticketId":0
             }
         ]",
-		"Attachments": "[
+		"Attachments":"[
 			{
-            "attachmentId": 0,
-            "submittedByUserId": 0,
-            "submittedByUserName": "",
-            "uploadDate": "0001-01-01T00:00:00",
-            "uploadIP": "",
-            "ticketNumber": 0
+            "attachmentId":0,
+            "submittedByUserId":0,
+            "submittedByUserName":"",
+            "uploadDate":"0001-01-01T00:00:00",
+            "uploadIP":"",
+            "ticketNumber":0
        		}
 		]",
-		"AuditLog": "[]"
+		"AuditLog":"[]"
 	}
 ]
 ```
@@ -91,7 +89,7 @@ The key-value pairs *StartIndex* and *Limit* are optional. The oldest ticket is 
 | assetId             | **integer.** The ID of the asset (product) that was withdrawn. Withdrawal fees (if any) are usually assessed in the same asset that was withdrawn. |
 | assetName           | **string.** The short name of the asset. For example, BTC for BitCoin or USD for US Dollars. |
 | amount              | **real.** The number of units or fractions of units of the asset that were withdrawn (not the asset's monetary value). For example, 2.5 BitCoin or 2018.00 US Dollars. |
-| templateForm        | **JSON string object.** The contents of the template form vary from Account Provider to Account Provider depending on the asset being withdrawn and the identity of the Account Provider. The Response returns this information as a string. The fields shown here are just examples. |
+| templateForm        | **string.** The contents of the template form vary from Account Provider to Account Provider depending on the asset being withdrawn and the identity of the Account Provider. The Response returns this information as a string, not an object. |
 | templateFormType    | **string.** The name of the template being used. Templates vary from Account Provider to Account Provider. |
 | omsId               | **integer.** The ID of the Order Management System on which the withdrawal was made. |
 | requestCode         | **string.** A globally unique identifier (GUID) that identifies this specific withdrawal. |
@@ -106,25 +104,25 @@ The key-value pairs *StartIndex* and *Limit* are optional. The oldest ticket is 
 | ticketNumber        | **integer.** The number of the ticket, as assigned by the system. |
 | createdTimeStamp    | **string.** The time and date when the withdrawal ticket was created, in Microsoft Ticks format. All times and dates are UTC. |
 | lastUpdateTimeStamp | **string.** The time and date when the withdrawal ticket was last updated, in Microsoft Ticks format. All times and dates are UTC. |
-| Comments            | **array of JSON string objects.** An array of key-value pairs appended as comments to the withdrawal ticket. See *Comments* example. |
-| Attachments         | **array of JSON string objects.** An array of any attachments appended to the withdrawal ticket. See *Attachments* example. |
-| AuditLog            | **array of JSON string objects.** Reserved for future use.   |
+| Comments            | **array.** An array of key-value pairs appended as comments to the withdrawal ticket. See *Comments* example. |
+| Attachments         | **array.** An array of any attachments appended to the withdrawal ticket. See *Attachments* example. |
+| AuditLog            | **array.** Reserved for future use.                          |
 
-#### Comments Example
+####Comments Example
 
 > Comments Example
 
 ```json
 "Comments":"[
         	{
-            "commentId": 0,
-            "enteredBy": 0,
-            "enteredDateTime": "0001-01-01T00:00:00",
-            "comment": "",
-            "operatorId": 0,
-            "omsId": 0,
-            "ticketCode": "",
-            "ticketId": 0
+            "commentId":0,
+            "enteredBy":0,
+            "enteredDateTime":"0001-01-01T00:00:00",
+            "comment":"",
+            "operatorId":0,
+            "omsId":0,
+            "ticketCode":"",
+            "ticketId":0
             }
         ]",
 ```
@@ -139,7 +137,7 @@ Comments appear as an array.
 | comment         | **string.** The text of the comment.                         |
 | operatorId      | **integer.** The ID of the admin (operator) making the comment. |
 | omsId           | **integer.** The ID of the Order Management System where the withdrawal ticket and comment were created. (They are unlikely to be different). |
-| ticketCode      | **string.** A globally unique ID (GUID) assigned by the system and which identifies the ticket. |
+| ticketCode      | **string.** A globally unique ID (GUID) assigned by the system that identifies the ticket. |
 | ticketId        | **integer.** The ID of the ticket as assigned by the system. |
 
 #### Attachments Example
@@ -149,12 +147,12 @@ Comments appear as an array.
 ```json
 "Attachments":"[
 			{
-            "attachmentId": 0,
-            "submittedByUserId": 0,
-            "submittedByUserName": "",
-            "uploadDate": "0001-01-01T00:00:00",
-            "uploadIP": "",
-            "ticketNumber": 0
+            "attachmentId":0,
+            "submittedByUserId":0,
+            "submittedByUserName":"",
+            "uploadDate":"0001-01-01T00:00:00",
+            "uploadIP":"",
+            "ticketNumber":0
        		}
 		]",
 ```

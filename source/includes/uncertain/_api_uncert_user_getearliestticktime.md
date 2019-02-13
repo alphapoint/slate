@@ -2,7 +2,7 @@
 
 **Category:** User<br />**Permissions:** Operator, Level1MarketData<br />**Call Type:** Synchronous
 
-Gets the earliest ticker reading of the trading day.
+Gets the earliest ticker time of the trading day.
 
 Users with Level1MarketData permission can obtain the earliest tick time only for an instrument they have permission to trade; users with Operator permission can get earliest tick time for any instrument.
 
@@ -28,10 +28,10 @@ Users with Level1MarketData permission can obtain the earliest tick time only fo
 ]
 ```
 
-Despite the array brackets, the response returns a single value.
+Despite the array, the response returns a single value.
 
 | Key           | Value                                                        |
 | ------------- | ------------------------------------------------------------ |
-| 1501603632000 | **long integer** Time of the earliest ticker tick, in POSIX format and UTC. |
+| 1501603632000 | **long integer** Time of the earliest ticker tick, in POSIX format. |
 
 

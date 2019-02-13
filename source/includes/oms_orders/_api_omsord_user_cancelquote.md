@@ -63,7 +63,7 @@ Objects for both *BidResult* and *AskResult*:
 | Key       | Value                                                        |
 | --------- | ------------------------------------------------------------ |
 | result    | **Boolean.** A successful receipt of the cancelation returns *true*; and unsuccessful receipt of the cancelation (an error condition) returns *false*. |
-| errormsg  | **string.** A successful receipt of the cancelation returns *null*; the *errormsg* parameter for an unsuccessful receipt returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106) |
+| errormsg  | **string.** A successful receipt of the cancelation returns *null*; the *errormsg* parameter for an unsuccessful receipt returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104) |
 | errorcode | **integer.** A successful receipt of the cancelation returns 0. An unsuccessful receipt returns one of the *errorcodes* shown in the *errormsg* list. |
 | detail    | **string.** Message text that the system may send. Usually null. |
 

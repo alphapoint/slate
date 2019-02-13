@@ -14,17 +14,17 @@ Transaction Activity Reports are delivered in comma-separated-value (CSV) format
 
 ```json
 {
-  "frequency": 0,
-  "accountIdList": [1],
-  "omsId": 1,
-  "beginTime": "2018-08-10T04:00:00.000Z",
-  "intervalDuration": 10
+  "frequency":0,
+  "accountIdList":[1],
+  "omsId":1,
+  "beginTime":"2018-08-10T04:00:00.000Z",
+  "intervalDuration":10
 }
 ```
 
 | Key              | Value                                                        |
 | ---------------- | ------------------------------------------------------------ |
-| frequency        | **integer:** How often the report will run. Expressed as an integer that maps to this list:<br />**0** OnDemand<br />**1** Hourly<br />**2** Daily<br />**3** Weekly<br />**4** Monthly<br />**5** Annually |
+| frequency        | **integer:** How often the report will run. Expressed as an integer that maps to this list:<br />0 OnDemand<br />1 Hourly<br />2 Daily<br />3 Weekly<br />4 Monthly<br />5 Annually |
 | accountIdList    | **integer array.** Comma-separated integers; each element is an account ID whose transaction activity will be reported on. All accounts must be from the same OMS. |
 | omsId            | **integer.** The Order Management System on which the accounts named in the list reside. |
 | beginTime        | **string.** The time from which the transaction activities will be reported, in Microsoft Ticks format. |
@@ -34,19 +34,19 @@ Transaction Activity Reports are delivered in comma-separated-value (CSV) format
 
 ```json
 {
-    "RequestingUser": 1,
-    "OMSId": 1,
-    "reportFlavor": "Transaction",
-    "createTime": "2018-08-17T18:02:23Z",
-    "initialRunTime": "2018-08-10T04:00:00Z",
-    "intervalStartTime": "2018-08-10T04:00:00Z",
-    "intervalEndTime": "2018-08-10T05:00:00Z",
-    "RequestStatus": "Submitted",
-    "ReportFrequency": "Hourly",
-    "intervalDuration": 36000000000,
-    "RequestId": "I2nCtvyY8UuHsoSyrLe2QA==",
-    "lastInstanceId": "AAAAAAAAAAAAAAAAAAAAAA==",
-    "accountIds": [1]
+    "RequestingUser":1,
+    "OMSId":1,
+    "reportFlavor":"Transaction",
+    "createTime":"2018-08-17T18:02:23Z",
+    "initialRunTime":"2018-08-10T04:00:00Z",
+    "intervalStartTime":"2018-08-10T04:00:00Z",
+    "intervalEndTime":"2018-08-10T05:00:00Z",
+    "RequestStatus":"Submitted",
+    "ReportFrequency":"Hourly",
+    "intervalDuration":36000000000,
+    "RequestId":"I2nCtvyY8UuHsoSyrLe2QA==",
+    "lastInstanceId":"AAAAAAAAAAAAAAAAAAAAAA==",
+    "accountIds":[1]
 }
 ```
 

@@ -10,7 +10,7 @@ Returns details about a single deposit ticket. A deposit ticket documents that a
 {
     "OMSId": 1,
     "AccountId": 1,
-    "RequestCode": "Request Code GUID",
+    "RequestCode":"Request Code GUID",
     "TicketId": 100000002
 }
 ```
@@ -67,7 +67,7 @@ Returns details about a single deposit ticket. A deposit ticket documents that a
 | feeAmt              | **real.** The fee assessed for making the deposit, if any. Deposit fees usually are assessed in the asset/product being deposited. |
 | updatedByUser       | **integer.** The user ID of the last user to have updated the ticket (status, amount, etc.; this is usually an admin). |
 | updatedByUserName   | **string.** The user name of the last user to have updated the ticket, for example, jsmith. |
-| ticketNumber        | **long integer.** An ID number assigned by the system to identify the ticket (as opposed to identifying the deposit). |
+| ticketNumber        | **long integer.** An ID number assigned to the ticket by the system. |
 | depositInfo         | **string.** A set of key-value pairs that holds information about the source of the funds being deposited. This information was entered when the deposit ticket was created, as required by the Account Provider. It can vary from Account Provider to Account Provider. |
 | createdTimeStamp    | **string.** The date and time when the deposit ticket was created, in Microsoft Ticks format. All dates and times are UTC. |
 | lastUpdateTimeStamp | **string.** The date and time when the deposit ticket last was updated &mdash; usually by an admin changing its status &mdash;  in Microsoft Ticks format. All dates and times are UTC. |

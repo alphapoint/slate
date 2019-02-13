@@ -47,7 +47,7 @@ The response to **CancelOrder** verifies that the call was received, not that th
 | Key       | Value                                                        |
 | --------- | ------------------------------------------------------------ |
 | result    | **Boolean.** Returns *true* if the call to cancel the order has been successfully received, otherwise returns *false*. |
-| errormsg  | **string.** A successful receipt of a call to cancel an order returns *null*; the *errormsg* parameter for an unsuccessful call to cancel an order returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)  |
+| errormsg  | **string.** A successful receipt of a call to cancel an order returns *null*; the *errormsg* parameter for an unsuccessful call to cancel an order returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104) |
 | errorcode | **integer.** A successfully received call to cancel an order returns 0. An unsuccessfully received call to cancel an order returns one of the *errorcodes* shown in the *errormsg* list. |
 | detail    | **string.** Message text that the system may send. The contents of this parameter are usually null. |
 

@@ -13,24 +13,18 @@ Because permission is Public, any user can retrieve the ticker history for any i
 ```json
 {
 	"InstrumentId": 1,
-    "Interval": 60,
-	"FromDate": "2018-07-18",
-    "ToDate": "2018-07-19",
-    "OMSId":1
+	"FromDate": // POSIX-format date and time
 }
 ```
 
 | Key          | Value                                                        |
 | ------------ | ------------------------------------------------------------ |
-| InstrumentId | **integer.** The ID of a specific instrument. The current Order Management System is assumed. |
-| Interval     | **integer.** The time between ticks, in seconds. For example, a value of 60 returns ticker array elements between *FromDate* to *ToDate* in 60-second increments.
-| FromDate     | **string.** Oldest date from which the ticker history will start, in Micrisoft Ticks format. The report moves toward *ToDate* from this point. |
-| ToDate       | **string.** Most recent date, at which the ticker history will end, in Microsoft Ticks format.  |
-| OMSId        | **integer.** The ID of the Order Management System where the ticker history comes from.  |
+| InstrumentId | **long integer.** The ID of a specific instrument. The current Order Management System is assumed. |
+| FromDate     | **long integer.** Oldest date from which the ticker history will start, in POSIX format. The report moves toward the present from this point. |
 
 ### Response
 
-> The response is an array of arrays of comma-separated, but unlabeled, numbers. This sample shows comments applied to identify the data being returned (comments are not part of the response; the second array shows how the data actually is reported):
+> The response is an array of arrays of comma-separated, but unlabeled, numbers. This sample shows comments applied to identify the data being returned (comments are not part of the response):
 
 ```json
 [
@@ -49,6 +43,6 @@ Because permission is Public, any user can retrieve the ticker history for any i
 ]
 ```
 
-The response returns an array of arrays dating from the *FromDate* value of the request to the *ToDate*. The data are returned oldest-date first. The data returned in the arrays are not labeled.
+The response returns an array of arrays dating from the *FromDate* value of the request. The data are returned oldest-date first. The data returned in the arrays are not labeled.
 
 

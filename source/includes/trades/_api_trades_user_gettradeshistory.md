@@ -6,6 +6,8 @@
 
 Retrieves a list of trades for a specified account, order ID, user, instrument, or starting and ending time stamp. The returned list begins at start index *i,* where *i* is an integer identifying a specific trade in reverse order; that is, the most recent trade has an index of 0. “Depth” is the count of trades to report backwards from *StartIndex*. 
 
+![](./images/gettradeshistory.png)
+
 Users with Trading permission can retrieve trade history for accounts with which they are associated; users with Operator permission can retrieve trade history for any account.
 
 <aside class="warning"><strong>Caution</strong>: You must coordinate *StartIndex*, *Depth*, *StartTimeStamp*, and *EndTimeStamp* to retrieve the historical information you need. As the diagram shows, it is possible to specify values (for example, *EndTimeStamp* and *Depth*) that can exclude information you may want (the red areas).</aside>
@@ -19,17 +21,17 @@ Users with Trading permission can retrieve trade history for accounts with which
 
 ```json
 {
-    "omsId": 0,
-    "accountId": 0,
-    "instrumentId": 0,
-    "tradeId": 0,
-    "orderId": 0,
-    "userId": 0,
-    "startTimestamp": 0,
-    "endTimestamp": 0,
-    "depth": 100,
-    "startIndex": 0,
-    "executionId": 0
+    "omsId":0,
+    "accountId":0,
+    "instrumentId":0,
+    "tradeId":0,
+    "orderId":0,
+    "userId":0,
+    "startTimestamp":0,
+    "endTimestamp":0,
+    "depth":100,
+    "startIndex":0,
+    "executionId":0
 }
 ```
 
@@ -49,60 +51,43 @@ Users with Trading permission can retrieve trade history for accounts with which
 
 ### Response
 
+> The response returns an array, one element for each trade.
+
 ```json
 [
     {
-        "omsId": 0,
-        "executionId": 0,
-        "tradeId": 0,
-        "orderId": 0,
-        "accountId": 0,
-        "subAccountId": 0,
-        "clientOrderId": 0,
-        "instrumentId": 0,
-        "side": 0,
-        "quantity": 0.0,
-        "remainingQuantity": 0.0,
-        "price": 0.0,
-        "value": 0.0,
-        "tradeTime": 0,
-        "counterParty": null,
-        "orderTradeRevision": 0,
-        "direction": 0,
-        "isBlockTrade": false,
-        "tradeTimeMS": 0,
-        "fee": 0.0,
-        "feeProductId": 0,
-        "orderOriginator": 0
-    },
+        "omsId":0,
+        "executionId":0,
+        "tradeId":0,
+        "orderId":0,
+        "accountId":0,
+        "subAccountId":0,
+        "clientOrderId":0,
+        "instrumentId":0,
+        "side":0,
+        "quantity":0.0,
+        "remainingQuantity":0.0,
+        "price":0.0,
+        "value":0.0,
+        "tradeTime":0
+    }
 ]
 ```
 
-
-The response is an array of objects, each element of which represents the account’s side of a trade (either buy or sell).
-
 | Key               | Value                                                        |
 | ----------------- | ------------------------------------------------------------ |
-| omsId             | **integer.** The ID of the Order Management System to which the account belongs. |
-| executionId       | **integer.** The ID of this account's side of the trade. Every trade has two sides. |
+| omsId             | **integer.** The ID of the Order Management System on which the trade took place. |
+| executionId       | **integer.** The ID of the sell- or buy-side portion of the execution initiated by the *AccountId* specified in request. |
 | tradeId           | **integer.** The ID of the overall trade.                    |
-| orderId           | **long integer.** The ID of the order causing the trade (buy or sell). |
-| accountId         | **integer.** The ID of the account that made the trade (buy or sell). |
+| orderId           | **integer.** The ID of the order that resulted in the trade. |
+| accountId         | **integer.** The ID of the account under which the trade was executed. |
 | subAccountId      | **integer.** Not currently used; reserved for future use. Defaults to 0. |
-| clientOrderId     | **integer.** An ID supplied by the client to identify the order (like a purchase order number). The *clientOrderId* defaults to 0 if not supplied. |
-| instrumentId      | **integer.** The ID of the instrument being traded. An instrument comprises two products, for example Dollars and BitCoin. |
-| side              | **integer.** A number representing one of the following potential sides of a trade: <br />**0** Buy<br />**1** Sell<br />**2** Short<br />**3** Unknown (an error condition) |
-| quantity          | **real.** The unit quantity of this side of the trade.       |
-| remainingQuantity | **real.** The number of units remaining to be traded by the order after this execution. This number is not revealed to the other party in the trade. This value is also known as "leave size" or "leave quantity." |
-| price             | **real.** The unit price at which the instrument traded.     |
-| value             | **real.** The total value of the deal. The system calculates this as:<br />unit price X quantity executed. |
-| tradeTime         | **long integer.** The date and time stamp of the trade, in POSIX format. |
-| counterParty      | **string.** The ID of the other party in a block trade. Usually, IDs are stated as integers; this value is an integer written as a string.  |
-| orderTradeRevision  | **integer.** The revision number of this trade; usually 1.      |
-| direction         | **integer.** The effect of the trade on the instrument's market price. One of:<br />**0** No change<br />**1** Uptick<br />**2** DownTick    |
-| isBlockTrade      | **Boolean.** A value of *true* means that this trade was a block trade; a value of *false* that it was not a block trade.   |
-| tradeTimeMS       | **long integer.** The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.    |
-| fee               | **real.** Any fee levied against the trade by the Exchange.         |
-| feeProductId      | **integer.** The ID of the product in which the fee was levied.   |
-| orderOriginator   | **integer.** The ID of the user who initiated the trade.   |
+| clientOrderId     | **long integer.** A user-assigned ID for the order (like a purchase-order number assigned by a company). If not supplied, *ClientOrderId* defaults to 0. |
+| instrumentId      | **integer.** The ID of the instrument being traded.          |
+| side              | **integer.** A number representing this trade's the side of the transaction. One of:<br />0 Buy<br />1 Sell<br />2 Short<br />3 Unknown (error condition). |
+| quantity          | **real.** The quantity of the instrument being traded.       |
+| remainingQuantity | **real.** Any quantity remaining in the order after this trade. |
+| price             | **real.** The unit price of the order.                       |
+| value             | **real.** The overall value of the trade, calculated as price X quantity. |
+| tradeTime         | **long integer.** The time at which the trade took place, in POSIX format. |
 

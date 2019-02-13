@@ -1,6 +1,8 @@
 ## GetAccountInfo
 
-**Category:** User<br />**Permissions:** Operator, Trading, AccountReadOnly<br />**Call Type:** Synchronous
+**Category:** User<br />
+**Permissions:** Operator, Trading, AccountReadOnly<br />
+**Call Type:** Synchronous
 
 Returns detailed information about one specific account and existing on a specific Order Management System.
 
@@ -9,7 +11,8 @@ Returns detailed information about one specific account and existing on a specif
 ```json
 {
     "omsId":0,
-    "accountId":0
+    "accountId":0,
+    "accountHandle":""
 }
 ```
 
@@ -17,6 +20,7 @@ Returns detailed information about one specific account and existing on a specif
 | ------------- | ------------------------------------------------------------ |
 | omsId         | **integer.** The ID of the Order Management System on which the account exists. |
 | accountId     | **integer.** The ID of the account on the Order Management System for which information will be returned. |
+| accountHandle | **string.** *accountHandle* is a unique user-assigned name that is checked at create time by the Order Management System. Alternate to Account ID. |
 
 ### Response
 

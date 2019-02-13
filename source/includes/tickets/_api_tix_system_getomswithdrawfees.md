@@ -23,13 +23,13 @@ Returns an array of objects, each of which describe a fee assessed on a specific
 ```json
 [
     {
-        "OMSId": 1,
-        "AccountId": 0,
-        "FeeId": 47,
-        "FeeAmt": 1,
-        "FeeCalcType": "Percentage",
-        "IsActive": false,
-        "ProductId": 1
+        "OMSId":1,
+        "AccountId":0,
+        "FeeId":47,
+        "FeeAmt":1,
+        "FeeCalcType":"Percentage",
+        "IsActive":false,
+        "ProductId":1
     },
 ]
 ```
