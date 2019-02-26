@@ -225,15 +225,15 @@ includes: # api - group - category - call
   # - margin/api_marg_user_getaccountmarginstate
   # - margin/api_marg_user_sendmarginquote
   - uncertain/api_uncertain_divider
-  # - uncertain/api_uncert_user_getallusergrouppermissions
-  # - uncertain/api_uncert_null_getallusergroups
-  # - uncertain/api_uncert_user_getalluserinstrumentpermissions
-  # - uncertain/api_uncert_user_getalluserproductpermissions
+  - uncertain/api_uncert_user_getallusergrouppermissions
+  - uncertain/api_uncert_null_getallusergroups
+  - uncertain/api_uncert_user_getalluserinstrumentpermissions
+  - uncertain/api_uncert_user_getalluserproductpermissions
   - uncertain/api_uncert_user_getearliestticktime
-  # - uncertain/api_uncert_user_getusergrouppermissions
+  - uncertain/api_uncert_user_getusergrouppermissions
   - uncertain/api_uncert_user_ping
-  # - uncertain/api_uncert_user_removeuserinstrumentpermissions
-  # - uncertain/api_uncert_user_setusergrouppermission
+  - uncertain/api_uncert_user_removeuserinstrumentpermissions
+  - uncertain/api_uncert_user_setusergrouppermission
   # - am_mgr/api_ammgr_divider
   # - am_mgr/api_ammgr_system_am_addeditaccountassetinfo
   # - am_mgr/api_ammgr_system_am_addeditaccountproviderinfo
