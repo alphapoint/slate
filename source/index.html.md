@@ -225,15 +225,15 @@ includes: # api - group - category - call
   # - margin/api_marg_user_getaccountmarginstate
   # - margin/api_marg_user_sendmarginquote
   - uncertain/api_uncertain_divider
-  - uncertain/api_uncert_user_getallusergrouppermissions
-  - uncertain/api_uncert_null_getallusergroups
-  - uncertain/api_uncert_user_getalluserinstrumentpermissions
-  - uncertain/api_uncert_user_getalluserproductpermissions
+  # - uncertain/api_uncert_user_getallusergrouppermissions
+  # - uncertain/api_uncert_null_getallusergroups
+  # - uncertain/api_uncert_user_getalluserinstrumentpermissions
+  # - uncertain/api_uncert_user_getalluserproductpermissions
   - uncertain/api_uncert_user_getearliestticktime
-  - uncertain/api_uncert_user_getusergrouppermissions
+  # - uncertain/api_uncert_user_getusergrouppermissions
   - uncertain/api_uncert_user_ping
-  - uncertain/api_uncert_user_removeuserinstrumentpermissions
-  - uncertain/api_uncert_user_setusergrouppermission
+  # - uncertain/api_uncert_user_removeuserinstrumentpermissions
+  # - uncertain/api_uncert_user_setusergrouppermission
   # - am_mgr/api_ammgr_divider
   # - am_mgr/api_ammgr_system_am_addeditaccountassetinfo
   # - am_mgr/api_ammgr_system_am_addeditaccountproviderinfo
@@ -338,7 +338,7 @@ search: true
 
 # Introduction
 
-This API covers the User-category calls in **version 3.3**of the AlphaPoint Exchange software. It includes calls required for log-in and authentication.
+This API covers the User-category calls in **version 3.3** of the AlphaPoint Exchange software. It includes calls required for log-in and authentication.
 
 The calls have been organized roughly to correspond to similar functions you would find in the AlphaPoint Admin. For example, in the Admin you manage users in the Users function. So calls that manage users have been gathered in the Users section of the API.
 
