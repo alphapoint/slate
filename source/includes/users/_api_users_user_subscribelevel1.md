@@ -8,6 +8,8 @@ Retrieves the latest Level 1 Ticker information and then subscribes the user to 
 
 The **SubscribeLevel1** call responds with the Level 1 response shown below. The OMS then periodically sends in the same format as this response *Leve1UpdateEvent* information when best-bid/best-offer issue, until you send the **UnsubscribeLevel1** call.
 
+Only a user with Operator permission can issue Level1MarketData permission using the call ***AddUserMarketDataPermission.** 
+
 ### Request
 
 > You can identify the instrument with its ID or with its market symbol (string).

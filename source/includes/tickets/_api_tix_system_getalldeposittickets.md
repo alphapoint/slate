@@ -17,7 +17,7 @@ Only a user with Operator permission can issue **GetAllDepositTickets.**
 }
 ```
 
-The values for *OMSId* and *OperatorId* are required; including the key-value pairs *StartIndex* and *Limit* is optional.
+The values for *OMSId* and *OperatorId* are required; the key-value pairs *StartIndex* and *Limit* are optional. You can include *StartIndex*, *Limit,* or both.
 
 | Key            | Value                                                        |
 | -------------- | ------------------------------------------------------------ |
@@ -37,15 +37,15 @@ The values for *OMSId* and *OperatorId* are required; including the key-value pa
         "assetName": null,
         "amount": 0.0,
         "omsId": 0,
-        "requestCode": null,
-        "requestIP": null,
+        "requestCode": "",
+        "requestIP": "",
         "requestUser": 0,
-        "requestUserName": null,
+        "requestUserName": "",
         "operatorId": 0,
         "Status": 0,
         "feeAmt": 0.0,
         "updatedByUser": 0,
-        "updatedByUserName": null,
+        "updatedByUserName": "",
         "ticketNumber": 0,
         "depositInfo": {
         	"Full Name": "John Smith",

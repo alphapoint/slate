@@ -15,7 +15,7 @@ Users with Deposit permission can deposit only to their own accounts; users with
     "ProductId": 1,
     "AccountProviderId": 1,
     "GenerateNewKey": true,
-    "DepositInfo":"{}"
+    "DepositInfo": "{}"
 }
 ```
 

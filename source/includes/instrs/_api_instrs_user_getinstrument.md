@@ -1,8 +1,6 @@
 ## GetInstrument
 
-**Category:** User<br />
-**Permissions:** Public<br />
-**Call Type:** Synchronous
+**Category:** User<br />**Permissions:** Public<br />**Call Type:** Synchronous
 
 Retrieves the details of a specific instrument from the Order Management System of the trading venue. An instrument is a pair of exchanged products (or fractions of them) such as US dollars and BitCoin.
 
@@ -17,29 +15,30 @@ Retrieves the details of a specific instrument from the Order Management System 
 
 | Key          | Value                                                        |
 | ------------ | ------------------------------------------------------------ |
-| OMSId        | **integer**. The ID of the Order Management System from where the instrument is traded. |
+| OMSId        | **integer**. The ID of the Order Management System on which the instrument is traded. |
 | InstrumentId | **integer**. The ID of the instrument.                       |
 
 ### Response
 
 ```json
 {
-    "omsId":0,
-    "instrumentId":0,
-    "symbol":null,
-    "product1":0,
-    "product1Symbol":null,
-    "product2":0,
-    "product2Symbol":null,
-    "instrumentType":0,
-    "venueInstrumentId":0,
-    "venueId":0,
-    "sortIndex":0,
-    "sessionStatus":0,
-    "previousSessionStatus":0,
-    "sessionStatusDateTime":"0001-01-01T00:00:00",
-    "selfTradePrevention":false,
-    "quantityIncrement":0.0
+    "omsId": 0,
+    "instrumentId": 0,
+    "symbol": null,
+    "product1": 0,
+    "product1Symbol": null,
+    "product2": 0,
+    "product2Symbol": null,
+    "instrumentType": 0,
+    "venueInstrumentId": 0,
+    "venueId": 0,
+    "sortIndex": 0,
+    "sessionStatus": 0,
+    "previousSessionStatus": 0,
+    "sessionStatusDateTime": "0001-01-01T00:00:00",
+    "selfTradePrevention": false,
+    "quantityIncrement": 0.0,
+    "priceIncrement": 0.0
 }
 ```
 
@@ -61,5 +60,6 @@ Retrieves the details of a specific instrument from the Order Management System 
 | sessionStatusDateTime | **string.**  The time and date at which the session status was reported, in Microsoft Ticks format. |
 | selfTradePrevention   | **Boolean.** An account that is trading with itself still incurs fees. If this instrument prevents an account from trading the instrument with itself, the value returns *true*; otherwise defaults to *false*. |
 | quantityIncrement     | **real.** The smallest tradeable increment of the instrument. For example, for BTCUSD, the quantity increment might be 0.0005, but for ETHUSD, the quantity increment might be 50. |
+| priceIncrement        | **real.** The smallest amount by which the instrument can rise or fall in the market.  |
 
 

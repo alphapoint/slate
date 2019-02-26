@@ -29,9 +29,9 @@ The system "knows" what Account Provider templates are suitable to your account 
     "TemplateTypes": [
         "Standard"
     ],
-    "result":false,
-    "errormsg":"",
-    "statuscode":0
+    "result": false,
+    "errormsg": "",
+    "statuscode": 0 
 }
 ```
 

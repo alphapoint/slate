@@ -1,10 +1,12 @@
 ## SubscribeTicker
 
 **Category:** User<br />
-**Permissions:** Operator, Trading, Level 1MarketData<br />
+**Permissions:** Operator, Trading, Level1MarketData<br />
 **Call Type:** Synchronous
 
 Subscribes a user to a Ticker Market Data Feed for a specific instrument and interval. **SubscribeTicker** sends a response object as described below, and then periodically returns a *TickerDataUpdateEvent* that matches the content of the response object.
+
+Only a user with Operator permission can issue a Level1MarketData permission using the call **AddUserMarketDataPermission.**
 
 ### Request
 ```json

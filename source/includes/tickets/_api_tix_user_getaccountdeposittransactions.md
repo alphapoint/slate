@@ -31,18 +31,18 @@ The owner of the trading venue determines how long to retain transaction history
 ```json
 [
   {
-    "transactionId":0,
-    "omsId":0,
-    "accountId":0,
-    "cr":0.0,
-    "dr":0.0,
-    "counterparty":0,
-    "transactionType":0,
-    "referenceId":0,
-    "referenceType":0,
-    "productId":0,
-    "balance":0.0,
-    "timeStamp":0
+    "transactionId": 0,
+    "omsId": 0,
+    "accountId": 0,
+    "cr": 0.0,
+    "dr": 0.0,
+    "counterparty": 0,
+    "transactionType": 0,
+    "referenceId": 0,
+    "referenceType": 0,
+    "productId": 0,
+    "balance": 0.0,
+    "timeStamp": 0
     },
 ]
 ```
