@@ -5764,32 +5764,42 @@
 </tbody></table>
 <h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"executionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"instrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"remainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"counterParty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"isBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"feeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ExecutionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SubAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InstrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="w">
+        </span><span class="s2">"Quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"RemainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CounterParty"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FeeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"UserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MakerTaker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maker"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AdapterTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBidSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAsk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAskSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsQuote"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>The response is an array of objects, each of which represents the account’s side of a trade (either buy or sell).</p>
+<p>The response is an array of objects, each element of which represents the account’s side of a trade (either buy or sell).</p>
 
 <table><thead>
 <tr>
@@ -5798,92 +5808,128 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>omsId</td>
+<td>OMSId</td>
 <td><strong>integer.</strong> The ID of the Order Management System to which the account belongs.</td>
 </tr>
 <tr>
-<td>executionId</td>
+<td>ExecutionId</td>
 <td><strong>integer.</strong> The ID of this account&#39;s side of the trade. Every trade has two sides.</td>
 </tr>
 <tr>
-<td>tradeId</td>
+<td>TradeId</td>
 <td><strong>integer.</strong> The ID of the overall trade.</td>
 </tr>
 <tr>
-<td>orderId</td>
+<td>OrderId</td>
 <td><strong>long integer.</strong> The ID of the order causing the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>accountId</td>
+<td>AccountId</td>
 <td><strong>integer.</strong> The ID of the account that made the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>subAccountId</td>
+<td>AccountName</td>
+<td><strong>string.</strong> The Name of the account that made the trade (buy or sell).</td>
+</tr>
+<tr>
+<td>SubAccountId</td>
 <td><strong>integer.</strong> Not currently used; reserved for future use. Defaults to 0.</td>
 </tr>
 <tr>
-<td>clientOrderId</td>
+<td>ClientOrderId</td>
 <td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
-<td>instrumentId</td>
+<td>InstrumentId</td>
 <td><strong>integer.</strong> The ID of the instrument being traded. An instrument comprises two products, for example Dollars and BitCoin.</td>
 </tr>
 <tr>
-<td>side</td>
-<td><strong>integer.</strong> A number representing one of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
+<td>Side</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
 </tr>
 <tr>
-<td>quantity</td>
+<td>OrderType</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br />Market<br />Limit<br />BlockTrade<br />StopMarket<br />StopLimit<br />TrailingStopLimit<br />StopMarket<br />TrailingStopMarket</td>
+</tr>
+<tr>
+<td>Quantity</td>
 <td><strong>real.</strong> The unit quantity of this side of the trade.</td>
 </tr>
 <tr>
-<td>remainingQuantity</td>
+<td>RemainingQuantity</td>
 <td><strong>real.</strong> The number of units remaining to be traded by the order after this execution. This number is not revealed to the other party in the trade. This value is also known as &quot;leave size&quot; or &quot;leave quantity.&quot;</td>
 </tr>
 <tr>
-<td>price</td>
+<td>Price</td>
 <td><strong>real.</strong> The unit price at which the instrument traded.</td>
 </tr>
 <tr>
-<td>value</td>
+<td>Value</td>
 <td><strong>real.</strong> The total value of the deal. The system calculates this as:<br />unit price X quantity executed.</td>
 </tr>
 <tr>
-<td>tradeTime</td>
-<td><strong>long integer.</strong> The date and time stamp of the trade, in POSIX format.</td>
-</tr>
-<tr>
-<td>counterParty</td>
+<td>CounterParty</td>
 <td><strong>string.</strong> The ID of the other party in a block trade. Usually, IDs are stated as integers; this value is an integer written as a string.</td>
 </tr>
 <tr>
-<td>orderTradeRevision</td>
+<td>OrderTradeRevision</td>
 <td><strong>integer.</strong> The revision number of this trade; usually 1.</td>
 </tr>
 <tr>
-<td>direction</td>
+<td>Direction</td>
 <td><strong>integer.</strong> The effect of the trade on the instrument&#39;s market price. One of:<br /><strong>0</strong> No change<br /><strong>1</strong> Uptick<br /><strong>2</strong> DownTick</td>
 </tr>
 <tr>
-<td>isBlockTrade</td>
+<td>IsBlockTrade</td>
 <td><strong>Boolean.</strong> A value of <em>true</em> means that this trade was a block trade; a value of <em>false</em> that it was not a block trade.</td>
 </tr>
 <tr>
-<td>tradeTimeMS</td>
-<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
-</tr>
-<tr>
-<td>fee</td>
+<td>Fee</td>
 <td><strong>real.</strong> Any fee levied against the trade by the Exchange.</td>
 </tr>
 <tr>
-<td>feeProductId</td>
+<td>FeeProductId</td>
 <td><strong>integer.</strong> The ID of the product in which the fee was levied.</td>
 </tr>
 <tr>
-<td>orderOriginator</td>
+<td>OrderOriginator</td>
 <td><strong>integer.</strong> The ID of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>UserName</td>
+<td><strong>integer.</strong> The UserName of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>TradeTimeMS</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
+</tr>
+<tr>
+<td>MakerTaker</td>
+<td><strong>string.</strong> One of the following potential liquidity provider of a trade: <br />Maker<br />Taker<br /></td>
+</tr>
+<tr>
+<td>AdapterTradeId</td>
+<td><strong>integer.</strong> The ID of the adapter of the overall trade.</td>
+</tr>
+<tr>
+<td>InsideBid</td>
+<td><strong>real.</strong> The best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideBidSize</td>
+<td><strong>real.</strong> The quantity of the best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAsk</td>
+<td><strong>real.</strong> The best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAskSize</td>
+<td><strong>real.</strong> The quantity of the best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>TradeTime</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in C# Ticks. All dates and times are UTC.</td>
 </tr>
 </tbody></table>
 <h2 id='getaccounttransactions'>GetAccountTransactions</h2>
@@ -6325,28 +6371,38 @@
 </tbody></table>
 <h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"executionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"instrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"remainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"counterParty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"isBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"feeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ExecutionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SubAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InstrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="w">
+        </span><span class="s2">"Quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"RemainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CounterParty"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FeeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"UserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MakerTaker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maker"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AdapterTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBidSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAsk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAskSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsQuote"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -6359,92 +6415,128 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>omsId</td>
+<td>OMSId</td>
 <td><strong>integer.</strong> The ID of the Order Management System to which the account belongs.</td>
 </tr>
 <tr>
-<td>executionId</td>
+<td>ExecutionId</td>
 <td><strong>integer.</strong> The ID of this account&#39;s side of the trade. Every trade has two sides.</td>
 </tr>
 <tr>
-<td>tradeId</td>
+<td>TradeId</td>
 <td><strong>integer.</strong> The ID of the overall trade.</td>
 </tr>
 <tr>
-<td>orderId</td>
+<td>OrderId</td>
 <td><strong>long integer.</strong> The ID of the order causing the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>accountId</td>
+<td>AccountId</td>
 <td><strong>integer.</strong> The ID of the account that made the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>subAccountId</td>
+<td>AccountName</td>
+<td><strong>string.</strong> The Name of the account that made the trade (buy or sell).</td>
+</tr>
+<tr>
+<td>SubAccountId</td>
 <td><strong>integer.</strong> Not currently used; reserved for future use. Defaults to 0.</td>
 </tr>
 <tr>
-<td>clientOrderId</td>
+<td>ClientOrderId</td>
 <td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
-<td>instrumentId</td>
+<td>InstrumentId</td>
 <td><strong>integer.</strong> The ID of the instrument being traded. An instrument comprises two products, for example Dollars and BitCoin.</td>
 </tr>
 <tr>
-<td>side</td>
-<td><strong>integer.</strong> A number representing one of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
+<td>Side</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
 </tr>
 <tr>
-<td>quantity</td>
+<td>OrderType</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br />Market<br />Limit<br />BlockTrade<br />StopMarket<br />StopLimit<br />TrailingStopLimit<br />StopMarket<br />TrailingStopMarket</td>
+</tr>
+<tr>
+<td>Quantity</td>
 <td><strong>real.</strong> The unit quantity of this side of the trade.</td>
 </tr>
 <tr>
-<td>remainingQuantity</td>
+<td>RemainingQuantity</td>
 <td><strong>real.</strong> The number of units remaining to be traded by the order after this execution. This number is not revealed to the other party in the trade. This value is also known as &quot;leave size&quot; or &quot;leave quantity.&quot;</td>
 </tr>
 <tr>
-<td>price</td>
+<td>Price</td>
 <td><strong>real.</strong> The unit price at which the instrument traded.</td>
 </tr>
 <tr>
-<td>value</td>
+<td>Value</td>
 <td><strong>real.</strong> The total value of the deal. The system calculates this as:<br />unit price X quantity executed.</td>
 </tr>
 <tr>
-<td>tradeTime</td>
-<td><strong>long integer.</strong> The date and time stamp of the trade, in POSIX format.</td>
-</tr>
-<tr>
-<td>counterParty</td>
+<td>CounterParty</td>
 <td><strong>string.</strong> The ID of the other party in a block trade. Usually, IDs are stated as integers; this value is an integer written as a string.</td>
 </tr>
 <tr>
-<td>orderTradeRevision</td>
+<td>OrderTradeRevision</td>
 <td><strong>integer.</strong> The revision number of this trade; usually 1.</td>
 </tr>
 <tr>
-<td>direction</td>
+<td>Direction</td>
 <td><strong>integer.</strong> The effect of the trade on the instrument&#39;s market price. One of:<br /><strong>0</strong> No change<br /><strong>1</strong> Uptick<br /><strong>2</strong> DownTick</td>
 </tr>
 <tr>
-<td>isBlockTrade</td>
+<td>IsBlockTrade</td>
 <td><strong>Boolean.</strong> A value of <em>true</em> means that this trade was a block trade; a value of <em>false</em> that it was not a block trade.</td>
 </tr>
 <tr>
-<td>tradeTimeMS</td>
-<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
-</tr>
-<tr>
-<td>fee</td>
+<td>Fee</td>
 <td><strong>real.</strong> Any fee levied against the trade by the Exchange.</td>
 </tr>
 <tr>
-<td>feeProductId</td>
+<td>FeeProductId</td>
 <td><strong>integer.</strong> The ID of the product in which the fee was levied.</td>
 </tr>
 <tr>
-<td>orderOriginator</td>
+<td>OrderOriginator</td>
 <td><strong>integer.</strong> The ID of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>UserName</td>
+<td><strong>integer.</strong> The UserName of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>TradeTimeMS</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
+</tr>
+<tr>
+<td>MakerTaker</td>
+<td><strong>string.</strong> One of the following potential liquidity provider of a trade: <br />Maker<br />Taker<br /></td>
+</tr>
+<tr>
+<td>AdapterTradeId</td>
+<td><strong>integer.</strong> The ID of the adapter of the overall trade.</td>
+</tr>
+<tr>
+<td>InsideBid</td>
+<td><strong>real.</strong> The best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideBidSize</td>
+<td><strong>real.</strong> The quantity of the best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAsk</td>
+<td><strong>real.</strong> The best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAskSize</td>
+<td><strong>real.</strong> The quantity of the best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>TradeTime</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in C# Ticks. All dates and times are UTC.</td>
 </tr>
 </tbody></table>
 <h1 id='oms-orders'>OMS Orders</h1>

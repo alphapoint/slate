@@ -222,7 +222,13 @@
             <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#revised-calls" class="toc-h2 toc-link" data-title="Revised calls">Revised calls</a>
+                    <a href="#revised-calls-3-3-2-gt-3-3-3" class="toc-h2 toc-link" data-title="Revised calls - 3.3.2 --&gt; 3.3.3">Revised calls - 3.3.2 --&gt; 3.3.3</a>
+                  </li>
+                  <li>
+                    <a href="#new-endpoints-calls-3-3-2-gt-3-3-3" class="toc-h2 toc-link" data-title="New Endpoints calls - 3.3.2 --&gt; 3.3.3">New Endpoints calls - 3.3.2 --&gt; 3.3.3</a>
+                  </li>
+                  <li>
+                    <a href="#revised-calls-3-0-x-gt-3-3-2" class="toc-h2 toc-link" data-title="Revised calls - 3.0.X --&gt; 3.3.2">Revised calls - 3.0.X --&gt; 3.3.2</a>
                   </li>
                   <li>
                     <a href="#previously-unrevealed-calls" class="toc-h2 toc-link" data-title="Previously unrevealed calls">Previously unrevealed calls</a>
@@ -308,6 +314,15 @@
                   </li>
                   <li>
                     <a href="#getuseraffiliatetag" class="toc-h2 toc-link" data-title="GetUserAffiliateTag">GetUserAffiliateTag</a>
+                  </li>
+                  <li>
+                    <a href="#getuserconfig" class="toc-h2 toc-link" data-title="GetUserConfig">GetUserConfig</a>
+                  </li>
+                  <li>
+                    <a href="#getallunredacteduserconfigsforuser" class="toc-h2 toc-link" data-title="GetAllUnredactedUserConfigsForUser">GetAllUnredactedUserConfigsForUser</a>
+                  </li>
+                  <li>
+                    <a href="#getunredacteduserconfigbykey" class="toc-h2 toc-link" data-title="GetUnredactedUserConfigByKey">GetUnredactedUserConfigByKey</a>
                   </li>
                   <li>
                     <a href="#getuserreporttickets" class="toc-h2 toc-link" data-title="GetUserReportTickets">GetUserReportTickets</a>
@@ -511,25 +526,7 @@
                     <a href="#deposit-and-withdraw-templates" class="toc-h2 toc-link" data-title="Deposit and Withdraw Templates">Deposit and Withdraw Templates</a>
                   </li>
                   <li>
-                    <a href="#acceptwithdrawticket" class="toc-h2 toc-link" data-title="AcceptWithdrawTicket">AcceptWithdrawTicket</a>
-                  </li>
-                  <li>
-                    <a href="#adddepositticketattachment" class="toc-h2 toc-link" data-title="AddDepositTicketAttachment">AddDepositTicketAttachment</a>
-                  </li>
-                  <li>
-                    <a href="#addwithdrawticketattachment" class="toc-h2 toc-link" data-title="AddWithdrawTicketAttachment">AddWithdrawTicketAttachment</a>
-                  </li>
-                  <li>
-                    <a href="#cancelfailedwithdrawticket" class="toc-h2 toc-link" data-title="CancelFailedWithdrawTicket">CancelFailedWithdrawTicket</a>
-                  </li>
-                  <li>
                     <a href="#cancelwithdraw" class="toc-h2 toc-link" data-title="CancelWithdraw">CancelWithdraw</a>
-                  </li>
-                  <li>
-                    <a href="#confirmwithdraw" class="toc-h2 toc-link" data-title="ConfirmWithdraw">ConfirmWithdraw</a>
-                  </li>
-                  <li>
-                    <a href="#createassetmanagerwalletticket" class="toc-h2 toc-link" data-title="CreateAssetManagerWalletTicket">CreateAssetManagerWalletTicket</a>
                   </li>
                   <li>
                     <a href="#createdepositticket" class="toc-h2 toc-link" data-title="CreateDepositTicket">CreateDepositTicket</a>
@@ -538,16 +535,13 @@
                     <a href="#createwithdrawticket" class="toc-h2 toc-link" data-title="CreateWithdrawTicket">CreateWithdrawTicket</a>
                   </li>
                   <li>
-                    <a href="#deposit-deprecated" class="toc-h2 toc-link" data-title="Deposit (DEPRECATED)">Deposit (DEPRECATED)</a>
-                  </li>
-                  <li>
                     <a href="#getaccountdeposittransactions" class="toc-h2 toc-link" data-title="GetAccountDepositTransactions">GetAccountDepositTransactions</a>
                   </li>
                   <li>
                     <a href="#getaccountwithdrawtransactions" class="toc-h2 toc-link" data-title="GetAccountWithdrawTransactions">GetAccountWithdrawTransactions</a>
                   </li>
                   <li>
-                    <a href="#getallassetmanagerwallettickets" class="toc-h2 toc-link" data-title="GetAllAssetManagerWalletTickets">GetAllAssetManagerWalletTickets</a>
+                    <a href="#getallledgerentrytickets" class="toc-h2 toc-link" data-title="GetAllLedgerEntryTickets">GetAllLedgerEntryTickets</a>
                   </li>
                   <li>
                     <a href="#getalldeposittickets" class="toc-h2 toc-link" data-title="GetAllDepositTickets">GetAllDepositTickets</a>
@@ -574,9 +568,6 @@
                     <a href="#getdepositticket" class="toc-h2 toc-link" data-title="GetDepositTicket">GetDepositTicket</a>
                   </li>
                   <li>
-                    <a href="#getdepositticketattachment" class="toc-h2 toc-link" data-title="GetDepositTicketAttachment">GetDepositTicketAttachment</a>
-                  </li>
-                  <li>
                     <a href="#getdeposittickets" class="toc-h2 toc-link" data-title="GetDepositTickets">GetDepositTickets</a>
                   </li>
                   <li>
@@ -598,43 +589,13 @@
                     <a href="#getwithdrawticket" class="toc-h2 toc-link" data-title="GetWithdrawTicket">GetWithdrawTicket</a>
                   </li>
                   <li>
-                    <a href="#getwithdrawticketattachment" class="toc-h2 toc-link" data-title="GetWithdrawTicketAttachment">GetWithdrawTicketAttachment</a>
-                  </li>
-                  <li>
                     <a href="#getwithdrawtickets" class="toc-h2 toc-link" data-title="GetWithdrawTickets">GetWithdrawTickets</a>
-                  </li>
-                  <li>
-                    <a href="#markdepositticketasfullyprocessed" class="toc-h2 toc-link" data-title="MarkDepositTicketAsFullyProcessed">MarkDepositTicketAsFullyProcessed</a>
-                  </li>
-                  <li>
-                    <a href="#markwithdrawticketascancelled" class="toc-h2 toc-link" data-title="MarkWithdrawTicketAsCancelled">MarkWithdrawTicketAsCancelled</a>
-                  </li>
-                  <li>
-                    <a href="#markwithdrawticketasconfirmed" class="toc-h2 toc-link" data-title="MarkWithdrawTicketAsConfirmed">MarkWithdrawTicketAsConfirmed</a>
-                  </li>
-                  <li>
-                    <a href="#markwithdrawticketasfullyprocessed" class="toc-h2 toc-link" data-title="MarkWithdrawTicketAsFullyProcessed">MarkWithdrawTicketAsFullyProcessed</a>
-                  </li>
-                  <li>
-                    <a href="#resubmitfailedwithdrawticket" class="toc-h2 toc-link" data-title="ResubmitFailedWithdrawTicket">ResubmitFailedWithdrawTicket</a>
                   </li>
                   <li>
                     <a href="#submitdepositticketcomment" class="toc-h2 toc-link" data-title="SubmitDepositTicketComment">SubmitDepositTicketComment</a>
                   </li>
                   <li>
                     <a href="#submitwithdrawticketcomment" class="toc-h2 toc-link" data-title="SubmitWithdrawTicketComment">SubmitWithdrawTicketComment</a>
-                  </li>
-                  <li>
-                    <a href="#updateassetmanagerwalletticket" class="toc-h2 toc-link" data-title="UpdateAssetManagerWalletTicket">UpdateAssetManagerWalletTicket</a>
-                  </li>
-                  <li>
-                    <a href="#updatedepositticket" class="toc-h2 toc-link" data-title="UpdateDepositTicket">UpdateDepositTicket</a>
-                  </li>
-                  <li>
-                    <a href="#updatewithdrawticket" class="toc-h2 toc-link" data-title="UpdateWithdrawTicket">UpdateWithdrawTicket</a>
-                  </li>
-                  <li>
-                    <a href="#withdraw-deprecated" class="toc-h2 toc-link" data-title="Withdraw (DEPRECATED)">Withdraw (DEPRECATED)</a>
                   </li>
               </ul>
           </li>
@@ -661,7 +622,89 @@
 <p>This API covers the User-category calls in <strong>version 3.3</strong> of the AlphaPoint Exchange software. It includes calls required for log-in and authentication.</p>
 
 <p>The calls have been organized roughly to correspond to similar functions you would find in the AlphaPoint Admin. For example, in the Admin you manage users in the Users function. So calls that manage users have been gathered in the Users section of the API.</p>
-<h3 id='revised-calls'>Revised calls</h3>
+<h3 id='revised-calls-3-3-2-gt-3-3-3'>Revised calls - 3.3.2 --&gt; 3.3.3</h3>
+<p><strong>GetAccountTrades</strong>
+<strong>GetTradesHistory</strong></p>
+
+<p>New fields added to response object</p>
+
+<blockquote>
+<p>Old Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"executionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"subAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"instrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"remainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"counterParty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"orderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"isBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"tradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"feeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"orderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>New Response - Additional Fields OrderType, AccountName, UserName, MakerTaker, AdapterTradeId, InsideBid, InsideBidSize, InsideAsk, InsideAskSize, IsQuote</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ExecutionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SubAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InstrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="w">
+        </span><span class="s2">"Quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"RemainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CounterParty"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FeeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"UserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MakerTaker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maker"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AdapterTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBidSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAsk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAskSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsQuote"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p><strong>GetUserConfig</strong>
+User Config Values are redacted by default (can be turned off via configuration).</p>
+<h3 id='new-endpoints-calls-3-3-2-gt-3-3-3'>New Endpoints calls - 3.3.2 --&gt; 3.3.3</h3>
+<p><strong>GetAllUnredactedUserConfigsForUser</strong>
+<strong>GetAllLedgerEntryTickets</strong>
+<strong>GetUnredactedUserConfigByKey</strong></p>
+<h3 id='revised-calls-3-0-x-gt-3-3-2'>Revised calls - 3.0.X --&gt; 3.3.2</h3>
 <p>Generally, upper- and lowercase is not important for the key-value pairs inside a request or response. If an otherwise well formed call returns an unexpected error, check the case of the key-value pairs in the request.</p>
 
 <p><strong>AuthenticateUser</strong></p>
@@ -1632,6 +1675,30 @@
         </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="err">//</span><span class="w"> </span><span class="err">Side</span><span class="w">
     </span><span class="p">],</span><span class="w">
 </span><span class="p">]</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>Old SubmitLedgerEntry Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detail"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>New SubmitLedgerEntry Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+        </span><span class="s2">"accountLedgerEntryId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CR_Amt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DR_Amt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enteredBy"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"onsSidedTransaction"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
 </span></code></pre><h3 id='previously-unrevealed-calls'>Previously unrevealed calls</h3>
 <p><strong>AddProductAttributes</strong></p>
 
@@ -3101,6 +3168,152 @@
 <tr>
 <td>affiliateTag</td>
 <td><strong>string.</strong> The tag that the user can share.</td>
+</tr>
+</tbody></table>
+<h2 id='getuserconfig'>GetUserConfig</h2>
+<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
+
+<p>Returns an array of configuration key-value pairs for the specified user. Via Configuration this will return redacted values to minimize PII exposure. The array of key-value pairs is variable in number, as required by the Exchange. The value of both <em>Key</em> and <em>Value</em> KVPs are strings.</p>
+
+<p>You can set the array of configuration pairs using <strong>SetUserConfig.</strong></p>
+<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td><strong>integer.</strong> The ID of the user whose configuration key-value pairs you want to return.</td>
+</tr>
+<tr>
+<td>userName</td>
+<td><strong>string.</strong> The user name of the user whose configuration key-value pairs you want to return.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config1Val"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>The Response returns an array of a variable number of elements, depending on the needs of the Exchange.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Key</td>
+<td><strong>string.</strong> The name of the key part of the key-value pair.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td><strong>string.</strong> The value part of the key-value pair. The value must be a string.</td>
+</tr>
+</tbody></table>
+<h2 id='getallunredacteduserconfigsforuser'>GetAllUnredactedUserConfigsForUser</h2>
+<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
+
+<p>Gets all the unredacted configs for a user</p>
+<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td><strong>integer.</strong> The ID of the user whose configuration key-value pairs you want to return.</td>
+</tr>
+<tr>
+<td>userName</td>
+<td><strong>string.</strong> The user name of the user whose configuration key-value pairs you want to return.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config1Val"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>The Response returns an array of a variable number of elements, depending on the needs of the Exchange.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Key</td>
+<td><strong>string.</strong> The name of the key part of the key-value pair.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td><strong>string.</strong> The value part of the key-value pair. The value must be a string.</td>
+</tr>
+</tbody></table>
+<h2 id='getunredacteduserconfigbykey'>GetUnredactedUserConfigByKey</h2>
+<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
+
+<p>Gets an unredacted config for a user config</p>
+<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td><strong>integer.</strong> The ID of the user whose configuration key-value pairs you want to return.</td>
+</tr>
+<tr>
+<td>userName</td>
+<td><strong>string.</strong> The user name of the user whose configuration key-value pairs you want to return.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+    </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"Key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config1"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Config1Val"</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+<p>The Response returns an array of a variable number of elements, depending on the needs of the Exchange.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Key</td>
+<td><strong>string.</strong> The name of the key part of the key-value pair.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td><strong>string.</strong> The value part of the key-value pair. The value must be a string.</td>
 </tr>
 </tbody></table>
 <h2 id='getuserreporttickets'>GetUserReportTickets</h2>
@@ -5743,32 +5956,42 @@
 </tbody></table>
 <h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"executionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"instrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"remainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"counterParty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"isBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"feeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ExecutionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SubAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InstrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="w">
+        </span><span class="s2">"Quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"RemainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CounterParty"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FeeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"UserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MakerTaker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maker"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AdapterTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBidSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAsk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAskSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsQuote"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>The response is an array of objects, each of which represents the account’s side of a trade (either buy or sell).</p>
+<p>The response is an array of objects, each element of which represents the account’s side of a trade (either buy or sell).</p>
 
 <table><thead>
 <tr>
@@ -5777,92 +6000,128 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>omsId</td>
+<td>OMSId</td>
 <td><strong>integer.</strong> The ID of the Order Management System to which the account belongs.</td>
 </tr>
 <tr>
-<td>executionId</td>
+<td>ExecutionId</td>
 <td><strong>integer.</strong> The ID of this account&#39;s side of the trade. Every trade has two sides.</td>
 </tr>
 <tr>
-<td>tradeId</td>
+<td>TradeId</td>
 <td><strong>integer.</strong> The ID of the overall trade.</td>
 </tr>
 <tr>
-<td>orderId</td>
+<td>OrderId</td>
 <td><strong>long integer.</strong> The ID of the order causing the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>accountId</td>
+<td>AccountId</td>
 <td><strong>integer.</strong> The ID of the account that made the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>subAccountId</td>
+<td>AccountName</td>
+<td><strong>string.</strong> The Name of the account that made the trade (buy or sell).</td>
+</tr>
+<tr>
+<td>SubAccountId</td>
 <td><strong>integer.</strong> Not currently used; reserved for future use. Defaults to 0.</td>
 </tr>
 <tr>
-<td>clientOrderId</td>
+<td>ClientOrderId</td>
 <td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
-<td>instrumentId</td>
+<td>InstrumentId</td>
 <td><strong>integer.</strong> The ID of the instrument being traded. An instrument comprises two products, for example Dollars and BitCoin.</td>
 </tr>
 <tr>
-<td>side</td>
-<td><strong>integer.</strong> A number representing one of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
+<td>Side</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
 </tr>
 <tr>
-<td>quantity</td>
+<td>OrderType</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br />Market<br />Limit<br />BlockTrade<br />StopMarket<br />StopLimit<br />TrailingStopLimit<br />StopMarket<br />TrailingStopMarket</td>
+</tr>
+<tr>
+<td>Quantity</td>
 <td><strong>real.</strong> The unit quantity of this side of the trade.</td>
 </tr>
 <tr>
-<td>remainingQuantity</td>
+<td>RemainingQuantity</td>
 <td><strong>real.</strong> The number of units remaining to be traded by the order after this execution. This number is not revealed to the other party in the trade. This value is also known as &quot;leave size&quot; or &quot;leave quantity.&quot;</td>
 </tr>
 <tr>
-<td>price</td>
+<td>Price</td>
 <td><strong>real.</strong> The unit price at which the instrument traded.</td>
 </tr>
 <tr>
-<td>value</td>
+<td>Value</td>
 <td><strong>real.</strong> The total value of the deal. The system calculates this as:<br />unit price X quantity executed.</td>
 </tr>
 <tr>
-<td>tradeTime</td>
-<td><strong>long integer.</strong> The date and time stamp of the trade, in POSIX format.</td>
-</tr>
-<tr>
-<td>counterParty</td>
+<td>CounterParty</td>
 <td><strong>string.</strong> The ID of the other party in a block trade. Usually, IDs are stated as integers; this value is an integer written as a string.</td>
 </tr>
 <tr>
-<td>orderTradeRevision</td>
+<td>OrderTradeRevision</td>
 <td><strong>integer.</strong> The revision number of this trade; usually 1.</td>
 </tr>
 <tr>
-<td>direction</td>
+<td>Direction</td>
 <td><strong>integer.</strong> The effect of the trade on the instrument&#39;s market price. One of:<br /><strong>0</strong> No change<br /><strong>1</strong> Uptick<br /><strong>2</strong> DownTick</td>
 </tr>
 <tr>
-<td>isBlockTrade</td>
+<td>IsBlockTrade</td>
 <td><strong>Boolean.</strong> A value of <em>true</em> means that this trade was a block trade; a value of <em>false</em> that it was not a block trade.</td>
 </tr>
 <tr>
-<td>tradeTimeMS</td>
-<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
-</tr>
-<tr>
-<td>fee</td>
+<td>Fee</td>
 <td><strong>real.</strong> Any fee levied against the trade by the Exchange.</td>
 </tr>
 <tr>
-<td>feeProductId</td>
+<td>FeeProductId</td>
 <td><strong>integer.</strong> The ID of the product in which the fee was levied.</td>
 </tr>
 <tr>
-<td>orderOriginator</td>
+<td>OrderOriginator</td>
 <td><strong>integer.</strong> The ID of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>UserName</td>
+<td><strong>integer.</strong> The UserName of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>TradeTimeMS</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
+</tr>
+<tr>
+<td>MakerTaker</td>
+<td><strong>string.</strong> One of the following potential liquidity provider of a trade: <br />Maker<br />Taker<br /></td>
+</tr>
+<tr>
+<td>AdapterTradeId</td>
+<td><strong>integer.</strong> The ID of the adapter of the overall trade.</td>
+</tr>
+<tr>
+<td>InsideBid</td>
+<td><strong>real.</strong> The best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideBidSize</td>
+<td><strong>real.</strong> The quantity of the best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAsk</td>
+<td><strong>real.</strong> The best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAskSize</td>
+<td><strong>real.</strong> The quantity of the best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>TradeTime</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in C# Ticks. All dates and times are UTC.</td>
 </tr>
 </tbody></table>
 <h2 id='getaccounttransactions'>GetAccountTransactions</h2>
@@ -6304,28 +6563,38 @@
 </tbody></table>
 <h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"executionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"subAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"instrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"side"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"remainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"counterParty"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"isBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"tradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"feeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"orderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+        </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ExecutionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"SubAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"ClientOrderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InstrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Side"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Buy"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Limit"</span><span class="w">
+        </span><span class="s2">"Quantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"RemainingQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Price"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Value"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CounterParty"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderTradeRevision"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Direction"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsBlockTrade"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"Fee"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"FeeProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"OrderOriginator"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"UserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTimeMS"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"MakerTaker"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Maker"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"AdapterTradeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBid"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideBidSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAsk"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"InsideAskSize"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"IsQuote"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"TradeTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
     </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
@@ -6338,92 +6607,128 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>omsId</td>
+<td>OMSId</td>
 <td><strong>integer.</strong> The ID of the Order Management System to which the account belongs.</td>
 </tr>
 <tr>
-<td>executionId</td>
+<td>ExecutionId</td>
 <td><strong>integer.</strong> The ID of this account&#39;s side of the trade. Every trade has two sides.</td>
 </tr>
 <tr>
-<td>tradeId</td>
+<td>TradeId</td>
 <td><strong>integer.</strong> The ID of the overall trade.</td>
 </tr>
 <tr>
-<td>orderId</td>
+<td>OrderId</td>
 <td><strong>long integer.</strong> The ID of the order causing the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>accountId</td>
+<td>AccountId</td>
 <td><strong>integer.</strong> The ID of the account that made the trade (buy or sell).</td>
 </tr>
 <tr>
-<td>subAccountId</td>
+<td>AccountName</td>
+<td><strong>string.</strong> The Name of the account that made the trade (buy or sell).</td>
+</tr>
+<tr>
+<td>SubAccountId</td>
 <td><strong>integer.</strong> Not currently used; reserved for future use. Defaults to 0.</td>
 </tr>
 <tr>
-<td>clientOrderId</td>
+<td>ClientOrderId</td>
 <td><strong>integer.</strong> An ID supplied by the client to identify the order (like a purchase order number). The <em>clientOrderId</em> defaults to 0 if not supplied.</td>
 </tr>
 <tr>
-<td>instrumentId</td>
+<td>InstrumentId</td>
 <td><strong>integer.</strong> The ID of the instrument being traded. An instrument comprises two products, for example Dollars and BitCoin.</td>
 </tr>
 <tr>
-<td>side</td>
-<td><strong>integer.</strong> A number representing one of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
+<td>Side</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br /><strong>0</strong> Buy<br /><strong>1</strong> Sell<br /><strong>2</strong> Short<br /><strong>3</strong> Unknown (an error condition)</td>
 </tr>
 <tr>
-<td>quantity</td>
+<td>OrderType</td>
+<td><strong>string.</strong> One of the following potential sides of a trade: <br />Market<br />Limit<br />BlockTrade<br />StopMarket<br />StopLimit<br />TrailingStopLimit<br />StopMarket<br />TrailingStopMarket</td>
+</tr>
+<tr>
+<td>Quantity</td>
 <td><strong>real.</strong> The unit quantity of this side of the trade.</td>
 </tr>
 <tr>
-<td>remainingQuantity</td>
+<td>RemainingQuantity</td>
 <td><strong>real.</strong> The number of units remaining to be traded by the order after this execution. This number is not revealed to the other party in the trade. This value is also known as &quot;leave size&quot; or &quot;leave quantity.&quot;</td>
 </tr>
 <tr>
-<td>price</td>
+<td>Price</td>
 <td><strong>real.</strong> The unit price at which the instrument traded.</td>
 </tr>
 <tr>
-<td>value</td>
+<td>Value</td>
 <td><strong>real.</strong> The total value of the deal. The system calculates this as:<br />unit price X quantity executed.</td>
 </tr>
 <tr>
-<td>tradeTime</td>
-<td><strong>long integer.</strong> The date and time stamp of the trade, in POSIX format.</td>
-</tr>
-<tr>
-<td>counterParty</td>
+<td>CounterParty</td>
 <td><strong>string.</strong> The ID of the other party in a block trade. Usually, IDs are stated as integers; this value is an integer written as a string.</td>
 </tr>
 <tr>
-<td>orderTradeRevision</td>
+<td>OrderTradeRevision</td>
 <td><strong>integer.</strong> The revision number of this trade; usually 1.</td>
 </tr>
 <tr>
-<td>direction</td>
+<td>Direction</td>
 <td><strong>integer.</strong> The effect of the trade on the instrument&#39;s market price. One of:<br /><strong>0</strong> No change<br /><strong>1</strong> Uptick<br /><strong>2</strong> DownTick</td>
 </tr>
 <tr>
-<td>isBlockTrade</td>
+<td>IsBlockTrade</td>
 <td><strong>Boolean.</strong> A value of <em>true</em> means that this trade was a block trade; a value of <em>false</em> that it was not a block trade.</td>
 </tr>
 <tr>
-<td>tradeTimeMS</td>
-<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
-</tr>
-<tr>
-<td>fee</td>
+<td>Fee</td>
 <td><strong>real.</strong> Any fee levied against the trade by the Exchange.</td>
 </tr>
 <tr>
-<td>feeProductId</td>
+<td>FeeProductId</td>
 <td><strong>integer.</strong> The ID of the product in which the fee was levied.</td>
 </tr>
 <tr>
-<td>orderOriginator</td>
+<td>OrderOriginator</td>
 <td><strong>integer.</strong> The ID of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>UserName</td>
+<td><strong>integer.</strong> The UserName of the user who initiated the trade.</td>
+</tr>
+<tr>
+<td>TradeTimeMS</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in milliseconds and POSIX format. All dates and times are UTC.</td>
+</tr>
+<tr>
+<td>MakerTaker</td>
+<td><strong>string.</strong> One of the following potential liquidity provider of a trade: <br />Maker<br />Taker<br /></td>
+</tr>
+<tr>
+<td>AdapterTradeId</td>
+<td><strong>integer.</strong> The ID of the adapter of the overall trade.</td>
+</tr>
+<tr>
+<td>InsideBid</td>
+<td><strong>real.</strong> The best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideBidSize</td>
+<td><strong>real.</strong> The quantity of the best (highest) price level of the buy side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAsk</td>
+<td><strong>real.</strong> The best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>InsideAskSize</td>
+<td><strong>real.</strong> The quantity of the best (lowest) price level of the sell side of the book at the time of the trade.</td>
+</tr>
+<tr>
+<td>TradeTime</td>
+<td><strong>long integer.</strong> The date and time that the trade took place, in C# Ticks. All dates and times are UTC.</td>
 </tr>
 </tbody></table>
 <h1 id='oms-orders'>OMS Orders</h1>
@@ -9323,280 +9628,6 @@
 <p>The content of the template depends on the Account Provider that you use for deposits and withdrawals. The Account Provider does not supply the template <em>per se</em> (they do, however, determine the fields that are in the template). The template is specific to each Account Provider. </p>
 
 <p>To determine which withdrawal template types are available to you, call <strong>GetWithdrawTemplateTypes.</strong></p>
-<h2 id='acceptwithdrawticket'>AcceptWithdrawTicket</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Accepts a withdraw ticket for fiat currency. Withdrawals of cryptocurrency are automatically accepted (or rejected) by the system.</p>
-
-<p>Only a user with Operator permission can accept a withdraw ticket.</p>
-
-<p>A user can withdraw two types of product, cryptocurrency and fiat (national) currency. The sequences of status that each type of withdraw ticket goes through are slightly different.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>OMSId</td>
-<td><strong>integer.</strong> The ID of the Order Management System on which the withdraw ticket was created.</td>
-</tr>
-<tr>
-<td>TicketId</td>
-<td><strong>long integer.</strong> An ID supplied by the system when the ticket was created, and which identifies the ticket uniquely.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The response indicates that the system has received the <strong>AcceptWithdrawTicket</strong> Request, not that the withdraw ticket has been accepted. You can check the status of a withdraw ticket by using <strong>GetWithdrawTicket.</strong></p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> A successful receipt of the withdraw ticket acceptance request returns <em>true;</em> an unsuccessful receipt (an error condition) returns <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the withdraw ticket acceptance request returns <em>null;</em> the <em>errormsg</em> field for an unsuccessful request returns one of the following messages: <br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the withdraw ticket acceptance request returns 0. An unsuccessful receipt returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send. Usually <em>null.</em></td>
-</tr>
-</tbody></table>
-<h2 id='adddepositticketattachment'>AddDepositTicketAttachment</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Adds an attachment to a deposit ticket.</p>
-
-<p>User with Trading permission can add an attachment only to their own deposit tickets; users with Operator permission can add an attachment to any deposit ticket.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"base64Attachment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachmentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submittedByUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> 
-    </span><span class="s2">"submittedByUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadIP"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>base64Attachment</td>
-<td><strong>string.</strong> Any attachment file; PDF, spreadsheet, blob.</td>
-</tr>
-<tr>
-<td>attachmentId</td>
-<td><strong>long integer.</strong> The ID of the attachment. Assign 0 to this key. The system will assign an ID to the attachment and return it in the response when it receives the call.</td>
-</tr>
-<tr>
-<td>submittedByUserId</td>
-<td><strong>integer.</strong> The user ID of the user submitting the attachment.</td>
-</tr>
-<tr>
-<td>submittedByUserName</td>
-<td><strong>string.</strong> The user name of the user submitting the attachment; for example, jsmith.</td>
-</tr>
-<tr>
-<td>uploadDate</td>
-<td><strong>string.</strong> The date and time stamp showing when the attachment was uploaded, in Microsoft Ticks format. All date and time stamps are in UTC.</td>
-</tr>
-<tr>
-<td>uploadIp</td>
-<td><strong>string.</strong> The IP address from which the attachment was uploaded.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>long integer.</strong> The number of the deposit ticket to which the attachment is being attached.</td>
-</tr>
-<tr>
-<td>description</td>
-<td><strong>string.</strong> A description of the attachment.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachmentid"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000002</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Unlike many responses, a <em>true</em> response in the <em>success</em> field indicates that the attachment was received and attached to the deposit ticket.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>success</td>
-<td><strong>Boolean.</strong> A <em>true</em> value means that the attachment was received and attached to the deposit ticket specified in the Request. A <em>false</em> value indicates that it was not.</td>
-</tr>
-<tr>
-<td>attachmentid</td>
-<td><strong>long integer.</strong> The ID for the attachment, supplied by the system.</td>
-</tr>
-</tbody></table>
-<h2 id='addwithdrawticketattachment'>AddWithdrawTicketAttachment</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Adds an attachment to a withdraw ticket.</p>
-
-<p>Users with Trading permission can add an attachment only to their own withdraw tickets; users with Operator permission can add an attachment to any withdraw ticket.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"base64Attachment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachmentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submittedByUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submittedByUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadIP"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>base64Attachment</td>
-<td><strong>string.</strong> Any attachment file; PDF, spreadsheet, blob, or other format.</td>
-</tr>
-<tr>
-<td>attachmentId</td>
-<td><strong>long integer.</strong> The ID of the attachment. Assign a 0 value to this key. The system will assign an ID to the attachment and return it in the response when it receives this call.</td>
-</tr>
-<tr>
-<td>submittedByUserId</td>
-<td><strong>integer.</strong> The user ID of the user submitting the attachment.</td>
-</tr>
-<tr>
-<td>submittedByUserName</td>
-<td><strong>string.</strong> The user name of the user submitting the attachment; for example, Jsmith.</td>
-</tr>
-<tr>
-<td>uploadDate</td>
-<td><strong>string.</strong> The date and time stamp showing when the attachment was uploaded, in Microsoft Ticks format. All date and time stamps are in UTC.</td>
-</tr>
-<tr>
-<td>uploadIp</td>
-<td><strong>string.</strong> The IP address from which the attachment was uploaded.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>long integer.</strong> The number of the withdraw ticket to which the attachment is being attached.</td>
-</tr>
-<tr>
-<td>description</td>
-<td><strong>string.</strong> A description of the attachment.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachmentid"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000002</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>Unlike many responses, a <em>true</em> response in the <em>success</em> field indicates that the attachment was received and attached to the withdraw  ticket.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>success</td>
-<td><strong>Boolean.</strong> A <em>true</em> value means that the attachment was received and attached to the withdraw ticket specified in the Request. A <em>false</em> value indicates that it was not.</td>
-</tr>
-<tr>
-<td>attachmentid</td>
-<td><strong>long integer.</strong> The ID for the attachment, supplied by the system.</td>
-</tr>
-</tbody></table>
-<h2 id='cancelfailedwithdrawticket'>CancelFailedWithdrawTicket</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Cancels any single failed or resubmitted-failed withdraw ticket.</p>
-
-<p>Only a user with Operator permission can cancel a failed withdraw ticket.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>omsId</td>
-<td><strong>integer.</strong> The ID of the Order Management System on which the failed withdraw ticket was created.</td>
-</tr>
-<tr>
-<td>ticketId</td>
-<td><strong>long integer.</strong> The ID of the specific ticket that must be canceled.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid Request"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid OMSId"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The response indicates that the system has received the <strong>CancelFailedWithdrawTicket</strong> Request, not that the failed withdraw ticket has been canceled. You can check the status of a withdraw ticket by using <strong>GetWithdrawTicket.</strong></p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> A successful receipt of the failed withdraw ticket cancellation request returns <em>true;</em> an unsuccessful receipt (an error condition) returns <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the failed withdraw ticket cancellation request returns <em>null;</em> the <em>errormsg</em> field for an unsuccessful request returns one of the following messages: <br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the failed withdraw ticket cancellation request returns 0. An unsuccessful receipt returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send. Usually <em>null.</em></td>
-</tr>
-</tbody></table>
 <h2 id='cancelwithdraw'>CancelWithdraw</h2>
 <p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Withdraw<br /><strong>Call Type:</strong> Synchronous</p>
 
@@ -9663,135 +9694,6 @@
 <tr>
 <td>detail</td>
 <td><strong>string.</strong> Message text that the system may send. Usually <em>null.</em></td>
-</tr>
-</tbody></table>
-<h2 id='confirmwithdraw'>ConfirmWithdraw</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Public<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Checks whether the user has clicked the confirmation link in an email. The email confirms whether the user issued the withdrawal request.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"UserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"VerifyCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Verify Code GUID"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>UserId</td>
-<td><strong>integer.</strong> The ID of the calling user.</td>
-</tr>
-<tr>
-<td>VerifyCode</td>
-<td><strong>string.</strong> The globally unique identifier (GUID) that identifies a specific withdrawal.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> Returns <em>true</em> if the user has clicked the link in the confirming email). Returns false if the withdrawal has not clicked the link.</td>
-</tr>
-</tbody></table>
-<h2 id='createassetmanagerwalletticket'>CreateAssetManagerWalletTicket</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Creates an Asset Manager wallet ticket, and returns the ticket number and the ticket status.</p>
-
-<p>The Asset Manager wallet is a joint wallet for all Account Providers on the Exchange. Asset Manager wallet tickets are system-generated tickets that alert an admin (Operator) to error conditions that may occur between the Exchange and its Account Providers.</p>
-
-<p>Only a user with Operator permission may create an Asset Manager wallet ticket.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"assetManagerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountProviderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetManagerServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"startIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>assetManagerId</td>
-<td><strong>integer.</strong> The ID of the Asset Manager to which the wallet is linked. Different Order Management Systems may have different Asset Manager IDs.</td>
-</tr>
-<tr>
-<td>accountProviderId</td>
-<td><strong>integer.</strong> The ID of the Account Provider that is linked to the Asset Manager.</td>
-</tr>
-<tr>
-<td>assetId</td>
-<td><strong>integer.</strong> The ID of the asset (product) of the Exchange that caused the generation of a ticket. Usually this is because of some problem or issue.</td>
-</tr>
-<tr>
-<td>ticketId</td>
-<td><strong>string.</strong> A GUID (alphanumeric) assigned by the system to the ticket. When creating a ticket, leave this as an empty string.</td>
-</tr>
-<tr>
-<td>ticketType</td>
-<td><strong>integer.</strong> Describes the type of error or condition that triggered the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> LowBalance<br /><strong>2</strong> HighBalance<br /><strong>3</strong> Transfer<br /><strong>4</strong> BalanceRequired<br /><strong>5</strong> BalanceMismatch<br /><strong>6</strong> WithdrawError<br /><strong>7</strong> DepositError<br /><strong>8</strong> AccountProviderError</td>
-</tr>
-<tr>
-<td>ticketStatus</td>
-<td><strong>integer.</strong> Describes the disposition of the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> Open<br /><strong>2</strong> Resolved<br /><strong>3</strong> Rejected<br /><strong>4</strong> Notification</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>integer.</strong> The number of this ticket on the Exchange. When creating a ticket, leave this value empty. The system will create a ticket number and send it in the Response.</td>
-</tr>
-<tr>
-<td>assetManagerService Id</td>
-<td><strong>string.</strong> The <em>assetManagerServiceId</em> is an alphanumeric string pre-configured for the specific Exchange. For current installations, this value is &quot;1&quot;.</td>
-</tr>
-<tr>
-<td>startIndex</td>
-<td><strong>integer.</strong> The <strong>CreateAssetManagerWalletTicket</strong> call ignores the value for <em>startIndex</em>. You can safely set this value to 0.</td>
-</tr>
-<tr>
-<td>limit</td>
-<td><strong>integer.</strong> The <strong>CreateAssetManagerWalletTicket</strong> call ignores the value for <em>limit.</em> You can safely set this value to 0.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"success"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketnumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">100000002</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The successful response to <strong>CreateAssetManagerWalletTicket</strong> is a Boolean <em>true</em> value and a ticket number to identify the ticket.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>success</td>
-<td><strong>Boolean.</strong> Returns <em>true</em> if the Asset Manager wallet ticket is successfully created; <em>false</em> if the ticket is not successfully created.</td>
-</tr>
-<tr>
-<td>ticketnumber</td>
-<td><strong>long integer.</strong> The number of the ticket, created by the Exchange.</td>
 </tr>
 </tbody></table>
 <h2 id='createdepositticket'>CreateDepositTicket</h2>
@@ -10038,75 +9940,6 @@
 <td><strong>string.</strong> Message text that the system may send. Often <em>null.</em></td>
 </tr>
 </tbody></table>
-<h2 id='deposit-deprecated'>Deposit (DEPRECATED)</h2>
-<p><strong>Category:</strong> System<br /><strong>Permission:</strong> SUPERUSER<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Deposits funds into an account. This call is no longer used and is documented here only for completeness. This call has been replaced by <strong>CreateDepositTicket.</strong> </p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"instrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"depositInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>omsId</td>
-<td><strong>integer.</strong> The ID of the Order Management System into which the deposit is being made.</td>
-</tr>
-<tr>
-<td>accountId</td>
-<td><strong>integer.</strong> The ID of the account receiving the deposit.</td>
-</tr>
-<tr>
-<td>instrumentId</td>
-<td><strong>integer.</strong> The ID of the product (not instrument) being deposited. The AlphaPoint exchange differentiates between products and instruments (two products comprise an instrument, BitCoin and dollars, for example).</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><strong>real.</strong> The unit and fractional amount of the deposit. For example, 2.5 BitCoin or 201.85 dollars.</td>
-</tr>
-<tr>
-<td>depositInfo</td>
-<td><strong>JSON string object.</strong> A JSON object describing a deposit form template. The template may vary from Account Provider to Account Provider. You can obtain a list of templates available to you (and their contents) by calling <strong>GetDepositRequestInfoTemplate</strong> (you must have Operator or Trading permissions).</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
 <h2 id='getaccountdeposittransactions'>GetAccountDepositTransactions</h2>
 <p><strong>Category:</strong> User<br /><strong>Permissions:</strong> Trading, AccountReadOnly<br /><strong>Call Type:</strong> Synchronous</p>
 
@@ -10325,26 +10158,20 @@
 <td><strong>long integer.</strong> Time at which the transaction took place, in POSIX format.</td>
 </tr>
 </tbody></table>
-<h2 id='getallassetmanagerwallettickets'>GetAllAssetManagerWalletTickets</h2>
+<h2 id='getallledgerentrytickets'>GetAllLedgerEntryTickets</h2>
 <p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
 
-<p>Returns an array of all Asset Manager wallet tickets that meet the criteria set in the Request.</p>
+<p>Retrieves an account ledger entries by optional parameters</p>
 
-<p>The Asset Manager wallet is a joint wallet for all Account Providers on the Exchange. Only a user with Operator permission may call <strong>GetAllAssetManagerWalletTickets.</strong></p>
+<p>Only a user with Operator permission can issue <strong>GetAllLedgerEntryTickets.</strong></p>
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"assetManagerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountProviderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetManagerServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"startIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+    </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"OperatorId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"StartIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
-<p>In the Request, some fields are optional so that <strong>GetAllAssetManagerWalletTickets</strong> can return tickets that meet specific criteria.</p>
+<p>The values for <em>OMSId</em> is required; the key-value pairs <em>StartIndex</em> and <em>Limit</em> are optional. You can include <em>StartIndex</em>, <em>Limit,</em> or both.</p>
 
 <table><thead>
 <tr>
@@ -10353,63 +10180,44 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>assetManagerId</td>
-<td><strong>integer.</strong> The ID of the Asset Manager to which the wallet is linked. Different Order Management Systems may have different Asset Manager IDs.</td>
+<td>OMSId</td>
+<td><strong>integer.</strong> REQUIRED The ID of the Order Management System on which the ledger entries were created.</td>
 </tr>
 <tr>
-<td>accountProviderId</td>
-<td><strong>integer.</strong> The ID of the Account Provider that is linked to the Asset Manager.</td>
+<td>AccountId</td>
+<td><strong>integer.</strong> OPTIONAL The ID of the Account for which the ledger entries were created.</td>
 </tr>
 <tr>
-<td>assetId</td>
-<td><strong>integer.</strong> OPTIONAL The ID of the asset (product) on the exchange that caused the generation of the ticket. By setting the <em>assetId</em> value to 0, tickets for all assets are returned.</td>
+<td>UserId</td>
+<td><strong>integer.</strong> OPTIONAL The ID of the User for which the ledger entries were created.</td>
 </tr>
 <tr>
-<td>ticketId</td>
-<td><strong>string.</strong> OPTIONAL A unique ID (alphanumeric) assigned by the system to the ticket. By leaving the <em>ticketId</em> value as <em>null</em> (empty string), tickets with any ID are returned.</td>
+<td>ProductId</td>
+<td><strong>integer.</strong> OPTIONAL The ID of the Product for which the ledger entries were created.</td>
 </tr>
 <tr>
-<td>ticketType</td>
-<td><strong>integer.</strong> Describes the type of error or condition that triggered the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> LowBalance<br /><strong>2</strong> HighBalance<br /><strong>3</strong> Transfer<br /><strong>4</strong> BalanceRequired<br /><strong>5</strong> BalanceMismatch<br /><strong>6</strong> WithdrawError<br /><strong>7</strong> DepositError<br /><strong>8</strong> AccountProviderError</td>
+<td>StartIndex</td>
+<td><strong>integer.</strong> OPTIONAL The earliest location in the series of ledger entries at which to begin returning tickets. Tickets are returned from that location forward (that is, from then toward now). The most recent deposit ticket is ticket 0. If you do not include a <em>StartIndex</em> key and value in your request, tickets from the beginning of the Exchange will be returned (subject to <em>Limit.</em>)</td>
 </tr>
 <tr>
-<td>ticketStatus</td>
-<td><strong>integer.</strong> Describes the disposition of the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> Open<br /><strong>2</strong> Resolved<br /><strong>3</strong> Rejected<br /><strong>4</strong> Notification</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>integer.</strong> OPTIONAL The number of this ticket on the exchange. A value of 0 for <em>ticketNumber</em> returns tickets with all numbers.</td>
-</tr>
-<tr>
-<td>assetManagerServiceId</td>
-<td><strong>string.</strong> The <em>assetManagerServiceId</em> is an alphanumeric string pre-configured for the specific Exchange. For current installations, this value is &quot;1&quot;.</td>
-</tr>
-<tr>
-<td>startIndex</td>
-<td><strong>integer.</strong> OPTIONAL The location in the series of Asset Manager wallet tickets at which to begin returning tickets. The most recent wallet ticket is 0; the count increments backwards.</td>
-</tr>
-<tr>
-<td>limit</td>
-<td><strong>integer.</strong> OPTIONAL The count of Asset Manager wallet tickets to return (starting at <em>startIndex</em>). For example, a value of 100 returns 100 wallet tickets beginning with the ticket at position <em>startIndex.</em> A value of 0 returns only the most recent wallet ticket.</td>
+<td>Limit</td>
+<td><strong>integer.</strong> OPTIONAL The count of deposit tickets you want returned. For example, if you set the value of <em>Limit</em> to 50, a maximum of 50 ledger entries will be returned. That maximum may be further restricted by the position of <em>StartIndex.</em> For example, if your <em>StartIndex</em> is only ten tickets back, and you include a <em>Limit</em> value of 50, you&#39;re still only going to get ten tickets.</td>
 </tr>
 </tbody></table>
 <h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
     </span><span class="p">{</span><span class="w">
-        </span><span class="s2">"assetManagerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"accountProviderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"lastUpdatedTime"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"lastUpdatedBy"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"assetManagerServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"info"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"TicketType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-        </span><span class="s2">"TicketStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-    </span><span class="p">}</span><span class="w">
+        </span><span class="s2">"accountLedgerEntryId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"CR_Amt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"DR_Amt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"enteredBy"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"onsSidedTransaction"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+    </span><span class="p">},</span><span class="w">
 </span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>The Response is an array of wallet tickets meeting the criteria set in the Request.</p>
+<p>The Response returns an array of ledger entries matching the criteria set in the Request.</p>
 
 <table><thead>
 <tr>
@@ -10418,48 +10226,36 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>assetManagerId</td>
-<td><strong>integer.</strong> The ID of the Asset Manager to which the wallet is linked.</td>
+<td>accountLedgerEntryId</td>
+<td><strong>integer.</strong> The ID of the Ledger Entry</td>
 </tr>
 <tr>
-<td>accountProviderId</td>
-<td><strong>integer.</strong> The ID of the Account Provider that is linked to the Asset Manager.</td>
+<td>accountId</td>
+<td><strong>integer.</strong> The ID of the product into which the deposit was made.</td>
 </tr>
 <tr>
 <td>assetId</td>
-<td><strong>integer.</strong> The ID of the asset (product) to which the wallet ticket refers.</td>
+<td><strong>integer.</strong> The ID of the asset (product) deposited. This may be cryptocurrency or fiat (national) currency.</td>
 </tr>
 <tr>
-<td>ticketId</td>
-<td><strong>string.</strong> The unique ID (alphanumeric) assigned by the system to the ticket.</td>
+<td>productId</td>
+<td><strong>string.</strong> The short name of the asset being deposited, for example USD (US Dollars), BTC (BitCoin), etc.</td>
 </tr>
 <tr>
-<td>lastUpdatedTime</td>
-<td><strong>long integer.</strong> The date and time stamp for the last time this wallet ticket was updated, in POSIX format. All dates and times are given as UTC.</td>
+<td>CR_Amt</td>
+<td><strong>real.</strong> The Credit amount of the ledger entry.</td>
 </tr>
 <tr>
-<td>lastUpdatedBy</td>
-<td><strong>integer.</strong> The ID of the last user to update the wallet ticket (if any). Only a user with Operator permission can update an Asset Manager wallet ticket.</td>
+<td>DR_Amt</td>
+<td><strong>real.</strong> The Debit amount of the ledger entry.</td>
 </tr>
 <tr>
-<td>ticketNumber</td>
-<td><strong>integer.</strong> The number of this ticket on the Exchange.</td>
+<td>comments</td>
+<td><strong>string.</strong> The Comments entered at time of creation.</td>
 </tr>
 <tr>
-<td>assetManagerService Id</td>
-<td><strong>string.</strong> An alphanumeric string pre-configured for the specific Exchange. In current installations, always returns a value of &quot;1&quot;.</td>
-</tr>
-<tr>
-<td>info</td>
-<td><strong>string.</strong> Any message added to the wallet ticket by the system.</td>
-</tr>
-<tr>
-<td>ticketType</td>
-<td><strong>integer.</strong> Describes the type of error or condition that triggered the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> LowBalance<br /><strong>2</strong> HighBalance<br /><strong>3</strong> Transfer<br /><strong>4</strong> BalanceRequired<br /><strong>5</strong> BalanceMismatch<br /><strong>6</strong> WithdrawError<br /><strong>7</strong> DepositError<br /><strong>8</strong> AccountProviderError</td>
-</tr>
-<tr>
-<td>ticketStatus</td>
-<td><strong>integer.</strong> Describes the disposition of the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> Open<br /><strong>2</strong> Resolved<br /><strong>3</strong> Rejected<br /><strong>4</strong> Notification</td>
+<td>onsSidedTransaction</td>
+<td><strong>boolean.</strong> One-sided (false by default).</td>
 </tr>
 </tbody></table>
 <h2 id='getalldeposittickets'>GetAllDepositTickets</h2>
@@ -11509,77 +11305,6 @@
 <td><strong>string.</strong> Any attachment to the deposit ticket.</td>
 </tr>
 </tbody></table>
-<h2 id='getdepositticketattachment'>GetDepositTicketAttachment</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Returns a single specific deposit ticket attachment based solely on the attachment ID.</p>
-
-<p>A user with Trading permission can return an attachment only from a deposit made to that user&#39;s associated account; a user with Operator permission can return any attachment.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"attachmentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>attachmentId</td>
-<td><strong>integer.</strong> The ID of an attachment that is part of a deposit ticket associated with the account of the issuing user (if Trading permission) or any account or user (if Operator permission).</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"base64Attachment"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachmentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submittedByUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submittedByUserName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadIP"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>base64Attachment</td>
-<td><strong>string.</strong> Any attachment file; PDF, spreadsheet, blob.</td>
-</tr>
-<tr>
-<td>attachmentId</td>
-<td><strong>integer.</strong> The ID of the attachment. The system assigned the attachment ID when the attachment was uploaded.</td>
-</tr>
-<tr>
-<td>submittedByUserId</td>
-<td><strong>integer.</strong> The user ID of the submitting user.</td>
-</tr>
-<tr>
-<td>submittedByUserName</td>
-<td><strong>string.</strong> The user name of the submitting user, for example, Jsmith.</td>
-</tr>
-<tr>
-<td>uploadDate</td>
-<td><strong>string.</strong> The time and date that the attachment was uploaded, in Microsoft Ticks format. All times and dates are UTC.</td>
-</tr>
-<tr>
-<td>uploadIP</td>
-<td><strong>string.</strong> The IP address from which the attachment was uploaded.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>long integer.</strong> The ID number of the deposit ticket to which the attachment was linked.</td>
-</tr>
-<tr>
-<td>description</td>
-<td><strong>string.</strong> A description of the attachment.</td>
-</tr>
-</tbody></table>
 <h2 id='getdeposittickets'>GetDepositTickets</h2>
 <p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
 
@@ -12410,71 +12135,6 @@
 <td><strong>long integer.</strong> The number of the withdrawal ticket, as assigned by the system.</td>
 </tr>
 </tbody></table>
-<h2 id='getwithdrawticketattachment'>GetWithdrawTicketAttachment</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Retrieves an attachment from a withdrawal ticket.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"attachmentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>attachmentId</td>
-<td><strong>integer.</strong> The ID of the specific attachment you want to retrieve. You can use the call <strong>GetWithdrawTicket</strong> to return any attachments appended to a specific ticket and learn the <em>attachmentId</em> if you don&#39;t already have it.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"base64Attachment"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachmentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submittedByUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"submittedByUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"uploadIP"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>base64Attachment</td>
-<td><strong>string.</strong> The attachment file. May be PDF, spreadsheet, blob, or other.</td>
-</tr>
-<tr>
-<td>attachmentId</td>
-<td><strong>integer.</strong> The ID assigned to the attachment by the system. Echoes the ID in the Request.</td>
-</tr>
-<tr>
-<td>submittedByUserId</td>
-<td><strong>integer.</strong> The user ID of the person who added the attachment to the withdrawal ticket.</td>
-</tr>
-<tr>
-<td>submittedByUserName</td>
-<td><strong>string.</strong> The user name of the person who submitted the attachment.</td>
-</tr>
-<tr>
-<td>uploadDate</td>
-<td><strong>string.</strong> The date and time that the attachment was uploaded, in Microsoft Ticks format. All dates and times are UTC.</td>
-</tr>
-<tr>
-<td>uploadIP</td>
-<td><strong>string.</strong> The IP address from which the attachment was uploaded.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>long integer.</strong> The number of the withdrawal ticket, as assigned by the system.</td>
-</tr>
-</tbody></table>
 <h2 id='getwithdrawtickets'>GetWithdrawTickets</h2>
 <p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
 
@@ -12772,286 +12432,6 @@
 <td><strong>long integer.</strong> The number of the withdrawal ticket, as assigned by the system.</td>
 </tr>
 </tbody></table>
-<h2 id='markdepositticketasfullyprocessed'>MarkDepositTicketAsFullyProcessed</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Allows a user with Operator permission to mark a single deposit ticket as fully processed (closed).</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>OMSId</td>
-<td><strong>integer.</strong> The ID of the Order Management System through which the deposit is being made.</td>
-</tr>
-<tr>
-<td>TicketId</td>
-<td><strong>integer.</strong> The ID of the deposit ticket, as assigned by the system. You can obtain a value for <em>TicketId</em> from both the <strong>GetDepositTickets</strong> and <strong>GetAllDepositTickets</strong> calls, where it is named <em>TicketNumber.</em></td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The Response is a standard response object.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
-<h2 id='markwithdrawticketascancelled'>MarkWithdrawTicketAsCancelled</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Allows a user with Operator permission to mark a single withdrawal ticket as cancelled, terminating the withdrawal.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>OMSId</td>
-<td><strong>integer.</strong> The ID of the Order Management System through which the deposit is being made.</td>
-</tr>
-<tr>
-<td>TicketId</td>
-<td><strong>integer.</strong> The ID of the withdrawal ticket, as assigned by the system. You can obtain a value for <em>TicketId</em> from both the <strong>GetWithdrawTickets</strong> and <strong>GetAllWithdrawTickets</strong> calls, where it is named <em>TicketNumber.</em></td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The Response is a standard response object.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
-<h2 id='markwithdrawticketasconfirmed'>MarkWithdrawTicketAsConfirmed</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Allows a user with Operator permission to mark a single withdrawal ticket as confirmed. <em>Confirmed</em> ordinarily means that the user has clicked the confirmation link in an email; the email confirms whether the user issued the withdrawal request. By marking the ticket as confirmed, the operator can manually make the confirmation.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>OMSId</td>
-<td><strong>integer.</strong> The ID of the Order Management System through which the deposit is being made.</td>
-</tr>
-<tr>
-<td>TicketId</td>
-<td><strong>integer.</strong> The ID of the withdrawal ticket, as assigned by the system. You can obtain a value for <em>TicketId</em> from both the <strong>GetWithdrawTickets</strong> and <strong>GetAllWithdrawTickets</strong> calls, where it is named <em>TicketNumber.</em></td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The Response is a standard response object.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
-<h2 id='markwithdrawticketasfullyprocessed'>MarkWithdrawTicketAsFullyProcessed</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Allows a user with Operator permission to mark a single withdrawal ticket as fully processed (closed).</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>OMSId</td>
-<td><strong>integer.</strong> The ID of the Order Management System through which the deposit is being made.</td>
-</tr>
-<tr>
-<td>TicketId</td>
-<td><strong>integer.</strong> The ID of the withdrawal ticket, as assigned by the system. You can obtain a value for <em>TicketId</em> from both the <strong>GetWithdrawTickets</strong> and <strong>GetAllWithdrawTickets</strong> calls, where it is named <em>TicketNumber.</em></td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The Response is a standard response object.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
-<h2 id='resubmitfailedwithdrawticket'>ResubmitFailedWithdrawTicket</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Allows a user with Operator permission to resubmit a failed withdrawal ticket to the approval queue. A withdrawal ticket may fail for several generic reasons &mdash; often it is a typo on the withdrawal request. A user with Operator permission can update a ticket and correct that kind of problem.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>OMSId</td>
-<td><strong>integer.</strong> The ID of the Order Management System through which the deposit is being made.</td>
-</tr>
-<tr>
-<td>TicketId</td>
-<td><strong>integer.</strong> The ID of the withdrawal ticket, as assigned by the system. You can obtain a value for <em>TicketId</em> from both the <strong>GetWithdrawTickets</strong> and <strong>GetAllWithdrawTickets</strong> calls, where it is named <em>TicketNumber.</em></td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid Request"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid OMSId"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The Response is a standard response object.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
 <h2 id='submitdepositticketcomment'>SubmitDepositTicketComment</h2>
 <p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
 
@@ -13198,635 +12578,6 @@
 <tr>
 <td>commentId</td>
 <td><strong>integer.</strong> The ID assigned by the system to this specific comment.</td>
-</tr>
-</tbody></table>
-<h2 id='updateassetmanagerwalletticket'>UpdateAssetManagerWalletTicket</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Changes the data in, and updates, a single Asset Manager wallet ticket.</p>
-
-<p>Only a user with Operator permission can update an Asset Manager wallet ticket.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"assetManagerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountProviderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"TicketStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetManagerServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"startIndex"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"limit"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>assetManagerId</td>
-<td><strong>integer.</strong> The ID of the Asset Manager to which the wallet is linked. Different Order Management Systems may have different Asset Manager IDs.</td>
-</tr>
-<tr>
-<td>accountProviderId</td>
-<td><strong>integer.</strong> The ID of the Account Provider that is linked to the Asset Manager.</td>
-</tr>
-<tr>
-<td>assetId</td>
-<td><strong>integer.</strong> The ID of the asset (product) of the Exchange that caused the generation of a ticket.</td>
-</tr>
-<tr>
-<td>ticketId</td>
-<td><strong>string.</strong> A GUID (alphanumeric) assigned by the system to the ticket.</td>
-</tr>
-<tr>
-<td>ticketType</td>
-<td><strong>integer.</strong> Describes the type of error or condition that triggered the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> LowBalance<br /><strong>2</strong> HighBalance<br /><strong>3</strong> Transfer<br /><strong>4</strong> BalanceRequired<br /><strong>5</strong> BalanceMismatch<br /><strong>6</strong> WithdrawError<br /><strong>7</strong> DepositError<br /><strong>8</strong> AccountProviderError</td>
-</tr>
-<tr>
-<td>ticketStatus</td>
-<td><strong>integer.</strong> Describes the disposition of the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> Open<br /><strong>2</strong> Resolved<br /><strong>3</strong> Rejected<br /><strong>4</strong> Notification</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>integer.</strong> The number of this ticket on the Exchange.</td>
-</tr>
-<tr>
-<td>assetManagerService Id</td>
-<td><strong>string.</strong> The <em>assetManagerServiceId</em> is an alphanumeric string pre-configured for the specific Exchange. For current installations, this value is &quot;1&quot;.</td>
-</tr>
-<tr>
-<td>startIndex</td>
-<td><strong>integer.</strong> The <strong>UpdateAssetManagerWalletTicket</strong> call ignores the value for <em>startIndex</em>. You can safely set this value to 0.</td>
-</tr>
-<tr>
-<td>limit</td>
-<td><strong>integer.</strong> The <strong>UpdateAssetManagerWalletTicket</strong> call ignores the value for <em>limit.</em> You can safely set this value to 0.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"accountProviderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketStatus"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketId"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>accountProviderId</td>
-<td><strong>integer.</strong> The ID of the Account Provider associated with the creation of the ticket (for example, the error condition that the ticket represents).</td>
-</tr>
-<tr>
-<td>assetId</td>
-<td><strong>integer.</strong> The ID of the asset associated with the ticket.</td>
-</tr>
-<tr>
-<td>ticketType</td>
-<td><strong>integer.</strong> Describes the type of error or condition that triggered the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> LowBalance<br /><strong>2</strong> HighBalance<br /><strong>3</strong> Transfer<br /><strong>4</strong> BalanceRequired<br /><strong>5</strong> BalanceMismatch<br /><strong>6</strong> WithdrawError<br /><strong>7</strong> DepositError<br /><strong>8</strong> AccountProviderError</td>
-</tr>
-<tr>
-<td>ticketStatus</td>
-<td><strong>integer.</strong> Describes the disposition of the ticket. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> Open<br /><strong>2</strong> Resolved<br /><strong>3</strong> Rejected<br /><strong>4</strong> Notification</td>
-</tr>
-<tr>
-<td>ticketId</td>
-<td><strong>string.</strong> The unique ID (alphanumeric) assigned by the system to the ticket.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>integer.</strong> The number of this ticket on the exchange.</td>
-</tr>
-</tbody></table>
-<h2 id='updatedepositticket'>UpdateDepositTicket</h2>
-<p><strong>Category:</strong> System<br /><strong>Permission:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Updates the details of a deposit ticket for deposits of fiat currency (non-crypto national currencies, for example).</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"assetManagerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestCode"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestIP"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestUser"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestUserName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"operatorId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"feeAmt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updatedByUser"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updatedByUserName"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"depositInfo"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"createdTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lastUpdateTimeStamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"comments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"attachments"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>assetManagerId</td>
-<td><strong>integer.</strong> The ID of the system&#39;s asset manager module, usually 1.</td>
-</tr>
-<tr>
-<td>accountId</td>
-<td><strong>integer.</strong> The account receiving the deposit.</td>
-</tr>
-<tr>
-<td>assetId</td>
-<td><strong>integer.</strong> The ID of the asset being deposited. An asset is functionally the same as a product; you can obtain a list of products/assets available on the Exchange by using <strong>GetProducts.</strong></td>
-</tr>
-<tr>
-<td>assetName</td>
-<td><strong>string.</strong> The short name of the asset being deposited. For example, USD (US Dollars) or BTC (BitCoin).</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><strong>real.</strong> The quantity of the asset being deposited. This is not the monetary value of the asset. For example, 2.5 BitCoins is 2.5.</td>
-</tr>
-<tr>
-<td>omsId</td>
-<td><strong>integer.</strong> The ID of the Order Management System where the deposit is being made, usually 1.</td>
-</tr>
-<tr>
-<td>requestCode</td>
-<td><strong>string.</strong> A <em>requestCode</em> is a globally unique ID assigned by the system. It identifies the deposit (as opposed to the deposit <em>ticket</em>).</td>
-</tr>
-<tr>
-<td>requestIp</td>
-<td><strong>string.</strong> The IP address from which the calling user made the deposit ticket request.</td>
-</tr>
-<tr>
-<td>requestUser</td>
-<td><strong>integer.</strong> The user ID of the user making the deposit ticket request.</td>
-</tr>
-<tr>
-<td>requestUserName</td>
-<td><strong>string.</strong> The user name of the user making the deposit ticket request, for example, jsmith.</td>
-</tr>
-<tr>
-<td>operatorId</td>
-<td><strong>integer.</strong> The ID of the trading venue operator. A deposit ticket can be updated only by a user with Operator permission.</td>
-</tr>
-<tr>
-<td>status</td>
-<td><strong>integer.</strong> The current status of this deposit ticket. Some of these statuses are valid only for cryptocurrency deposits; some are only valid for deposits of fiat (national) currency; others are used by AlphaPoint internally. Any of the statuses may appear on a deposit ticket.<br /><br /><strong>Deposit ticket statuses</strong><br /><strong>0</strong> New (new ticket awaiting operator review)<br /><strong>1</strong> AdminProcessing (an admin is looking at the ticket)<br /><strong>2</strong> Accepted (an admin accepts the ticket)<br /><strong>3</strong> Rejected (admin rejects the ticket)<br /><strong>4</strong> SystemProcessing (automatic processing; an unlikely status for a deposit)<br /><strong>5</strong> FullyProcessed (the deposit has concluded)<br /><strong>6</strong> Failed (the deposit has failed for some reason)<br /><strong>7</strong> Pending (Account Provider has set status to pending)<br /><strong>8</strong> Confirmed (Account Provider confirms the deposit)<br /><strong>9</strong> AmlProcessing (anti-money-laundering process underway)<br /><strong>10</strong> AmlAccepted (anti-money-laundering process successful)<br /><strong>11</strong> AmlRejected (deposit did not stand up to anti-money-laundering process)<br /><strong>12</strong> AmlFailed (anti-money-laundering process failed/did not complete)<br /><strong>13</strong> LimitsAccepted (deposit meets limits for fiat or crypto asset)<br /><strong>14</strong> LimitsRejected (deposit does not meet limits for fiat or crypto asset)</td>
-</tr>
-<tr>
-<td>feeAmt</td>
-<td><strong>real.</strong> The amount of any fee for the deposit.</td>
-</tr>
-<tr>
-<td>updatedByUser</td>
-<td><strong>integer.</strong> Contains the user ID of the user who updates the ticket.</td>
-</tr>
-<tr>
-<td>updatedByUserName</td>
-<td><strong>string.</strong> Contains the name of the user who updates the ticket.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>long integer.</strong> A number assigned by the system to identify the ticket (as opposed to identifying the deposit).</td>
-</tr>
-<tr>
-<td>depositInfo</td>
-<td><strong>object.</strong> A set of key-value pairs that holds information about the source of the funds being deposited. This information was entered when the deposit ticket was created, as required by the Account Provider. It can vary from Account Provider to Account Provider.</td>
-</tr>
-<tr>
-<td>createdTimeStamp</td>
-<td><strong>string.</strong> The time and date stamp for when the deposit ticket was created, in Microsoft Ticks format. All time and date stamps are given as UTC.</td>
-</tr>
-<tr>
-<td>lastUpdateTimeStamp</td>
-<td><strong>string.</strong> The time and date stamp for the last update to the deposit ticket after it was created.</td>
-</tr>
-<tr>
-<td>comments</td>
-<td><strong>string.</strong> Any comments appended to the deposit ticket.</td>
-</tr>
-<tr>
-<td>attachments</td>
-<td><strong>string.</strong> Any attachments appended to the deposit ticket.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
-<h2 id='updatewithdrawticket'>UpdateWithdrawTicket</h2>
-<p><strong>Category:</strong> System<br /><strong>Permission:</strong> Operator<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Updates the contents of a single withdrawal ticket as identified by the value for <em>requestCode.</em>  The <em>requestCode</em> is the same value reported by <strong>GetWithdraws</strong> (where it is called <em>withdrawCode</em>). All other values of the withdrawal ticket can be changed by a user with Operator permission.</p>
-
-<p>The values for <em>Comments</em> and <em>Attachments</em> are arrays. The values for <em>Comments</em> and <em>Attachments</em> can be added to using:</p>
-
-<ul>
-<li><strong>AddWithdrawTicketAttachment</strong></li>
-<li><strong>SubmitWithdrawTicketComment</strong></li>
-</ul>
-
-<p>You cannot delete a comment or an attachment.</p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"assetManagerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"assetName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"templateForm"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{
-            “TemplateType”: “TetherRPCWithdraw”,
-            “Comment”: “TestWithdraw”,
-            “ExternalAddress”: “ms6C3pKAAr8gRCcnVebs8VRkVrjcvqNYv3”, 
-            }"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"templateFormType"</span><span class="p">:</span><span class="w"> </span><span class="err">“TetherRPCWithdraw”</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestCode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"490b4fa3-53fc-44f4-bd29-7e16be86fba3"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestIP"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestUserId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"requestUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"operatorId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Status"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"feeAmt"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updatedByUser"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"updatedByUserName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ticketNumber"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"createdTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"lastUpdateTimestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0001-01-01T00:00:00"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[
-        {
-            "</span><span class="err">commentId</span><span class="s2">": 0,
-            "</span><span class="err">enteredBy</span><span class="s2">": 0,
-            "</span><span class="err">enteredDateTime</span><span class="s2">": "</span><span class="mi">0001-01-01</span><span class="err">T</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="s2">",
-            "</span><span class="err">comment</span><span class="s2">": "",
-            "</span><span class="err">operatorId</span><span class="s2">": 0,
-            "</span><span class="err">omsId</span><span class="s2">": 0,
-            "</span><span class="err">ticketCode</span><span class="s2">": "",
-            "</span><span class="err">ticketId</span><span class="s2">": 0
-        }
-    ]"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Attachments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[
-        {
-            "</span><span class="err">attachmentId</span><span class="s2">": 0,
-            "</span><span class="err">submittedByUserId</span><span class="s2">": 0,
-            "</span><span class="err">submittedByUserName</span><span class="s2">": "",
-            "</span><span class="err">uploadDate</span><span class="s2">": "</span><span class="mi">0001-01-01</span><span class="err">T</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="s2">",
-            "</span><span class="err">uploadIP</span><span class="s2">": "",
-            "</span><span class="err">ticketNumber</span><span class="s2">": 0
-        }
-    ]"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"AuditLog"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[]"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<p>The sample <em>Comments</em> and <em>Attachments</em> objects are documented separately below.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>assetManagerId</td>
-<td><strong>integer.</strong> The ID of the Asset Manager through which the withdrawal was made.</td>
-</tr>
-<tr>
-<td>accountId</td>
-<td><strong>integer.</strong> The ID of the account from which the withdrawal was made.</td>
-</tr>
-<tr>
-<td>assetId</td>
-<td><strong>integer.</strong> The ID of the asset (product) that was withdrawn. Withdrawal fees (if any) are usually assessed in the same asset that was withdrawn.</td>
-</tr>
-<tr>
-<td>assetName</td>
-<td><strong>string.</strong> The short name of the asset. For example, BTC for BitCoin or USD for US Dollars.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><strong>real.</strong> The number of units or fractions of units of the asset that were withdrawn (not the asset&#39;s monetary value). For example, 2.5 BitCoin or 2018.00 US Dollars.</td>
-</tr>
-<tr>
-<td>templateForm</td>
-<td><strong>JSON string object.</strong> The contents of the template form vary from Account Provider to Account Provider depending on the asset being withdrawn and the identity of the Account Provider. The fields shown here are just examples.</td>
-</tr>
-<tr>
-<td>templateFormType</td>
-<td><strong>string.</strong> The name of the template being used. Templates vary from Account Provider to Account Provider.</td>
-</tr>
-<tr>
-<td>omsId</td>
-<td><strong>integer.</strong> The ID of the Order Management System on which the withdrawal was made.</td>
-</tr>
-<tr>
-<td>requestCode</td>
-<td><strong>string.</strong> A globally unique identifier (GUID) that identifies this specific withdrawal (as opposed to the ticket).</td>
-</tr>
-<tr>
-<td>requestIP</td>
-<td><strong>string.</strong> The IP address from which the withdrawal was initiated.</td>
-</tr>
-<tr>
-<td>requestUserId</td>
-<td><strong>integer.</strong> The user ID of the user who submitted the withdrawal request.</td>
-</tr>
-<tr>
-<td>requestUserName</td>
-<td><strong>string.</strong> The user name of the user who submitted the withdrawal request. For example, jsmith.</td>
-</tr>
-<tr>
-<td>operatorId</td>
-<td><strong>integer.</strong> The ID of the administrator (operator) who processed the withdrawal. Withdrawals of cryptocurrency are handled automatically; withdrawals of fiat (national) currency are approved by a human operator. Only a user with Operator permission can issue the <strong>UpdateWithdrawTicket</strong> call.</td>
-</tr>
-<tr>
-<td>Status</td>
-<td><strong>integer.</strong> The current status of the withdrawal ticket. Some of these statuses are valid only for cryptocurrency withdrawals, which uses an automated withdrawal process, and some are valid for fiat currency withdrawals, which requires a human admin (operator).  Some of these statuses are used by AlphaPoint internally, yet they may appear on a returned Withdraw Ticket.<br /><br /><strong>Withdraw ticket statuses:</strong><br /><strong>0</strong> New (awaiting operator review)<br /><strong>1</strong> AdminProcessing (An admin is looking at the ticket)<br /><strong>2</strong> Accepted (withdrawal will proceed)<br /><strong>3</strong> Rejected (admin or automatic rejection)<br /><strong>4</strong> SystemProcessing (automatic processing underway)<br /><strong>5</strong> FullyProcessed (the withdrawal has concluded)<br /><strong>6</strong> Failed (the withdrawal failed for some reason)<br /><strong>7</strong> Pending (the admin has placed the withdrawal in pending status)<br /><strong>8</strong> Pending2Fa (user must click 2-factor authentication confirmation link)<br /><strong>9</strong> AutoAccepted (withdrawal will be automatically processed)<br /><strong>10</strong> Delayed (waiting for funds to be allocated for the withdrawal)<br /><strong>11</strong> UserCanceled (withdraw canceled by user or Superuser)<br /><strong>12</strong> AdminCanceled (withdraw canceled by Superuser)<br /><strong>13</strong> AmlProcessing (anti-money-laundering process underway)<br /><strong>14</strong> AmlAccepted (anti-money-laundering process complete)<br /><strong>15</strong> AmlRejected (withdrawal did not stand up to anti-money-laundering process)<br /><strong>16</strong> AmlFailed (withdrawal did not complete anti-money-laundering process)<br /><strong>17</strong> LimitsAccepted (withdrawal meets limits for fiat or crypto asset)<br /><strong>18</strong> LimitsRejected (withdrawal does not meet limits for fiat or crypto asset)<br /><strong>19</strong> Submitted (withdrawal sent to Account Provider; awaiting blockchain confirmation)<br /><strong>20</strong> Confirmed (Account Provider confirms that withdrawal is on the blockchain)<br /><strong>21</strong> ManuallyConfirmed (admin has sent withdrawal via wallet or admin function directly; marks ticket as FullyProcessed; debits account)<br /><strong>22</strong> Confirmed2Fa (user has confirmed withdraw via 2-factor authentication.)</td>
-</tr>
-<tr>
-<td>feeAmt</td>
-<td><strong>real.</strong> The amount of any fee that was charged for the withdrawal. <em>feeAmt</em> is always denominated in the asset or product that was withdrawn.</td>
-</tr>
-<tr>
-<td>updatedByUser</td>
-<td><strong>integer.</strong> The user ID of the most recent user who has updated the withdrawal ticket.</td>
-</tr>
-<tr>
-<td>updatedByUserName</td>
-<td><strong>string.</strong> The user name of the most recent user who has updated the withdrawal ticket.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>integer.</strong> An ID number that identifies the ticket (as opposed to identifying the withdrawal).</td>
-</tr>
-<tr>
-<td>createdTimeStamp</td>
-<td><strong>string.</strong> The time and date when the withdrawal ticket was created, in Microsoft Ticks format. All times and dates are UTC.</td>
-</tr>
-<tr>
-<td>lastUpdateTimeStamp</td>
-<td><strong>string.</strong> The time and date when the withdrawal ticket was last updated, in Microsoft Ticks format. All times and dates are UTC.</td>
-</tr>
-<tr>
-<td>Comments</td>
-<td><strong>array of JSON string objects.</strong> An array of key-value pairs appended as comments to the withdrawal ticket. See <em>Comments</em> example.</td>
-</tr>
-<tr>
-<td>Attachments</td>
-<td><strong>array of JSON string objects.</strong> An array of any attachments appended to the withdrawal ticket. See <em>Attachments</em> example.</td>
-</tr>
-<tr>
-<td>AuditLog</td>
-<td><strong>array of JSON string objects.</strong> Reserved for future use.</td>
-</tr>
-</tbody></table>
-<h4 id='comments-example'>Comments Example</h4>
-<blockquote>
-<p>Comments Example</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="s2">"Comments"</span><span class="p">:</span><span class="w"> </span><span class="s2">"[
-            {
-            "</span><span class="err">commentId</span><span class="s2">": 0,
-            "</span><span class="err">enteredBy</span><span class="s2">": 0,
-            "</span><span class="err">enteredDateTime</span><span class="s2">": "</span><span class="mi">0001-01-01</span><span class="err">T</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="s2">",
-            "</span><span class="err">comment</span><span class="s2">": "",
-            "</span><span class="err">operatorId</span><span class="s2">": 0,
-            "</span><span class="err">omsId</span><span class="s2">": 0,
-            "</span><span class="err">ticketCode</span><span class="s2">": "",
-            "</span><span class="err">ticketId</span><span class="s2">": 0
-            }
-        ]"</span><span class="p">,</span><span class="w">
-</span></code></pre>
-<p>Comments appear as an array.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>commentId</td>
-<td><strong>integer.</strong> The ID assigned to the comment by the system.</td>
-</tr>
-<tr>
-<td>enteredBy</td>
-<td><strong>integer.</strong> The ID of the user who entered the comment.</td>
-</tr>
-<tr>
-<td>enteredDateTime</td>
-<td><strong>string.</strong> The time and date that the comment was entered, in Microsoft Ticks format. All times and dates are UTC.</td>
-</tr>
-<tr>
-<td>comment</td>
-<td><strong>string.</strong> The text of the comment.</td>
-</tr>
-<tr>
-<td>operatorId</td>
-<td><strong>integer.</strong> The ID of the admin (operator) making the comment.</td>
-</tr>
-<tr>
-<td>omsId</td>
-<td><strong>integer.</strong> The ID of the Order Management System where the withdrawal ticket and comment were created. (They are unlikely to be different).</td>
-</tr>
-<tr>
-<td>ticketCode</td>
-<td><strong>string.</strong> A globally unique ID (GUID) assigned by the system and which identifies the ticket.</td>
-</tr>
-<tr>
-<td>ticketId</td>
-<td><strong>integer.</strong> The ID of the ticket as assigned by the system.</td>
-</tr>
-</tbody></table>
-<h4 id='attachments-example'>Attachments Example</h4>
-<blockquote>
-<p>Attachments Example</p>
-</blockquote>
-<pre class="highlight json tab-json"><code><span class="s2">"Attachments"</span><span class="p">:</span><span class="s2">"[
-            {
-            "</span><span class="err">attachmentId</span><span class="s2">": 0,
-            "</span><span class="err">submittedByUserId</span><span class="s2">": 0,
-            "</span><span class="err">submittedByUserName</span><span class="s2">": "",
-            "</span><span class="err">uploadDate</span><span class="s2">": "</span><span class="mi">0001-01-01</span><span class="err">T</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="s2">",
-            "</span><span class="err">uploadIP</span><span class="s2">": "",
-            "</span><span class="err">ticketNumber</span><span class="s2">": 0
-            }
-        ]"</span><span class="p">,</span><span class="w">
-</span></code></pre>
-<p>Any attachments appear as an array.</p>
-
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>attachmentId</td>
-<td><strong>integer.</strong> The ID assigned to the attachment by the system.</td>
-</tr>
-<tr>
-<td>submittedByUserId</td>
-<td><strong>integer.</strong> The user ID of the person who added the attachment to the withdrawal ticket.</td>
-</tr>
-<tr>
-<td>submittedByUserName</td>
-<td><strong>integer.</strong> The user name of the person who submitted the attachment.</td>
-</tr>
-<tr>
-<td>uploadDate</td>
-<td><strong>string.</strong> The date and time that the attachment was uploaded, in Microsoft Ticks format. All times and dates are UTC.</td>
-</tr>
-<tr>
-<td>uploadIP</td>
-<td><strong>string.</strong> The IP address from which the attachment was uploaded.</td>
-</tr>
-<tr>
-<td>ticketNumber</td>
-<td><strong>long integer.</strong> The number of the withdrawal ticket, as assigned by the system.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="s2">"Invalid Request"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="mi">100</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="s2">"Invalid OMSId or OperatorId"</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
-</tr>
-</tbody></table>
-<h2 id='withdraw-deprecated'>Withdraw (DEPRECATED)</h2>
-<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Withdraw<br /><strong>Call Type:</strong> Synchronous</p>
-
-<p>Executes a withdrawal of a product. This call is no longer used and is documented here only for completeness. This call has been replaced by <strong>CreateWithdrawTicket.</strong></p>
-<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"accountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"templateForm"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"templateFormType"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>omsId</td>
-<td><strong>integer.</strong> The ID of the Order Management System from which the withdrawal is to be made.</td>
-</tr>
-<tr>
-<td>accountId</td>
-<td><strong>integer.</strong> The ID of the account from which the withdrawal is to be made.</td>
-</tr>
-<tr>
-<td>productId</td>
-<td><strong>integer.</strong> The ID of the product (asset) being withdrawn.</td>
-</tr>
-<tr>
-<td>amount</td>
-<td><strong>real.</strong> The unit and fractional quantity of the withdrawal; for example 2.5 BitCoin or 2018.17 US Dollars.</td>
-</tr>
-<tr>
-<td>templateForm</td>
-<td><strong>object.</strong> The contents of the template form vary from Account Provider to Account Provider, depending on the asset being withdraw and the identity of the Account Provider.</td>
-</tr>
-<tr>
-<td>templateFormType</td>
-<td><strong>string.</strong> The name of the template being used for the withdrawal. Templates vary from Account Provider to Account Provider.</td>
-</tr>
-</tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Operation Not Supported"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">106</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre>
-<table><thead>
-<tr>
-<th>Key</th>
-<th>Value</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>result</td>
-<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, returns <em>true,</em> otherwise returns <em>false.</em></td>
-</tr>
-<tr>
-<td>errormsg</td>
-<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call can return:<br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errocode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
-</tr>
-<tr>
-<td>errorcode</td>
-<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
-</tr>
-<tr>
-<td>detail</td>
-<td><strong>string.</strong> Message text that the system may send.</td>
 </tr>
 </tbody></table>
 <h1 id='miscellaneous'>Miscellaneous</h1>
