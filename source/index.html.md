@@ -433,7 +433,9 @@ User Config Values are redacted by default (can be turned off via configuration)
 
 ### New Endpoints calls - 3.3.2 --> 3.3.3
 **GetAllUnredactedUserConfigsForUser**
+
 **GetAllLedgerEntryTickets**
+
 **GetUnredactedUserConfigByKey**
 
 
