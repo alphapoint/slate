@@ -1,10 +1,8 @@
-## GetUserConfig
+## GetAllUnredactedUserConfigsForUser
 
 **Category:** System<br />**Permissions:** Operator, Trading<br />**Call Type:** Synchronous
 
-Returns an array of configuration key-value pairs for the specified user. Via Configuration this will return redacted values to minimize PII exposure. The array of key-value pairs is variable in number, as required by the Exchange. The value of both *Key* and *Value* KVPs are strings.
-
-You can set the array of configuration pairs using **SetUserConfig.**
+Gets all the unredacted configs for a user
 
 ### Request
 

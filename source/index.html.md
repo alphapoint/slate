@@ -45,7 +45,9 @@ includes: # api - group - category - call
   - users/api_users_user_getuseraffiliatecount
   # - users/api_users_system_getuseraffiliates
   - users/api_users_user_getuseraffiliatetag
-  # - users/api_users_system_getuserconfig
+  - users/api_users_system_getuserconfig
+  - users/api_users_system_getallunredacteduserconfigsforuser
+  - users/api_users_system_getunredacteduserconfigbykey
   # - users/api_users_system_getuserinfo
   # - users/api_users_system_getusermarketdatapermissions
   # - users/api_users_system_getuserpermissions
@@ -175,19 +177,19 @@ includes: # api - group - category - call
   # - instrs/api_instrs_system_setdistribution
   # - instrs/api_instrs_system_updateinstrument
   - tickets/api_tickets_divider
-  - tickets/api_tix_system_acceptwithdrawticket
-  - tickets/api_tix_system_adddepositticketattachment
-  - tickets/api_tix_system_addwithdrawticketattachment
-  - tickets/api_tix_system_cancelfailedwithdrawticket
+  # - tickets/api_tix_system_acceptwithdrawticket
+  # - tickets/api_tix_system_adddepositticketattachment
+  # - tickets/api_tix_system_addwithdrawticketattachment
+  # - tickets/api_tix_system_cancelfailedwithdrawticket
   - tickets/api_tix_system_cancelwithdraw
-  - tickets/api_tix_system_confirmwithdraw
-  - tickets/api_tix_system_createassetmanagerwalletticket
+  # - tickets/api_tix_system_confirmwithdraw
+  # - tickets/api_tix_system_createassetmanagerwalletticket
   - tickets/api_tix_system_createdepositticket
   - tickets/api_tix_system_createwithdrawticket
-  - tickets/api_tix_system_deposit
+  #- tickets/api_tix_system_deposit
   - tickets/api_tix_user_getaccountdeposittransactions
   - tickets/api_tix_user_getaccountwithdrawtransactions
-  - tickets/api_tix_system_getallassetmanagerwallettickets
+  # - tickets/api_tix_system_getallassetmanagerwallettickets
   - tickets/api_tix_system_getalldeposittickets
   - tickets/api_tix_system_getalldepositrequestinfotemplates
   - tickets/api_tix_system_getallwithdrawtickets
@@ -196,7 +198,7 @@ includes: # api - group - category - call
   - tickets/api_tix_system_getdepositrequestinfotemplate
   - tickets/api_tix_system_getdeposits
   - tickets/api_tix_system_getdepositticket
-  - tickets/api_tix_system_getdepositticketattachment
+  # - tickets/api_tix_system_getdepositticketattachment
   - tickets/api_tix_system_getdeposittickets
   - tickets/api_tix_system_getomswithdrawfees
   - tickets/api_tix_user_getwithdrawfee
@@ -204,19 +206,19 @@ includes: # api - group - category - call
   - tickets/api_tix_system_getwithdrawtemplate
   - tickets/api_tix_system_getwithdrawtemplatetypes
   - tickets/api_tix_system_getwithdrawticket
-  - tickets/api_tix_system_getwithdrawticketattachment
+  # - tickets/api_tix_system_getwithdrawticketattachment
   - tickets/api_tix_system_getwithdrawtickets
-  - tickets/api_tix_system_markdepositticketasfullyprocessed
-  - tickets/api_tix_system_markwithdrawticketascancelled
-  - tickets/api_tix_system_markwithdrawticketasconfirmed
-  - tickets/api_tix_system_markwithdrawticketasfullyprocessed
-  - tickets/api_tix_system_resubmitfailedwithdrawticket
+  # - tickets/api_tix_system_markdepositticketasfullyprocessed
+  # - tickets/api_tix_system_markwithdrawticketascancelled
+  # - tickets/api_tix_system_markwithdrawticketasconfirmed
+  # - tickets/api_tix_system_markwithdrawticketasfullyprocessed
+  # - tickets/api_tix_system_resubmitfailedwithdrawticket
   - tickets/api_tix_system_submitdepositticketcomment
   - tickets/api_tix_system_submitwithdrawticketcomment
-  - tickets/api_tix_system_updateassetmanagerwalletticket
-  - tickets/api_tix_system_updatedepositticket
-  - tickets/api_tix_system_updatewithdrawticket
-  - tickets/api_tix_system_withdraw
+  # - tickets/api_tix_system_updateassetmanagerwalletticket
+  # - tickets/api_tix_system_updatedepositticket
+  # - tickets/api_tix_system_updatewithdrawticket
+  # - tickets/api_tix_system_withdraw
   # - user_verification/api_userverification_divider
   # - user_verification/api_uver_system_createvalidatorconfig
   # - user_verification/api_uver_system_setuserverificationlevel
@@ -342,7 +344,94 @@ This API covers the User-category calls in **version 3.3** of the AlphaPoint Exc
 
 The calls have been organized roughly to correspond to similar functions you would find in the AlphaPoint Admin. For example, in the Admin you manage users in the Users function. So calls that manage users have been gathered in the Users section of the API.
 
-### Revised calls
+
+### Revised calls - 3.3.2 --> 3.3.3
+
+
+**GetAccountTrades**
+**GetTradesHistory**
+
+New fields added to response object
+
+>Old Response
+
+```json
+[
+    {
+        "omsId": 0,
+        "executionId": 0,
+        "tradeId": 0,
+        "orderId": 0,
+        "accountId": 0,
+        "subAccountId": 0,
+        "clientOrderId": 0,
+        "instrumentId": 0,
+        "side": 0,
+        "quantity": 0.0,
+        "remainingQuantity": 0.0,
+        "price": 0.0,
+        "value": 0.0,
+        "tradeTime": 0,
+        "counterParty": null,
+        "orderTradeRevision": 0,
+        "direction": 0,
+        "isBlockTrade": false,
+        "tradeTimeMS": 0,
+        "fee": 0.0,
+        "feeProductId": 0,
+        "orderOriginator": 0
+    },
+]
+```
+
+>New Response - Additional Fields OrderType, AccountName, UserName, MakerTaker, AdapterTradeId, InsideBid, InsideBidSize, InsideAsk, InsideAskSize, IsQuote
+
+```json
+[
+    {
+        "OMSId": 0,
+        "ExecutionId": 0,
+        "TradeId": 0,
+        "OrderId": 0,
+        "AccountId": 0,
+        "AccountName": "",
+        "SubAccountId": 0,
+        "ClientOrderId": 0,
+        "InstrumentId": 0,
+        "Side": "Buy",
+        "OrderType": "Limit"
+        "Quantity": 0.0,
+        "RemainingQuantity": 0.0,
+        "Price": 0.0,
+        "Value": 0.0,
+        "CounterParty": "",
+        "OrderTradeRevision": 0,
+        "Direction": 0,
+        "IsBlockTrade": false,
+        "Fee": 0.0,
+        "FeeProductId": 0,
+        "OrderOriginator": 0,
+        "UserName": "",
+        "TradeTimeMS": 0,
+        "MakerTaker": "Maker",
+        "AdapterTradeId": 0,
+        "InsideBid": 0,
+        "InsideBidSize": 0,
+        "InsideAsk": 0,
+        "InsideAskSize": 0,
+        "IsQuote": 0,
+        "TradeTime": 0
+    },
+]
+```
+
+
+**GetUserConfig**
+User Config Values are redacted by default (can be turned off via configuration).
+
+
+
+### Revised calls - 3.0.X --> 3.3.2
 Generally, upper- and lowercase is not important for the key-value pairs inside a request or response. If an otherwise well formed call returns an unexpected error, check the case of the key-value pairs in the request.
 
 **AuthenticateUser**
@@ -1376,6 +1465,33 @@ or
         0, // Side
     ],
 ]
+```
+
+
+>Old SubmitLedgerEntry Response
+
+```json
+{
+    "result":true,
+    "errormsg":"",
+    "errorcode": 0,
+    "detail":"",
+}
+```
+
+>New SubmitLedgerEntry Response
+
+```json
+{
+        "accountLedgerEntryId": 0,
+        "accountId": 0,
+        "productId": 0,
+        "CR_Amt": 0.0,
+        "DR_Amt": 0.0,
+        "enteredBy": 0.0,
+        "comments": "",
+        "onsSidedTransaction": false
+    },
 ```
 
 
