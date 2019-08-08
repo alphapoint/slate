@@ -1,8 +1,8 @@
-## GetUserConfig
+## GetUnredactedUserConfigByKey
 
 **Category:** System<br />**Permissions:** Operator, Trading<br />**Call Type:** Synchronous
 
-Gets an unredacted config for a user
+Gets an unredacted config for a user config
 
 ### Request
 

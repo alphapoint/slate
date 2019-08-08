@@ -190,6 +190,7 @@ includes: # api - group - category - call
   - tickets/api_tix_user_getaccountdeposittransactions
   - tickets/api_tix_user_getaccountwithdrawtransactions
   # - tickets/api_tix_system_getallassetmanagerwallettickets
+  - tickets/api_tix_system_getallledgerentrytickets
   - tickets/api_tix_system_getalldeposittickets
   - tickets/api_tix_system_getalldepositrequestinfotemplates
   - tickets/api_tix_system_getallwithdrawtickets
@@ -283,6 +284,7 @@ includes: # api - group - category - call
   # - accounts/api_accts_system_getaccountfees
   # - trades/api_trades_user_getaccounttrades
   # - gen_admin/api_genadmin_system_getalloperatorloyaltyfeeconfigs
+  # - tickets/api_tix_system_getallledgerentrytickets
   # - tickets/api_tix_system_getallwithdrawtickets
   # - tickets/api_tix_system_getdepositticket
   # - tickets/api_tix_system_getdeposittickets
@@ -428,6 +430,11 @@ New fields added to response object
 
 **GetUserConfig**
 User Config Values are redacted by default (can be turned off via configuration).
+
+### New Endpoints calls - 3.3.2 --> 3.3.3
+**GetAllUnredactedUserConfigsForUser**
+**GetAllLedgerEntryTickets**
+**GetUnredactedUserConfigByKey**
 
 
 
