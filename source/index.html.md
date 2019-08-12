@@ -349,8 +349,8 @@ The calls have been organized roughly to correspond to similar functions you wou
 
 ### Revised calls - 3.3.2 --> 3.3.3
 
-
 **GetAccountTrades**
+
 **GetTradesHistory**
 
 New fields added to response object
@@ -426,6 +426,29 @@ New fields added to response object
     },
 ]
 ```
+
+
+**GetWithdrawFee**
+
+New fields added to response object
+
+>Old Response
+
+```json
+{
+    "FeeAmount": 0.0
+}
+```
+
+>New Response - Additional Field TicketAmount to support withdraw fees that deduct from the ticket amount
+
+```json
+{
+    "FeeAmount": 0.0,
+    "TicketAmount": 0.0
+}
+```
+
 
 
 **GetUserConfig**

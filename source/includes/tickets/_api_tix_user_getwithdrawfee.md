@@ -4,6 +4,8 @@
 
 Gets an estimate of a fee for a withdrawal. The Products function of the AlphaPoint Admin can set withdraw fees OMS-wide. You can also set a withdraw fee programmatically using **SetOMSFee,** but **SetOMSFee** is a System (not User) call with permission reserved to an exchange operator. Exchange-wide withdrawal fees cannot be overridden.
 
+Returns the Fee Amount and Ticket Amount depending on the venue configuration to deduct withdraw fee's or have them be additive (default)
+
 A user with Trading or Withdraw permissions can obtain withdrawal fee estimates only for products and accounts with which the user is associated; a user with Operator permission can obtain withdrawal fee estimates for any product or account.
 
 ### Request
@@ -28,12 +30,14 @@ A user with Trading or Withdraw permissions can obtain withdrawal fee estimates 
 
 ```json
 {
-    "FeeAmount":1.06
+    "FeeAmount":1.06,
+    "TicketAmount": 10.60
 }
 ```
 
 | Key       | Value                                                        |
 | --------- | ------------------------------------------------------------ |
 | FeeAmount | **real.** The estimated amount of the fee for the indicated withdrawal. |
+| TicketAmount | **real.** The amount of the withdraw minus any fee. |
 
 
