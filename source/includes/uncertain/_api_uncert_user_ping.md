@@ -21,6 +21,7 @@ Ping requires no payload.
 ```
 
 Response is PONG.
+
 | Key | Value            |
 | --- | -----------------|
 | msg | **string.** PONG |
