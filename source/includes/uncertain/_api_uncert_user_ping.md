@@ -15,7 +15,12 @@ Ping requires no payload.
 ### Response
 
 ```json
-PONG
+{
+  "msg": "PONG"
+}
 ```
 
 Response is PONG.
+| Key | Value            |
+| --- | -----------------|
+| msg | **string.** PONG |
