@@ -10,6 +10,24 @@ Users with Deposit permission can deposit only to their own accounts; users with
 
 ```json
 {
+    "OMSId": 1,
+    "AccountId": 1,
+    "ProductId": 1,
+    "GenerateNewKey": true
+}
+```
+
+| Key                   | Value                                                        |
+| --------------------- | ------------------------------------------------------------ |
+| OMSId           | **integer.** The ID of the Order Management System on which the deposit ticket was created. |
+| AccountId    	  | **integer.** The ID of the account into which the deposit was made. |
+| ProductId       | **integer.** The ID of the product (asset) of the Exchange that caused the generation of a ticket. |
+| GenerateNewKey  | **Boolean.** If GenerateNewKey has a *true* value, the two crypto deposit keys wil be new; if GenerateNewKey has a *false* value, these will be the last two keys that were generated.|
+
+### Response
+
+```json
+{
 	"AssetManagerId": 1,
 	"ACcountId": 1,
 	"AssetId": 1,
