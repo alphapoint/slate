@@ -11268,9 +11268,7 @@
     </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"AccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"AccountProviderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"GenerateNewKey"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"DepositInfo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"{}"</span><span class="w">
+    </span><span class="s2">"GenerateNewKey"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -11281,32 +11279,71 @@
 </thead><tbody>
 <tr>
 <td>OMSId</td>
-<td><strong>integer.</strong> The ID of the Order Management System on which the deposit will be made.</td>
+<td><strong>integer.</strong> The ID of the Order Management System on which the deposit ticket was created.</td>
 </tr>
 <tr>
 <td>AccountId</td>
-<td><strong>integer.</strong> The ID of the account into which the deposit will be made.</td>
+<td><strong>integer.</strong> The ID of the account into which the deposit was made.</td>
 </tr>
 <tr>
 <td>ProductId</td>
-<td><strong>integer.</strong> The ID of the product (asset) being deposited. <strong>GetDepositInfo</strong> is only for cryptocurrency deposits.</td>
-</tr>
-<tr>
-<td>AccountProviderId</td>
-<td><strong>integer.</strong> The ID of the Account Provider that handles this specific product (asset).</td>
+<td><strong>integer.</strong> The ID of the product (asset) of the Exchange that caused the generation of a ticket.</td>
 </tr>
 <tr>
 <td>GenerateNewKey</td>
-<td><strong>Boolean.</strong> If <em>true</em>, <strong>GetDepositInfo</strong> generates two new keys. If <em>false,</em> <strong>GetDepositInfo</strong> reports the last two keys used.</td>
+<td><strong>Boolean.</strong> If GenerateNewKey has a <em>true</em> value, the two crypto deposit keys wil be new; if GenerateNewKey has a <em>false</em> value, these will be the last two keys that were generated.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"AssetManagerId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ACcountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"AssetId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"ProviderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"DepositInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"statuscode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>assetManagerId</td>
+<td><strong>integer.</strong> The ID of the Asset Manager on which the deposit was made.</td>
+</tr>
+<tr>
+<td>accountId</td>
+<td><strong>integer.</strong> The ID of the account into which the deposit was made.</td>
+</tr>
+<tr>
+<td>assetId</td>
+<td><strong>integer.</strong> The ID of the asset (product) that was deposited.</td>
+</tr>
+<tr>
+<td>ProviderId</td>
+<td><strong>integer.</strong>  The ID of the Account Provider that handles this specific product (asset)</td>
 </tr>
 <tr>
 <td>DepositInfo</td>
-<td><strong>object.</strong> A JSON object describing a deposit form template. The template may vary from Account Provider to Account Provider. You can obtain a list of templates available to you (and their contents) by calling <strong>GetDepositRequestInfoTemplate</strong> (you must have Operator or Trading permission).</td>
+<td><strong>array.</strong> Array of two crypto deposit keys, each a long integer.</td>
+</tr>
+<tr>
+<td>result</td>
+<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, returns <em>true,</em> otherwise returns <em>false.</em></td>
+</tr>
+<tr>
+<td>errormsg</td>
+<td><strong>String.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call can return:<br /><br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
+</tr>
+<tr>
+<td>statusCode</td>
+<td><strong>integer.</strong> If <em>result</em> is <em>false,</em> <em>statusCode</em> can return: <br /><br /><strong>32</strong> Not Authorized<br /><strong>33</strong> Asset_Manager_Not_Found<br /><br />If no Account Provider is located, <em>statusCode</em> returns <em>null.</em></td>
 </tr>
 </tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="s2">"DepositKey1"</span><span class="p">,</span><span class="w"> </span><span class="s2">"DepositKey2"</span><span class="p">]</span><span class="w">
-</span></code></pre>
-<p>The Response is an array of two crypto deposit keys, each a long integer. If the key <em>GenerateNewKey</em> in the Request has a <em>true</em> value, the two crypto deposit keys will be new; if the key <em>GenerateNewKey</em> has a <em>false</em> value, these will be the last two keys that were generated. </p>
 <h2 id='getdepositrequestinfotemplate'>GetDepositRequestInfoTemplate</h2>
 <p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator, Trading<br /><strong>Call Type:</strong> Synchronous</p>
 
