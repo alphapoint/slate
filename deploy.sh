@@ -21,7 +21,10 @@ Options:
 
 
 run_build() {
-  bundle exec middleman build --clean
+  # bundle exec middleman build --clean
+  # @NB: using docker for cross-compatibility issues, prior script is above.
+  # MSYS_NO_PATHCONV = disable windows path conversion
+  MSYS_NO_PATHCONV=1 docker run --rm -v "$PWD/source":"/usr/src/app/source" -w "/usr/src/app/source" -v "$PWD/build":"/usr/src/app/build" slate_app bundle exec middleman build --clean
 }
 
 parse_args() {
