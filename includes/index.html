@@ -2402,7 +2402,12 @@
 <td><strong>string.</strong> Any arbitrary number or random string used with the APIKey to generate a signature.</td>
 </tr>
 </tbody></table>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+<h3 id='response'>Response</h3>
+<blockquote>
+<p>Authenticated response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"authenticated"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
   </span><span class="s2">"user"</span><span class="p">:</span><span class="w">
   </span><span class="p">{</span><span class="w"> </span><span class="s2">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"userName"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
@@ -2412,11 +2417,21 @@
     </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"use2FA"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
   </span><span class="p">},</span><span class="w">
-  </span><span class="s2">"authenticated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"requires2FA"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
   </span><span class="s2">"twoFAType"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
-  </span><span class="s2">"twoFAToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+  </span><span class="s2">"twoFAToken"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre>
+<blockquote>
+<p>False authenticated response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="s2">"authenticated"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Invalid username or password"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre>
@@ -2427,12 +2442,12 @@
 </tr>
 </thead><tbody>
 <tr>
-<td>user</td>
-<td>JSON user object (below)</td>
-</tr>
-<tr>
 <td>authenticated</td>
 <td><strong>Boolean.</strong> <em>True</em> if the user is authenticated; <em>false</em> otherwise.</td>
+</tr>
+<tr>
+<td>user</td>
+<td>JSON user object (below)</td>
 </tr>
 <tr>
 <td>locked</td>
@@ -2449,6 +2464,10 @@
 <tr>
 <td>twoFAToken</td>
 <td><strong>string.</strong> Returns an appropriate token. In the case of Google, this is a QR code.</td>
+</tr>
+<tr>
+<td>errormsg</td>
+<td><strong>string.</strong> A successful receipt of the call returns <em>null</em>.</td>
 </tr>
 </tbody></table>
 
