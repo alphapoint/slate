@@ -29,7 +29,7 @@ Authenticates a user for the current websocket session.
 
 | Key       | Value                                                        |
 | --------- | ------------------------------------------------------------ |
-| Username  | **string.** The user's assigned user name.                    |
+| Username  | **string.** The user's assigned user name.                   |
 | Password  | **string.** The user's assigned password.                    |
 
 or
@@ -42,8 +42,11 @@ or
 | Nonce     | **string.** Any arbitrary number or random string used with the APIKey to generate a signature.                                             |
 
 ###Response
+>Authenticated response
+
 ```json
 {
+  "authenticated": true,
   "user":
   { "userId": 0,
     "userName": "",
@@ -53,23 +56,34 @@ or
     "omsId": 0,
     "use2FA": false
   },
-  "authenticated": false,
   "locked": false,
   "requires2FA": false,
   "twoFAType": "",
-  "twoFAToken": ""
+  "twoFAToken": "",
+  "errormsg": ""
+}
+
+```
+>False authenticated response
+
+```json
+{
+  "authenticated": false,
+  "locked": false,
+  "errormsg": "Invalid username or password"
 }
 
 ```
 
 | Key           | Value                                                        |
 | ------------- | ------------------------------------------------------------ |
-| user          | JSON user object (below)                                     |
-| authenticated | **Boolean.** *True* if the user is authenticated; *false* otherwise.                                                  |
+| authenticated | **Boolean.** *True* if the user is authenticated; *false* otherwise. |
+| user          | JSON user object (below)                                     | 
 | locked        | **Boolean.** *True* if this affiliated user is currently locked; *false* otherwise. A user may be locked by trying to log in too many times in rapid succession. He must be *unlocked* by an admin.     |
 | requires2FA   | **Boolean.** *True* if the user must use two-factor authentication; *false* otherwise.                                               |
 | twoFAType     | **string.** Returns the type of 2FA this user requires. For example, "Google." |
 | twoFAToken    | **string.** Returns an appropriate token. In the case of Google, this is a QR code. |
+| errormsg      | **string.** A successful receipt of the call returns *null*. |
 
 JSON user object:
 
