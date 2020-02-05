@@ -12,9 +12,11 @@ Once reported, you can follow the trade using **GetAccountTrades** or **GetTrade
 
 ```json
 {
+    "omsId": 0,
     "accountId":0,
-    "counterPartyId":null,
-    "omsId":0,
+    "counterPartyAccountName": "test",
+    "counterPartyAccountId": 0,
+    "counterPartyId": "",
     "clientOrderId":0,
     "quantity":0.0,
     "limitPrice":0.0,
@@ -27,9 +29,11 @@ Once reported, you can follow the trade using **GetAccountTrades** or **GetTrade
 
 | Key            | Value                                                        |
 | -------------- | ------------------------------------------------------------ |
-| accountId      | **integer.** The ID of the account making the report of the block trade. |
-| counterPartyId | **Integer.** The ID of the other party in the off-market trade. |
 | omsId          | **integer.** The ID of the Order Management System where the block trade is to be reported. |
+| accountId      | **integer.** The ID of the account making the report of the block trade. |
+| counterPartyAccountName | **string.** The name of the account of the other party in the off-market trade. |
+| counterPartyAccountId | **integer.** The ID of the account of the other party in the off-market trade. |
+| counterPartyId | **integer.** The ID of the other party in the off-market trade. |
 | clientOrderId  | **long integer.** The client-provided ID for the trade (much like a client-provided purchase order number). |
 | quantity       | **real.** The quantity on the instrument that was traded.    |
 | limitPrice     | **real.** The price at which to execute the block trade.     |
