@@ -8443,9 +8443,11 @@
 
 <p>Once reported, you can follow the trade using <strong>GetAccountTrades</strong> or <strong>GetTradesHistory.</strong></p>
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"accountId"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"counterPartyId"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"counterPartyAccountName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"counterPartyAccountId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"counterPartyId"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
     </span><span class="s2">"clientOrderId"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"quantity"</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"limitPrice"</span><span class="p">:</span><span class="mf">0.0</span><span class="p">,</span><span class="w">
@@ -8462,16 +8464,24 @@
 </tr>
 </thead><tbody>
 <tr>
+<td>omsId</td>
+<td><strong>integer.</strong> The ID of the Order Management System where the block trade is to be reported.</td>
+</tr>
+<tr>
 <td>accountId</td>
 <td><strong>integer.</strong> The ID of the account making the report of the block trade.</td>
 </tr>
 <tr>
-<td>counterPartyId</td>
-<td><strong>Integer.</strong> The ID of the other party in the off-market trade.</td>
+<td>counterPartyAccountName</td>
+<td><strong>string.</strong> The name of the account of the other party in the off-market trade.</td>
 </tr>
 <tr>
-<td>omsId</td>
-<td><strong>integer.</strong> The ID of the Order Management System where the block trade is to be reported.</td>
+<td>counterPartyAccountId</td>
+<td><strong>integer.</strong> The ID of the account of the other party in the off-market trade.</td>
+</tr>
+<tr>
+<td>counterPartyId</td>
+<td><strong>integer.</strong> The ID of the other party in the off-market trade.</td>
 </tr>
 <tr>
 <td>clientOrderId</td>
