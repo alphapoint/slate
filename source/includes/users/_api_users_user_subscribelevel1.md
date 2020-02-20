@@ -77,7 +77,7 @@ The **SubscribeLevel1** response and *Level1UpdateEvent* both provide the same i
 | SessionHigh          | **real**. Highest price during the trading day, either during a session with opening and closing prices or UTC midnight to UTC midnight. |
 | SessionLow           | **real**. Lowest price during the trading day, either during a session with opening and closing prices or UTC midnight to UTC midnight. |
 | SessionClose         | **real**. The closing price. In markets with openings and closings, this is the closing price for the current session; in 24-hour markets, it is the price as of UTC Midnight. |
-| Volume               | **real**. The unit volume of the instrument traded, either during a session with openings and closings or in 24-hour markets, the period from UTC Midnight to UTC Midnight. |
+| Volume               | **real**. The last-traded quantity for the instrument, same value as LastTradedQty  |
 | CurrentDayVolume     | **real**. The unit volume of the instrument traded either during a session with openings and closings or in 24-hour markets, the period from UTC Midnight to UTC Midnight. |
 | CurrentDayNumTrades  | **integer**. The number of trades during the current day, either during a session with openings and closings or in 24-hour markets, the period from UTC Midnight to UTC Midnight. |
 | CurrentDayPxChange   | **real**. Current day price change, either during a trading session or UTC Midnight to UTC midnight. |

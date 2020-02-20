@@ -31,6 +31,8 @@ A user with Trading permission can create an order only for those accounts and i
  }
 ```
 
+If OrderType=1 (Market), Side=0 (Buy), and LimitPrice is supplied, the Market order will execute up to the value specified
+
 | Key                | Value                                                        |
 | ------------------ | ------------------------------------------------------------ |
 | InstrumentId       | **integer.** The ID of the instrument being traded.          |

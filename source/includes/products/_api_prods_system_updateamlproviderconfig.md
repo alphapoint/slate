@@ -1,4 +1,4 @@
-## CreateAmlProviderConfig
+## UpdateAmlProverConfig
 
 **Category:** System<br />**Permissions:** Operator<br />**Call Type:** Synchronous
 
@@ -21,6 +21,7 @@ Creates a new AML ("anti-money laundering") provider configuration for external 
 | Enabled         | **Boolean.** If *true* the AML configuration is active for this product. If *false,* the configuration is not live. You can create a configuration and then enable it later using **UpdateAmlProviderConfig.** |
 | OmsId           | **integer.** The Order Management System on which the anti-money laundering service will function. |
 | ProductId       | **integer.** The ID of the product for which this AML service provider will function. Each product ID may have its own AML service provider. |
+| url             | **string.** The URL address of the AML service provider.     |
 
 
 ### Response

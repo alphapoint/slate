@@ -27,11 +27,11 @@ Provides a current Level 2 snapshot of a specific instrument trading on an Order
 [
     [
         0, // MDUpdateId        
-        1, // AccountId
+        1, // Number of Unique Accounts
         123,// ActionDateTime in Posix format X 1000
         0,   // ActionType 0 (New), 1 (Update), 2(Delete)
         0.0, // LastTradePrice
-        0, // OrderId
+        0, // Number of Orders
         0.0, //Price
         0,  // ProductPairCode
         0.0, // Quantity
@@ -48,11 +48,11 @@ The response is an array of elements for one specific instrument, the number of 
 | Key          | Value                                                        |
 | --------------- | ------------------------------------------------------------ |
 | MDUpdateID      | **integer**. Market Data Update ID. This sequential ID identifies the order in which the update was created. |
-| AccountId        | **integer**. The ID of the account trading the instrument.  |
+| Number of Unique Accounts | **integer**. Number of accounts that placed orders.  |
 | ActionDateTime  | **long integer.**. *ActionDateTime* identifies the time and date that the snapshot was taken or the event occurred, in POSIX format X 1000 (milliseconds since 1 January 1970). |
 | ActionType      | **integer**. L2 information provides price data. This value shows whether this data is:<br />**0** new<br />**1** update<br />**2** deletion |
 | LastTradePrice  | **real**. The price at which the instrument was last traded. |
-| OrderId          | **integer**. The ID of the order.  |
+| Number of Orders  | **integer**. Number of orders in the GetL2Snapshot.  |
 | Price           | **real**. Bid or Ask price for the Quantity (see *Quantity* below). |
 | ProductPairCode | **integer**. *ProductPairCode* is the same value and used for the same purpose as *InstrumentID*. The two are completely equivalent. *InstrumentId* 47 = *ProductPairCode* 47. |
 | Quantity        | **real**. Quantity available at a given Bid or Ask price (see *Price* above). |
