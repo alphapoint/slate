@@ -15,7 +15,7 @@ A user with Trading permission can cancel an order only for an account with whic
 {
   "OMSId": 0,
   "AccountId": 0,  // conditionally optional
-  "ClientOrderId": 0,  // conditionally optional
+  "ClOrderId": 0,  // conditionally optional
   "OrderId": 0,    // conditionally optional
 }
 ```
@@ -28,7 +28,7 @@ If you specify the OMS ID and the Account ID, you must also specify at least the
 | ------------- | ------------------------------------------------------------ |
 | OMSId         | **integer.** The Order Management System on which the order exists. *Required*. |
 | AccountId     | **integer.** The ID of the account under which the order was placed. *Conditionally optional*. |
-| ClientOrderId | **long integer.** A user-assigned ID for the order (like a purchase-order number assigned by a company). *ClientOrderId* defaults to 0. *Conditionally optional.* |
+| ClOrderId | **long integer.** A user-assigned ID for the order (like a purchase-order number assigned by a company). *ClientOrderId* defaults to 0. *Conditionally optional.* |
 | OrderId       | **long integer.** The order to be canceled. *Conditionally optional*. |
 
 ### Response

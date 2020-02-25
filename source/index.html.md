@@ -13,6 +13,7 @@ includes: # api - group - category - call
   - users/api_users_divider
   - users/api_users_act_activate2fa
   # - users/api_users_system_adduseraccount
+  - users/api_users_system_addeditrole
   - users/api_users_user_adduseraffiliatetag
   - users/api_users_user_adduserinstrumentpermissions
   - users/api_users_user_adduserinstrumentpermissionsbulk
@@ -20,6 +21,7 @@ includes: # api - group - category - call
   # - users/api_users_system_adduserpermission
   - users/api_users_user_adduserproductpermissions
   - users/api_users_user_adduserproductpermissionsbulk
+  - users/api_users_system_adduserrole
   - users/api_users_auth_authenticate2fa
   - users/api_users_auth_authenticateuser
   - users/api_users_user_canceluserreport
@@ -28,6 +30,7 @@ includes: # api - group - category - call
   # - users/api_users_system_confirmuseremail
   # - users/api_users_system_createuser
   # - users/api_users_system_disable2fa
+  - users/api_users_system_deleterole
   - users/api_users_user_enablexp2fa
   # - users/api_users_system_enablegoogle2fa
   # - users/api_users_system_forceuserlogoff
@@ -35,11 +38,19 @@ includes: # api - group - category - call
   # - users/api_users_system_getallbadges
   # - users/api_users_system_getavailablepermissionlist
   # - users/api_users_system_getbadgeaccount
+  - users/api_users_system_getallroles
+  - users/api_users_system_getconfigmanagementsupportedservicenames
   - users/api_users_user_getl2snapshot
   - users/api_users_user_getlevel1
+  - gen_admin/api_genadmin_system_getoperatorusers
   # - users/api_users_system_getlockedusers
   # - users/api_users_system_getloggedinuserbysessiontoken
+  - users/api_users_foureyes_getpendingfoureyerequests
+  - users/api_users_foureyes_getcompletedfoureyerequests
   # - users/api_users_system_getrecentaffiliateregistrations
+  - users/api_users_system_getserviceconfigs
+  - users/api_users_system_getserviceconfigsbykey
+  - users/api_users_system_reverttopreviousconfigvalue
   - users/api_users_user_getuseraccountinfos
   - users/api_users_user_getuseraccounts
   - users/api_users_user_getuseraffiliatecount
@@ -48,19 +59,24 @@ includes: # api - group - category - call
   - users/api_users_system_getuserconfig
   - users/api_users_system_getallunredacteduserconfigsforuser
   - users/api_users_system_getunredacteduserconfigbykey
+  - users/api_users_system_getuserdevices
   # - users/api_users_system_getuserinfo
   # - users/api_users_system_getusermarketdatapermissions
   # - users/api_users_system_getuserpermissions
   - users/api_users_user_getuserreporttickets
+  - users/api_users_system_getuserroles
   # - users/api_users_system_getuserreportticketsbystatus
   - users/api_users_user_getuserreportwriterresultrecords
+  - users/api_users_system_getvalidate2farequiredendpoints
   - users/api_users_auth_logout
+  - users/api_users_system_registernewdevice
   # - users/api_users_system_registernewuser
   # - users/api_users_system_registeruser
   # - users/api_users_system_removeuseraccount
   # - users/api_users_system_removeuserconfig
   # - users/api_users_system_removeusermarketdatapermission
   - users/api_users_user_removeuserproductpermissions
+  - users/api_users_system_removeuserrole
   # - users/api_users_system_removeuserreportticket
   # - users/api_users_system_resendverificationemail
   # - users/api_users_system_resetpassword
@@ -79,6 +95,8 @@ includes: # api - group - category - call
   - users/api_users_user_unsubscribeticker
   - users/api_users_user_unsubscribetrades
   - users/api_users_user_updateuseraffiliatetag
+  - users/api_users_system_updateserviceconfig
+  - users/api_users_system_validate2fa
   - accounts/api_accts_divider
   # - accounts/api_accts_system_addaccount
   # - accounts/api_accts_system_addaccounthold
@@ -151,7 +169,8 @@ includes: # api - group - category - call
   # - products/api_prods_system_editverificationlevelconfig
   # - products/api_prods_system_getaccountprovideradminfunctions
   # - products/api_prods_system_getaccountproviderdetails
-  # - products/api_prods_system_getamlproviderconfig
+  - products/api_prods_system_getamlproviderconfig
+  - products/api_prods_system_getamlproviderconfigsforoms
   - products/api_prods_user_getproduct
   - products/api_prods_user_getproductattributes
   - products/api_prods_user_getproducts
@@ -250,6 +269,9 @@ includes: # api - group - category - call
   # - exchange_admin/api_exchadmin_divider
   # - exchange_admin/api_exchadmin_system_addeditexchange
   # - exchange_admin/api_exchadmin_system_addeditexchangeinstrument
+  # - exchange_admin/api_exchadmin_system_addeditexchangeinstrument
+  # - exchange_admin/api_exchadmin_system_getexchanges
+  # - exchange_admin/api_exchadmin_system_getexchangeserviceids
   # - exchange_admin/api_exchadmin_system_markethalt
   # - exchange_admin/api_exchadmin_system_marketpause
   # - exchange_admin/api_exchadmin_system_marketreopen
@@ -268,10 +290,10 @@ includes: # api - group - category - call
   # - gen_admin/api_genadmin_system_getoperatorloyaltyfeeconfig
   # - gen_admin/api_genadmin_system_getoperatorloyaltyfeeconfigsforoms
   # - gen_admin/api_genadmin_system_getoperatoromslist
-  # - gen_admin/api_genadmin_system_getoperators
-  # - gen_admin/api_genadmin_system_getoperatorusers
+  - gen_admin/api_genadmin_system_getoperators
+  - gen_admin/api_genadmin_system_getoperatorusers
   # - gen_admin/api_genadmin_system_removeoperatoroms
-  # - gen_admin/api_genadmin_system_removeoperatoruser
+  - gen_admin/api_genadmin_system_removeoperatoruser
   # - gen_admin/api_genadmin_system_sendemail
   # - gen_admin/api_genadmin_system_sendendofday
   # - gen_admin/api_genadmin_system_setdefaultoperatoroms

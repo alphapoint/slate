@@ -19,7 +19,6 @@ The ticketing mechanism of the Order Management System tracks deposits and withd
     "omsId": 0,
     "requestCode": null,
     "requestIP": null,
-    "requestUser": 0,
     "requestUserName": null,
     "operatorId": 0,
     "Status": 0,
@@ -45,7 +44,6 @@ The ticketing mechanism of the Order Management System tracks deposits and withd
 | omsId               | **integer.** The ID of the Order Management System where the deposit is being made, usually 1. |
 | requestCode         | **string.** A *requestCode* is a globally unique ID assigned by the system. Leave the value for this string null when issuing the **CreateDepositTicket** call; the Response returns the value for the *requestCode,* which you may need for other calls. |
 | requestIp           | **string.** The IP address from which the calling user makes the deposit ticket request. |
-| requestUser         | **integer.** The user ID of the user making the deposit ticket request. |
 | requestUserName     | **string.** The user name of the user making the deposit ticket request, for example, jsmith. |
 | operatorId          | **integer.** The ID of the trading venue operator.           |
 | status              | **integer.** The current status of the deposit, stated as a number. A new deposit will always have a status of 0. |

@@ -10,37 +10,61 @@ Once reported, you can follow the trade using **GetAccountTrades** or **GetTrade
 
 ###Request
 
+> Example lockedIn:True request
+
 ```json
 {
-    "omsId": 0,
-    "accountId":0,
-    "counterPartyAccountName": "test",
-    "counterPartyAccountId": 0,
-    "counterPartyId": "",
-    "clientOrderId":0,
-    "quantity":0.0,
-    "limitPrice":0.0,
-    "instrumentId":0,
-    "timestamp":0,
+    "instrumentId":1,
+    "accountId":5,
     "side":0,
-    "lockedIn":false
+    "counterPartyId": "3",
+    "quantity":0.1,
+    "limitPrice":5000.0,
+    "omsId": 0,
+    "lockedIn":true,
+    "timestamp":158153615438
+    
+}
+```
+
+> Example lockedIn:False set of requests
+
+```json
+{
+    "instrumentId":1,
+    "accountId":5,
+    "side":0,
+    "counterPartyId": "2",
+    "quantity":0.1,
+    "limitPrice":5000.0,
+    "omsId": 0,
+    "lockedIn":false,
+    "timestamp":158153615438
+}
+{
+    "instrumentId":1,
+    "accountId":7,
+    "side":1,
+    "counterPartyId": "1",
+    "quantity":0.1,
+    "limitPrice":5000.0,
+    "omsId": 0,
+    "lockedIn":false,
+    "timestamp":158153615438
 }
 ```
 
 | Key            | Value                                                        |
 | -------------- | ------------------------------------------------------------ |
-| omsId          | **integer.** The ID of the Order Management System where the block trade is to be reported. |
+| instrumentId   | **integer.** The ID of the instrument being traded.          |
 | accountId      | **integer.** The ID of the account making the report of the block trade. |
-| counterPartyAccountName | **string.** The name of the account of the other party in the off-market trade. |
-| counterPartyAccountId | **integer.** The ID of the account of the other party in the off-market trade. |
+| side           | **integer.** A number that represents the side of the transaction associated with accountId. One of:<br />0 Buy<br />1 Sell<br />2 Short<br />3 Unknown (error condition) |
 | counterPartyId | **string.** The badge of the other party in the off-market trade. |
-| clientOrderId  | **long integer.** The client-provided ID for the trade (much like a client-provided purchase order number). |
 | quantity       | **real.** The quantity on the instrument that was traded.    |
 | limitPrice     | **real.** The price at which to execute the block trade.     |
-| instrumentId   | **integer.** The ID of the instrument being traded.          |
-| timestamp      | **long integer.** The time that the block trade was submitted, in POSIX format.               |
-| side           | **integer.** A number that represents the side of the transaction associated with accountId. One of:<br />0 Buy<br />1 Sell<br />2 Short<br />3 Unknown (error condition) |
-| lockedIn       | **Boolean.** *True* if both parties to the block trade agree that one of the parties will report the trade for both sides. Otherwise, *false*. |
+| omsId          | **integer.** The ID of the Order Management System where the block trade is to be reported. |
+| lockedIn       | **Boolean.** *True* if both parties to the block trade agree that one of the parties will report the trade for both sides(Only need to submit API call once). Otherwise, *false* and both sides need to submit API call. |
+| timestamp      | **long integer.** The time that the block trade was submitted, in POSIX format.          |
 
 ### Response
 
