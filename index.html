@@ -2800,7 +2800,7 @@ User Config Values are redacted by default (can be turned off via configuration)
 
 <p>Remove an existing role for the given role id.</p>
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"roleId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -2810,7 +2810,7 @@ User Config Values are redacted by default (can be turned off via configuration)
 </tr>
 </thead><tbody>
 <tr>
-<td>roleId</td>
+<td>Id</td>
 <td><strong>integer.</strong> Id of role</td>
 </tr>
 </tbody></table>
@@ -4410,9 +4410,9 @@ User Config Values are redacted by default (can be turned off via configuration)
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{}</span><span class="w">
 </span></code></pre>
 <p>There is no payload.</p>
-<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="s2">"CreateWithdrawTicket"</span><span class="p">,</span><span class="w"> </span><span class="s2">"CreateDepositTicket"</span><span class="p">,</span><span class="w"> </span><span class="s2">"AddUserPermission"</span><span class="p">]</span><span class="w">
+<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">[</span><span class="s2">"createwithdrawticket"</span><span class="p">,</span><span class="w"> </span><span class="s2">"createdepositticket"</span><span class="p">,</span><span class="w"> </span><span class="s2">"adduserpermission"</span><span class="p">]</span><span class="w">
 </span></code></pre>
-<p>The response is a list of endpoints.</p>
+<p>The response is a list of endpoints, all lowercase.</p>
 <h2 id='logout'>LogOut</h2>
 <p><strong>Category:</strong> Authentication<br />
 <strong>Permissions:</strong> Public<br />
@@ -7854,6 +7854,10 @@ User Config Values are redacted by default (can be turned off via configuration)
 <td>OMSId</td>
 <td><strong>integer.</strong> The Order Management System under which the account operates. <em>Required</em>.</td>
 </tr>
+<tr>
+<td>IntrumentId</td>
+<td><strong>integer.</strong> The instrument for which all orders are being canceled. <em>Conditionally optional</em>.</td>
+</tr>
 </tbody></table>
 <h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
@@ -10016,8 +10020,6 @@ User Config Values are redacted by default (can be turned off via configuration)
 
 <p>All key-value pairs of the Request are required.</p>
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"AmlProviderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChainAnalysis"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"ProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -10028,14 +10030,6 @@ User Config Values are redacted by default (can be turned off via configuration)
 <th>Value</th>
 </tr>
 </thead><tbody>
-<tr>
-<td>AmlProviderType</td>
-<td><strong>integer.</strong> There are three AML configuration settings, or <em>types:</em><br /><strong>0</strong> PassThrough &mdash; Allows cryptocurrency to be freely deposited.<br /><strong>1</strong> ChainAnalysis &mdash; A third-party that scores cryptocurrency deposits according to configurations from the Blockchain.<br /><strong>2</strong> Manual &mdash; Used for fiat (national) currency deposits.</td>
-</tr>
-<tr>
-<td>Enabled</td>
-<td><strong>Boolean.</strong> If <em>true</em> the AML configuration is active for this product. If <em>false,</em> the configuration is not live. You can create a configuration and then enable it later using <strong>UpdateAmlProviderConfig.</strong></td>
-</tr>
 <tr>
 <td>OmsId</td>
 <td><strong>integer.</strong> The Order Management System on which the anti-money laundering service will function.</td>
@@ -10092,10 +10086,7 @@ User Config Values are redacted by default (can be turned off via configuration)
 
 <p>All key-value pairs of the Request are required.</p>
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-    </span><span class="s2">"AmlProviderType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ChainAnalysis"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Enabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
     </span><span class="s2">"OMSId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"ProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <table><thead>
@@ -10105,20 +10096,8 @@ User Config Values are redacted by default (can be turned off via configuration)
 </tr>
 </thead><tbody>
 <tr>
-<td>AmlProviderType</td>
-<td><strong>integer.</strong> There are three AML configuration settings, or <em>types:</em><br /><strong>0</strong> PassThrough &mdash; Allows cryptocurrency to be freely deposited.<br /><strong>1</strong> ChainAnalysis &mdash; A third-party that scores cryptocurrency deposits according to configurations from the Blockchain.<br /><strong>2</strong> Manual &mdash; Used for fiat (national) currency deposits.</td>
-</tr>
-<tr>
-<td>Enabled</td>
-<td><strong>Boolean.</strong> If <em>true</em> the AML configuration is active for this product. If <em>false,</em> the configuration is not live. You can create a configuration and then enable it later using <strong>UpdateAmlProviderConfig.</strong></td>
-</tr>
-<tr>
 <td>OmsId</td>
 <td><strong>integer.</strong> The Order Management System on which the anti-money laundering service will function.</td>
-</tr>
-<tr>
-<td>ProductId</td>
-<td><strong>integer.</strong> The ID of the product for which this AML service provider will function. Each product ID may have its own AML service provider.</td>
 </tr>
 </tbody></table>
 <h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
