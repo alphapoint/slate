@@ -25,6 +25,7 @@ A user with Trading permission can cancel orders for himselfd; a user with Opera
 | ------------ | ------------------------------------------------------------ |
 | AccountId    | **integer.** The account for which all orders are being canceled. *Conditionally optional.* |
 | OMSId        | **integer.** The Order Management System under which the account operates. *Required*. |
+| IntrumentId        | **integer.** The instrument for which all orders are being canceled. *Conditionally optional*. |
 
 ### Response
 

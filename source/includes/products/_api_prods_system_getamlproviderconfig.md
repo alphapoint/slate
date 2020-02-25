@@ -10,8 +10,6 @@ All key-value pairs of the Request are required.
 
 ```json
 {
-    "AmlProviderType": "ChainAnalysis",
-    "Enabled": true,
     "OMSId": 0,
     "ProductId": 1
 }
@@ -19,8 +17,6 @@ All key-value pairs of the Request are required.
 
 | Key             | Value                                                        |
 | --------------- | ------------------------------------------------------------ |
-| AmlProviderType | **integer.** There are three AML configuration settings, or *types:*<br />**0** PassThrough &mdash; Allows cryptocurrency to be freely deposited.<br />**1** ChainAnalysis &mdash; A third-party that scores cryptocurrency deposits according to configurations from the Blockchain.<br />**2** Manual &mdash; Used for fiat (national) currency deposits. |
-| Enabled         | **Boolean.** If *true* the AML configuration is active for this product. If *false,* the configuration is not live. You can create a configuration and then enable it later using **UpdateAmlProviderConfig.** |
 | OmsId           | **integer.** The Order Management System on which the anti-money laundering service will function. |
 | ProductId       | **integer.** The ID of the product for which this AML service provider will function. Each product ID may have its own AML service provider. |
 
