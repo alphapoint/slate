@@ -1,4 +1,4 @@
-## UpdateAmlProverConfig
+## UpdateAmlProviderConfig
 
 **Category:** System<br />**Permissions:** Operator<br />**Call Type:** Synchronous
 

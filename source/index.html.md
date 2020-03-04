@@ -267,9 +267,8 @@ includes: # api - group - category - call
   # - am_mgr/api_ammgr_system_am_getaccountproviderinfolist
   # - am_mgr/api_ammgr_system_sendassetmanagersequencereset
   # - exchange_admin/api_exchadmin_divider
-  # - exchange_admin/api_exchadmin_system_addeditexchange
-  # - exchange_admin/api_exchadmin_system_addeditexchangeinstrument
-  # - exchange_admin/api_exchadmin_system_addeditexchangeinstrument
+  - exchange_admin/api_exchadmin_system_addeditexchange
+  - exchange_admin/api_exchadmin_system_addeditexchangeinstrument
   # - exchange_admin/api_exchadmin_system_getexchanges
   # - exchange_admin/api_exchadmin_system_getexchangeserviceids
   # - exchange_admin/api_exchadmin_system_markethalt
@@ -1654,3 +1653,173 @@ Request requires only *OMSId* and *instrumentId*
     "KeyValue": "value"
 }
 ```
+
+### 3.4.1 New Endpoints
+
+**RegisterNewDevice**
+**GetUserDevices**
+**GetPendingFourEyeRequests**
+**GetCompletedFourEyeRequests**
+**ProcessPendingFourEyeRequest**
+**GetConfigManagementSupportedServiceNames**
+**GetServiceConfigs**
+**GetServiceConfigByKey**
+**UpdateServiceConfig**
+**RevertToPreviousConfigValue**
+**GetValidate2FARequiredEndpoints**
+**Validate2FA**
+**AddEditRole**
+**DeleteRole**
+**GetAllRoles**
+**GetRole**
+**AddUserRoles**
+**RemoveUserRoles**
+**GetUserRoles**
+**GetAmlProviderConfigsForOMS**
+**UpdateAmlProviderConfig**
+
+### RevisedCalls 3.4.1
+
+**SendOrder**
+
+Request Payload changed for Market Buy Value - if Buy order and Value (decimal) parameter is supplied, the Market order will execute up to the value specified.
+
+**AddEditExchange**
+
+Response Payload changed: 
+
+
+>Old AddEditExchange Response
+
+```json
+{
+    "Id": 1,
+    "RejectMessage": ""
+}
+```
+
+>New AddEditExchange Response
+
+```json
+{
+    "result": true,
+    "errormsg": "",
+    "errorcode": 0,
+    "detail": ""
+}
+```
+
+**GetExchangeServiceIds**
+>Old GetExchangeServiceIDs Response
+An array of strings representing service ids.
+
+>New GetExchangeServiceIds Response
+Array hard coded with a single entry: "Matching Engine"
+```json
+[
+    {
+        "Name": "V2ExchangeCore|1",
+        "ServiceId": "Matching Engine"
+        "URI": null
+    }
+]
+```
+
+**GetExchanges**
+>Old GetExchangeServiceIds Response
+A list of exchanges within a specified exchange service id.
+
+>New GetExchangeServiceIds Response
+Retrieves exchanges from "THE" mathcing engine as there can only ever be one as of 3.4
+
+**CreateAmlProviderConfig**
+>Old CreateAmlProviderConfig Request
+```json
+{
+    "omsId": 0,
+    "productId": 0,
+    "url": "",
+    "amlProviderType": 0,
+    "apiToken": "",
+    "enabled": true
+}
+```
+
+>New CreateAmlProviderConfig Request
+```json
+{
+    "AmlProviderType": "ChainAnalysis",
+    "Enabled": true,
+    "OMSId": 0,
+    "ProductId": 1
+}
+```
+
+**DeleteAmlProviderConfig**
+>Old DeleteAmlProviderConfig Request
+```json
+{
+    "omsId": 0,
+    "productId": 0,
+    "url": "",
+    "amlProviderType": 0,
+    "apiToken": "",
+    "enabled": true
+}
+```
+
+>New DeleteAmlProviderConfig Request
+```json
+{
+    "AmlProviderType": "ChainAnalysis",
+    "Enabled": true,
+    "OMSId": 0,
+    "ProductId": 1
+}
+```
+
+
+**GetAmlProviderConfig**
+>Old GetAmlProviderConfig Request
+```json
+{
+    "omsId": 0,
+    "productId": 0,
+    "url": "",
+    "amlProviderType": 0,
+    "apiToken": "",
+    "enabled": true
+}
+```
+>New GetAmlProviderConfig Request
+```json
+{
+    "OMSId": 0,
+    "ProductId": 1
+}
+```
+**GetAmlProviderConfigsForOMS**
+>New GetAmlProviderConfigForOMS Request
+```json
+{
+    "OMSId": 0,
+}
+```
+
+**Validate2FA**
+Behavior change, no longer has public permissions specified. 
+
+**AddInstrument (DEPRECATED)**
+Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. 
+
+**UpdateInstrument (DEPRECATED)**
+Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. 
+
+**RemoveOperatorUser**
+Behavior change from “Deprecated” to “Remove Association of Operator with User" 
+
+**GetOperatorUsers**
+Behavior change from “Deprecated” to “Getting all Operator Users”
+
+**GetOperators**
+Field “EmailTemplateCount” [integer] added to response. 
