@@ -14,6 +14,7 @@ There is no payload.
 ### Response
 
 ```json
-["CreateWithdrawTicket", "CreateDepositTicket", "AddUserPermission"]
+["createwithdrawticket", "createdepositticket", "adduserpermission"]
 ```
-The response is a list of endpoints.
+The response is a list of endpoints, all lowercase.
+

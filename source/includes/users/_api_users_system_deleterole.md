@@ -8,13 +8,14 @@ Remove an existing role for the given role id.
 
 ```json
 {
-	"roleId": 1,
+	"Id": 1,
 }
 ```
 
 | Key          | Value                                                        |
 | ------------ | ------------------------------------------------------------ |
-| roleId     | **integer.** Id of role |
+| Id     | **integer.** Id of role |
+
 
 ### Response
 
