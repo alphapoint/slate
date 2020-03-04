@@ -1655,27 +1655,46 @@ Request requires only *OMSId* and *instrumentId*
 ```
 
 ### 3.4.1 New Endpoints
-
 **RegisterNewDevice**
+
 **GetUserDevices**
+
 **GetPendingFourEyeRequests**
+
 **GetCompletedFourEyeRequests**
+
 **ProcessPendingFourEyeRequest**
+
 **GetConfigManagementSupportedServiceNames**
+
 **GetServiceConfigs**
+
 **GetServiceConfigByKey**
+
 **UpdateServiceConfig**
+
 **RevertToPreviousConfigValue**
+
 **GetValidate2FARequiredEndpoints**
+
 **Validate2FA**
+
 **AddEditRole**
+
 **DeleteRole**
+
 **GetAllRoles**
+
 **GetRole**
+
 **AddUserRoles**
+
 **RemoveUserRoles**
+
 **GetUserRoles**
+
 **GetAmlProviderConfigsForOMS**
+
 **UpdateAmlProviderConfig**
 
 ### RevisedCalls 3.4.1
@@ -1807,19 +1826,25 @@ Retrieves exchanges from "THE" mathcing engine as there can only ever be one as 
 ```
 
 **Validate2FA**
+
 Behavior change, no longer has public permissions specified. 
 
 **AddInstrument (DEPRECATED)**
+
 Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. 
 
 **UpdateInstrument (DEPRECATED)**
+
 Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. 
 
 **RemoveOperatorUser**
+
 Behavior change from “Deprecated” to “Remove Association of Operator with User" 
 
 **GetOperatorUsers**
+
 Behavior change from “Deprecated” to “Getting all Operator Users”
 
 **GetOperators**
+
 Field “EmailTemplateCount” [integer] added to response. 
