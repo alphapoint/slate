@@ -233,6 +233,12 @@
                   <li>
                     <a href="#previously-unrevealed-calls" class="toc-h2 toc-link" data-title="Previously unrevealed calls">Previously unrevealed calls</a>
                   </li>
+                  <li>
+                    <a href="#3-4-1-new-endpoints" class="toc-h2 toc-link" data-title="3.4.1 New Endpoints">3.4.1 New Endpoints</a>
+                  </li>
+                  <li>
+                    <a href="#revisedcalls-3-4-1" class="toc-h2 toc-link" data-title="RevisedCalls 3.4.1">RevisedCalls 3.4.1</a>
+                  </li>
               </ul>
           </li>
           <li>
@@ -667,6 +673,12 @@
                   </li>
                   <li>
                     <a href="#ping" class="toc-h2 toc-link" data-title="Ping">Ping</a>
+                  </li>
+                  <li>
+                    <a href="#addeditexchange" class="toc-h2 toc-link" data-title="AddEditExchange">AddEditExchange</a>
+                  </li>
+                  <li>
+                    <a href="#addeditexchangeinstrument" class="toc-h2 toc-link" data-title="AddEditExchangeInstrument">AddEditExchangeInstrument</a>
                   </li>
                   <li>
                     <a href="#getoperators" class="toc-h2 toc-link" data-title="GetOperators">GetOperators</a>
@@ -1882,7 +1894,209 @@ User Config Values are redacted by default (can be turned off via configuration)
     </span><span class="s2">"KeyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"key"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"KeyValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre><h1 id='background-information'>Background Information</h1>
+</span></code></pre><h3 id='3-4-1-new-endpoints'>3.4.1 New Endpoints</h3>
+<p><strong>RegisterNewDevice</strong></p>
+
+<p><strong>GetUserDevices</strong></p>
+
+<p><strong>GetPendingFourEyeRequests</strong></p>
+
+<p><strong>GetCompletedFourEyeRequests</strong></p>
+
+<p><strong>ProcessPendingFourEyeRequest</strong></p>
+
+<p><strong>GetConfigManagementSupportedServiceNames</strong></p>
+
+<p><strong>GetServiceConfigs</strong></p>
+
+<p><strong>GetServiceConfigByKey</strong></p>
+
+<p><strong>UpdateServiceConfig</strong></p>
+
+<p><strong>RevertToPreviousConfigValue</strong></p>
+
+<p><strong>GetValidate2FARequiredEndpoints</strong></p>
+
+<p><strong>Validate2FA</strong></p>
+
+<p><strong>AddEditRole</strong></p>
+
+<p><strong>DeleteRole</strong></p>
+
+<p><strong>GetAllRoles</strong></p>
+
+<p><strong>GetRole</strong></p>
+
+<p><strong>AddUserRoles</strong></p>
+
+<p><strong>RemoveUserRoles</strong></p>
+
+<p><strong>GetUserRoles</strong></p>
+
+<p><strong>GetAmlProviderConfigsForOMS</strong></p>
+
+<p><strong>UpdateAmlProviderConfig</strong></p>
+<h3 id='revisedcalls-3-4-1'>RevisedCalls 3.4.1</h3>
+<p><strong>SendOrder</strong></p>
+
+<p>Request Payload changed for Market Buy Value - if Buy order and Value (decimal) parameter is supplied, the Market order will execute up to the value specified.</p>
+
+<p><strong>AddEditExchange</strong></p>
+
+<p>Response Payload changed: </p>
+
+<blockquote>
+<p>Old AddEditExchange Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"RejectMessage"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<blockquote>
+<p>New AddEditExchange Response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p><strong>GetExchangeServiceIds</strong></p>
+
+<blockquote>
+<p>Old GetExchangeServiceIDs Response
+An array of strings representing service ids.</p>
+
+<p>New GetExchangeServiceIds Response
+Array hard coded with a single entry: &quot;Matching Engine&quot;
+<code>json
+[
+    {
+        &quot;Name&quot;: &quot;V2ExchangeCore|1&quot;,
+        &quot;ServiceId&quot;: &quot;Matching Engine&quot;
+        &quot;URI&quot;: null
+    }
+]
+</code></p>
+</blockquote>
+
+<p><strong>GetExchanges</strong></p>
+
+<blockquote>
+<p>Old GetExchangeServiceIds Response
+A list of exchanges within a specified exchange service id.</p>
+
+<p>New GetExchangeServiceIds Response
+Retrieves exchanges from &quot;THE&quot; mathcing engine as there can only ever be one as of 3.4</p>
+</blockquote>
+
+<p><strong>CreateAmlProviderConfig</strong></p>
+
+<blockquote>
+<p>Old CreateAmlProviderConfig Request
+<code>json
+{
+    &quot;omsId&quot;: 0,
+    &quot;productId&quot;: 0,
+    &quot;url&quot;: &quot;&quot;,
+    &quot;amlProviderType&quot;: 0,
+    &quot;apiToken&quot;: &quot;&quot;,
+    &quot;enabled&quot;: true
+}
+</code></p>
+
+<p>New CreateAmlProviderConfig Request
+<code>json
+{
+    &quot;AmlProviderType&quot;: &quot;ChainAnalysis&quot;,
+    &quot;Enabled&quot;: true,
+    &quot;OMSId&quot;: 0,
+    &quot;ProductId&quot;: 1
+}
+</code></p>
+</blockquote>
+
+<p><strong>DeleteAmlProviderConfig</strong></p>
+
+<blockquote>
+<p>Old DeleteAmlProviderConfig Request
+<code>json
+{
+    &quot;omsId&quot;: 0,
+    &quot;productId&quot;: 0,
+    &quot;url&quot;: &quot;&quot;,
+    &quot;amlProviderType&quot;: 0,
+    &quot;apiToken&quot;: &quot;&quot;,
+    &quot;enabled&quot;: true
+}
+</code></p>
+
+<p>New DeleteAmlProviderConfig Request
+<code>json
+{
+    &quot;AmlProviderType&quot;: &quot;ChainAnalysis&quot;,
+    &quot;Enabled&quot;: true,
+    &quot;OMSId&quot;: 0,
+    &quot;ProductId&quot;: 1
+}
+</code></p>
+</blockquote>
+
+<p><strong>GetAmlProviderConfig</strong></p>
+
+<blockquote>
+<p>Old GetAmlProviderConfig Request
+<code>json
+{
+    &quot;omsId&quot;: 0,
+    &quot;productId&quot;: 0,
+    &quot;url&quot;: &quot;&quot;,
+    &quot;amlProviderType&quot;: 0,
+    &quot;apiToken&quot;: &quot;&quot;,
+    &quot;enabled&quot;: true
+}
+</code>
+New GetAmlProviderConfig Request
+<code>json
+{
+    &quot;OMSId&quot;: 0,
+    &quot;ProductId&quot;: 1
+}
+</code>
+<strong>GetAmlProviderConfigsForOMS</strong>
+New GetAmlProviderConfigForOMS Request
+<code>json
+{
+    &quot;OMSId&quot;: 0,
+}
+</code></p>
+</blockquote>
+
+<p><strong>Validate2FA</strong></p>
+
+<p>Behavior change, no longer has public permissions specified. </p>
+
+<p><strong>AddInstrument (DEPRECATED)</strong></p>
+
+<p>Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. </p>
+
+<p><strong>UpdateInstrument (DEPRECATED)</strong></p>
+
+<p>Behavior change, endpoint returns with bad request message specifying the endpoint is deprecated. </p>
+
+<p><strong>RemoveOperatorUser</strong></p>
+
+<p>Behavior change from “Deprecated” to “Remove Association of Operator with User&quot; </p>
+
+<p><strong>GetOperatorUsers</strong></p>
+
+<p>Behavior change from “Deprecated” to “Getting all Operator Users”</p>
+
+<p><strong>GetOperators</strong>
+Field “EmailTemplateCount” [integer] added to response. </p>
+<h1 id='background-information'>Background Information</h1>
 <p>This section provides important information about the AlphaPoint Exchange software.</p>
 <h2 id='message-frame'>Message Frame</h2>
 <blockquote>
@@ -13930,6 +14144,219 @@ User Config Values are redacted by default (can be turned off via configuration)
 <tr>
 <td>msg</td>
 <td><strong>string.</strong> PONG</td>
+</tr>
+</tbody></table>
+<h2 id='addeditexchange'>AddEditExchange</h2>
+<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> SUPERUSER<br /><strong>Call Type:</strong> Synchronous</p>
+
+<p>Adds a new logical Exchange to a running matching engine or updates an existing Exchange.</p>
+
+<p>Only a SUPERUSER can create or update a new logical Exchange.</p>
+<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"exchangeServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V2ExchangeCore"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exchangeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The AlphaPoint Exchange &quot;knows&quot; if these key-value pairs already exist. If the values you provide don&#39;t currently exist, the system creates a new instance.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exchangeServiceId</td>
+<td><strong>string.</strong> The name of the matching engine on which the new Exchange will be created.</td>
+</tr>
+<tr>
+<td>exchangeId</td>
+<td><strong>integer.</strong> Assign a value to a newly created exchange or changes the ID of an existing exchange.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The Response is a standard response object.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
+</tr>
+<tr>
+<td>errormsg</td>
+<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
+</tr>
+<tr>
+<td>errorcode</td>
+<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
+</tr>
+<tr>
+<td>detail</td>
+<td><strong>string.</strong> Message text that the system may send.</td>
+</tr>
+</tbody></table>
+<h2 id='addeditexchangeinstrument'>AddEditExchangeInstrument</h2>
+<p><strong>Category:</strong> System<br /><strong>Permissions:</strong> Operator<br /><strong>Call Type:</strong> <strong>Synchronous</strong></p>
+
+<p>Adds a new instrument (and its market) to an existing Exchange.</p>
+<h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"omsId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exchangeServiceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"V2ExchangeCore"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"exchangeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"instrumentId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productPairType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"orderBookType"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"productPairId"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product1Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"product2Id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"minimumQuantity"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceIncrement"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"symbol"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"selfTradePrevention"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceCollarThreshold"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceCollarPercent"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceCollarEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceFloorLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceFloorLimitEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceCeilingLimit"</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"priceCeilingLimitEnabled"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"createWithMarketRunning"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>Required key-value pairs are marked; other KVPs are optional in the Request.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>omsId</td>
+<td><strong>integer.</strong> REQUIRED The ID of the Order Management System on which the instrument will be created.</td>
+</tr>
+<tr>
+<td>exchangeServiceId</td>
+<td><strong>string.</strong> The name of the matching engine on which the new instrument will be traded.</td>
+</tr>
+<tr>
+<td>exchangeId</td>
+<td><strong>integer.</strong> The ID of the AlphaPoint Exchange on which the instrument will be traded.</td>
+</tr>
+<tr>
+<td>instrumentId</td>
+<td><strong>integer.</strong> REQUIRED The value for <em>instrumentId</em> is determined by the system. Set this value to 0 when making the Request; the system responds with the assigned ID.</td>
+</tr>
+<tr>
+<td>productPairType</td>
+<td><strong>integer.</strong> A <em>product pair</em> is the same as <em>instrument.</em> The value of <em>productPairType</em> is an integer representing the type of instrument. All instrument types currently are <em>standard</em> (an exchange of one product for another), or <em>unknown</em> (an error condition). This may expand to new types in the future. One of:<br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> Standard</td>
+</tr>
+<tr>
+<td>orderBookType</td>
+<td><strong>integer.</strong> The type of order book for the Exchange. One of <br /><strong>0</strong> Unknown (an error condition)<br /><strong>1</strong> Standard<br /><strong>2</strong> NoMatching<br /><strong>3</strong> Crossing</td>
+</tr>
+<tr>
+<td>productPairId</td>
+<td><strong>integer.</strong> The value for <em>productPairId</em> is determined by the system. Set this value to 0 in the Request; the system responds with the assigned ID.</td>
+</tr>
+<tr>
+<td>product1Id</td>
+<td><strong>integer.</strong> The ID of the first product making up the instrument. For example, if the instrument is BTCUSD, BitCoin would be <em>product1</em> and the ID for the BitCoin asset would be <em>product1Id.</em></td>
+</tr>
+<tr>
+<td>product2Id</td>
+<td><strong>integer.</strong> The ID of the second product making up the instrument. For example, if the instrument is BTCUSD, US Dollar would be <em>product2</em> and the ID for the USD asset would be <em>product2Id.</em></td>
+</tr>
+<tr>
+<td>minimumQuantity</td>
+<td><strong>real.</strong> The minimum quantity in which the instrument is traded. For example, US Dollars cannot be traded in increments smaller than 1 cent (1/100 of a dollar); there is no half-cent denomination.</td>
+</tr>
+<tr>
+<td>priceIncrement</td>
+<td><strong>real.</strong> The smallest value by which the instrument can rise or fall on the Exchange. This is different from the number of decimal places in which the instrument is priced.</td>
+</tr>
+<tr>
+<td>symbol</td>
+<td><strong>string.</strong> REQUIRED The alphanumeric characters designating the instrument; for example BTCUSD for the instrument BitCoin/US Dollars.</td>
+</tr>
+<tr>
+<td>selfTradePrevention</td>
+<td><strong>Boolean.</strong> An account trading with itself may still incur fees. If this instrument prevents an account from trading the instrument with itself, the value is <em>true,</em> otherwise, the value is <em>false.</em></td>
+</tr>
+<tr>
+<td>priceCollarThreshold</td>
+<td><strong>real.</strong> A price threshold amount beyond the current market price that determines whether a put or call on the instrument is a collar strategy.</td>
+</tr>
+<tr>
+<td>priceCollarPercent</td>
+<td><strong>real.</strong> A price threshold percentage beyond the current market price that determines whether a put or a call on the instrument is a collar strategy.</td>
+</tr>
+<tr>
+<td>priceCollarEnabled</td>
+<td><strong>Boolean.</strong> A value of <em>true</em> enables purchasing out-of-the-money put options or writing out-of-the-money call options on the instrument. A value of <em>false</em> prevents collar strategies on the instrument.</td>
+</tr>
+<tr>
+<td>priceFloorLimit</td>
+<td><strong>real.</strong> A limit for the lowest acceptable price for the instrument on the Exchange, as determined by the Exchange operator.</td>
+</tr>
+<tr>
+<td>priceFloorLimitEnabled</td>
+<td><strong>Boolean.</strong> A value of <em>true</em> enables the floor limit, and halts trading in the instrument if the limit is reached. The Exchange operator is also notified by system via email.</td>
+</tr>
+<tr>
+<td>priceCeilingLimit</td>
+<td><strong>real.</strong> A limit for the highest acceptable price for the instrument on the Exchange, as determined by the Exchange operator.</td>
+</tr>
+<tr>
+<td>priceCeilingLimitEnabled</td>
+<td><strong>Boolean.</strong> A value of <em>true</em> enables the ceiling limit, and halts trading in the instrument if the limit is reached. The Exchange operator is also notified by the system via email.</td>
+</tr>
+<tr>
+<td>createWithMarketRunning</td>
+<td><strong>Boolean.</strong> A value of <em>true</em> means that the new instrument is created and immediately available on the operating market. A value of <em>false</em> means that the new instrument must wait for the market to be paused or halted, and will become available once the market restarts.</td>
+</tr>
+</tbody></table>
+<h3 id='response'>Response</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"result"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errormsg"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"errorcode"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"detail"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>The Response is a standard response object.</p>
+
+<table><thead>
+<tr>
+<th>Key</th>
+<th>Value</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>result</td>
+<td><strong>Boolean.</strong> If the call has been successfully received by the Order Management System, <em>result</em> is <em>true;</em> otherwise it is <em>false.</em></td>
+</tr>
+<tr>
+<td>errormsg</td>
+<td><strong>string.</strong> A successful receipt of the call returns <em>null.</em> The <em>errormsg</em> key for an unsuccessful call returns one of the following messages:<br />Not Authorized (errorcode 20)<br />Invalid Response (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106)</td>
+</tr>
+<tr>
+<td>errorcode</td>
+<td><strong>integer.</strong> A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the <em>errorcodes</em> shown in the <em>errormsg</em> list.</td>
+</tr>
+<tr>
+<td>detail</td>
+<td><strong>string.</strong> Message text that the system may send.</td>
 </tr>
 </tbody></table>
 <h2 id='getoperators'>GetOperators</h2>
