@@ -17,3 +17,4 @@ There is no payload.
 ["createwithdrawticket", "createdepositticket", "adduserpermission"]
 ```
 The response is a list of endpoints, all lowercase.
+

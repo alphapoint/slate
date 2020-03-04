@@ -16,6 +16,7 @@ Remove an existing role for the given role id.
 | ------------ | ------------------------------------------------------------ |
 | Id     | **integer.** Id of role |
 
+
 ### Response
 
 ```json

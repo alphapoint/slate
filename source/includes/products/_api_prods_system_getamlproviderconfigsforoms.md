@@ -18,6 +18,7 @@ All key-value pairs of the Request are required.
 | --------------- | ------------------------------------------------------------ |
 | OmsId           | **integer.** The Order Management System on which the anti-money laundering service will function. |
 
+
 ### Response
 ```json
 {
