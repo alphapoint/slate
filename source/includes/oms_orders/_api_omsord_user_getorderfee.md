@@ -10,6 +10,8 @@ The exchange generally deducts fees from the "receiving" side of the trade (alth
 
 A user with Trading permission can get fee estimates for any account that user is associated with and for any instrument or product that that account can trade; a user with Operator permission can get fee estimates for any account, instrument, or product.
 
+If loyalty token is enabled and there is no market for the loyalty token, the system automatically uses 3rd party rates for the loyalty token market. 
+
 ### Request
 
 ```json
