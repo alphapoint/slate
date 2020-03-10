@@ -48,6 +48,7 @@ includes: # api - group - category - call
   - users/api_users_foureyes_getpendingfoureyerequests
   - users/api_users_foureyes_getcompletedfoureyerequests
   # - users/api_users_system_getrecentaffiliateregistrations
+  - users/api_users_system_getrole
   - users/api_users_system_getserviceconfigs
   - users/api_users_system_getserviceconfigsbykey
   - users/api_users_system_reverttopreviousconfigvalue
@@ -1845,5 +1846,7 @@ Behavior change from “Deprecated” to “Remove Association of Operator with 
 
 Behavior change from “Deprecated” to “Getting all Operator Users”
 
+
 **GetOperators**
+
 Field “EmailTemplateCount” [integer] added to response. 
