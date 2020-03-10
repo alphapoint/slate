@@ -7373,6 +7373,8 @@
 <p>The exchange generally deducts fees from the &quot;receiving&quot; side of the trade (although an operator can modify this). There are two products in every trade (and in every instrument); for example, the instrument BTCUSD comprises a BitCoin product and a US dollar product. Placing a buy order on the book causes fees to be deducted from Product 1, in this case, BitCoin; placing a sell order causes fees to be deducted from Product 2, in this case, US dollar.</p>
 
 <p>A user with Trading permission can get fee estimates for any account that user is associated with and for any instrument or product that that account can trade; a user with Operator permission can get fee estimates for any account, instrument, or product.</p>
+
+<p>If loyalty token is enabled and there is no market for the loyalty token, the system automatically uses 3rd party rates for the loyalty token market. </p>
 <h3 id='request'>Request</h3><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"omsId"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
     </span><span class="s2">"accountId"</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span><span class="w">
