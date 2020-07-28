@@ -1949,7 +1949,7 @@ Any query APIs that return these objects now have the below new fields and respo
 
 ## Revised Calls 3.5.0
 
-Support for additional fields have been added to the following requests:
+Support for additional fields has been added to the following requests:
 
  * GetAllDepositTickets
  * GetAllWithdrawTickets
