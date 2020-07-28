@@ -105,17 +105,17 @@ Returns a single withdrawal ticket that matches all values in the Request. No op
 
 ```json
 "Comments":"[
-        	{
-            "commentId": 0,
-            "enteredBy": 0,
-            "enteredDateTime": "0001-01-01T00:00:00",
-            "comment": "",
-            "operatorId": 0,
-            "omsId": 0,
-            "ticketCode": "",
-            "ticketId": 0
-            }
-        ]",
+  {
+    "commentId": 0,
+    "enteredBy": 0,
+    "enteredDateTime": "0001-01-01T00:00:00",
+    "comment": "",
+    "operatorId": 0,
+    "omsId": 0,
+    "ticketCode": "",
+    "ticketId": 0
+  }
+]",
 ```
 
 Comments appear as an array.
@@ -137,15 +137,15 @@ Comments appear as an array.
 
 ```json
 "Attachments":"[
-			{
-            "attachmentId": 0,
-            "submittedByUserId": 0,
-            "submittedByUserName": "",
-            "uploadDate": "0001-01-01T00:00:00",
-            "uploadIP": "",
-            "ticketNumber": 0
-       		}
-		]",
+  {
+    "attachmentId": 0,
+    "submittedByUserId": 0,
+    "submittedByUserName": "",
+    "uploadDate": "0001-01-01T00:00:00",
+    "uploadIP": "",
+    "ticketNumber": 0
+  }
+]",
 ```
 
 Any attachments appear as an array.

@@ -369,7 +369,7 @@ This API covers the User-category calls in **version 3.3** of the AlphaPoint Exc
 The calls have been organized roughly to correspond to similar functions you would find in the AlphaPoint Admin. For example, in the Admin you manage users in the Users function. So calls that manage users have been gathered in the Users section of the API.
 
 
-### Revised calls - 3.3.2 --> 3.3.3
+## Revised calls - 3.3.2 --> 3.3.3
 
 
 **GetAccountTrades**
@@ -453,7 +453,7 @@ New fields added to response object
 **GetUserConfig**
 User Config Values are redacted by default (can be turned off via configuration).
 
-### New Endpoints calls - 3.3.2 --> 3.3.3
+## New Endpoints calls - 3.3.2 --> 3.3.3
 **GetAllUnredactedUserConfigsForUser**
 
 **GetAllLedgerEntryTickets**
@@ -462,7 +462,7 @@ User Config Values are redacted by default (can be turned off via configuration)
 
 
 
-### Revised calls - 3.0.X --> 3.3.2
+## Revised calls - 3.0.X --> 3.3.2
 Generally, upper- and lowercase is not important for the key-value pairs inside a request or response. If an otherwise well formed call returns an unexpected error, check the case of the key-value pairs in the request.
 
 **AuthenticateUser**
@@ -486,7 +486,7 @@ Some integer Request values are now strings
 
 > New AuthenticateUser Request
 
-```
+```json
 {
     "UserName": "",
     "Password": ""
@@ -570,18 +570,18 @@ Now separate Response objects for *BidResult* and *AskResult* in Response
 
 ```json
 {
- "BidResult": {
- "result": true,
-  "errormsg": "",
-  "errorcode": 0,
-  "detail": "",
- },
- "AskResult": {
-  "result": true,
-   "errormsg": "",
-   "errorcode": 0,
-   "detail": "",
- }
+  "BidResult": {
+    "result": true,
+    "errormsg": "",
+    "errorcode": 0,
+    "detail": "",
+  },
+  "AskResult": {
+    "result": true,
+    "errormsg": "",
+    "errorcode": 0,
+    "detail": "",
+  }
 }
 ```
 
@@ -604,13 +604,13 @@ Revised Request structure; separate Response objects for *BidResult* and *AskRes
 
 ```json
 {
- "OMSId": 0,
- "AccountId": 0,
- "InstrumentId": 0,
- "Bid": 0,
- "BidQty": 0,
- "Ask": 0,
- "AskQty": 0,
+    "OMSId": 0,
+    "AccountId": 0,
+    "InstrumentId": 0,
+    "Bid": 0,
+    "BidQty": 0,
+    "Ask": 0,
+    "AskQty": 0,
 }
 ```
 
@@ -629,18 +629,18 @@ Revised Request structure; separate Response objects for *BidResult* and *AskRes
 
 ```json
 {
- /"BidResult": {
- / /"result": true,
- / /"errormsg": "",
- / /"errorcode": 0,
- / /"detail": "",
- /},
- /"AskResult": {
- / /"result": true,
- / /"errormsg": "",
- / /"errorcode": 0,
- / /"detail": "",
- /}
+  "BidResult": {
+    "result": true,
+    "errormsg": "",
+    "errorcode": 0,
+    "detail": "",
+  },
+  "AskResult": {
+    "result": true,
+    "errormsg": "",
+    "errorcode": 0,
+    "detail": "",
+  }
 }
 ```
 
@@ -1526,7 +1526,7 @@ or
 ```
 
 
-### Previously unrevealed calls
+## Previously unrevealed calls
 
 **AddProductAttributes**
 
@@ -1655,7 +1655,7 @@ Request requires only *OMSId* and *instrumentId*
 }
 ```
 
-### 3.4.1 New Endpoints
+## 3.4.1 New Endpoints
 **RegisterNewDevice**
 
 **GetUserDevices**
@@ -1698,7 +1698,7 @@ Request requires only *OMSId* and *instrumentId*
 
 **UpdateAmlProviderConfig**
 
-### RevisedCalls 3.4.1
+## RevisedCalls 3.4.1
 
 **SendOrder**
 
@@ -1735,6 +1735,7 @@ An array of strings representing service ids.
 
 >New GetExchangeServiceIds Response
 Array hard coded with a single entry: "Matching Engine"
+
 ```json
 [
     {
@@ -1754,6 +1755,7 @@ Retrieves exchanges from "THE" mathcing engine as there can only ever be one as 
 
 **CreateAmlProviderConfig**
 >Old CreateAmlProviderConfig Request
+
 ```json
 {
     "omsId": 0,
@@ -1766,6 +1768,7 @@ Retrieves exchanges from "THE" mathcing engine as there can only ever be one as 
 ```
 
 >New CreateAmlProviderConfig Request
+
 ```json
 {
     "AmlProviderType": "ChainAnalysis",
@@ -1777,6 +1780,7 @@ Retrieves exchanges from "THE" mathcing engine as there can only ever be one as 
 
 **DeleteAmlProviderConfig**
 >Old DeleteAmlProviderConfig Request
+
 ```json
 {
     "omsId": 0,
@@ -1789,6 +1793,7 @@ Retrieves exchanges from "THE" mathcing engine as there can only ever be one as 
 ```
 
 >New DeleteAmlProviderConfig Request
+
 ```json
 {
     "AmlProviderType": "ChainAnalysis",
@@ -1801,6 +1806,7 @@ Retrieves exchanges from "THE" mathcing engine as there can only ever be one as 
 
 **GetAmlProviderConfig**
 >Old GetAmlProviderConfig Request
+
 ```json
 {
     "omsId": 0,
@@ -1811,15 +1817,19 @@ Retrieves exchanges from "THE" mathcing engine as there can only ever be one as 
     "enabled": true
 }
 ```
+
 >New GetAmlProviderConfig Request
+
 ```json
 {
     "OMSId": 0,
     "ProductId": 1
 }
 ```
+
 **GetAmlProviderConfigsForOMS**
 >New GetAmlProviderConfigForOMS Request
+
 ```json
 {
     "OMSId": 0,
@@ -1850,3 +1860,5 @@ Behavior change from “Deprecated” to “Getting all Operator Users”
 **GetOperators**
 
 Field “EmailTemplateCount” [integer] added to response. 
+
+## RevisedCalls 3.5.0

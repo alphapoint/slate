@@ -8,7 +8,7 @@ Users with Withdraw permission can get a withdraw template type suitable only fo
 
 ### Request
 
-```
+```json
 {
     "OMSId": 1,
     "ProductId": 1
