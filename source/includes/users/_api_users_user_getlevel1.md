@@ -46,6 +46,8 @@ Provides a current Level 1 snapshot (best bid, best offer) of a specific instrum
   "currentDayVolume": 0.0,
   "currentDayNumTrades": 0.0,
   "currentDayPxChange": 0.0,
+  "currentNotional": 0.0,
+  "rolling24HrNotional": 0.0,
   "rolling24HrVolume": 0.0,
   "rolling24NumTrades": 0.0,
   "rolling24HrPxChange": 0.0,
@@ -75,6 +77,8 @@ Provides a current Level 1 snapshot (best bid, best offer) of a specific instrum
 | currentDayVolume           | **real.** The unit volume of the instrument that is the subject of the snapshot, either during a true session (openings and closings) or in 24-hour markets, during the period UTC Midnight to UTC Midnight. |
 | currentDayNumTrades        | **integer.** The number of trades during the current day, either during a true session (openings and closings) or in a 24-hour market the period from UTC Midnight to UTC Midnight. |
 | currentDayPxChange         | **real.** Change in price over the current session or from UTC Midnight to UTC Midnight. |
+| currentNotional            | **decimal.** Current day quote volume - resets at UTC Midnight. |
+| rolling24HrNotional        | **decimal.** Rolling 24 hours quote volume. |
 | rolling24HrVolume          | **real.** Unit volume of the instrument over the past 24 hours, regardless of time zone. This value recalculates continuously. |
 | rolling24HrNumTrades       | **real.** Number of trades during the past 24 hours, regardless of time zone. This value recalculates continuously. |
 | rolling24HrPxChange        | **real.** Price change during the past 24 hours, regardless of time zone. This value recalculates continuously. |

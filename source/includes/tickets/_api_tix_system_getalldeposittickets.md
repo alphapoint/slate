@@ -13,7 +13,8 @@ Only a user with Operator permission can issue **GetAllDepositTickets.**
     "OMSId": 1,
     "OperatorId": 1,
     "StartIndex": 0,
-    "Limit": 0
+    "Limit": 0,
+    "IncludeComments": true
 }
 ```
 
@@ -25,6 +26,7 @@ The values for *OMSId* and *OperatorId* are required; the key-value pairs *Start
 | OperatorId     | **integer.** REQUIRED The user ID of the user with Operator permission who is issuing the **GetAllDepositTickets** call. |
 | StartIndex     | **integer.** OPTIONAL The earliest location in the series of deposit tickets at which to begin returning tickets. Tickets are returned from that location forward (that is, from then toward now). The most recent deposit ticket is ticket 0. If you do not include a *StartIndex* key and value in your request, tickets from the beginning of the Exchange will be returned (subject to *Limit.*) |
 | Limit          | **integer.** OPTIONAL The count of deposit tickets you want returned. For example, if you set the value of *Limit* to 50, a maximum of 50 deposit tickets will be returned. That maximum may be further restricted by the position of *StartIndex.* For example, if your *StartIndex* is only ten tickets back, and you include a *Limit* value of 50, you're still only going to get ten tickets. |
+| IncludeComments | **Boolean.** OPTIONAL Include or exclude ticket comments in 'Comments' field of each ticket in response. Useful for performance reasons. |
 
 ### Response
 

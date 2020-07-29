@@ -54,6 +54,6 @@ Returns an array of all withdrawal transactions for the specified *accountId* an
 | referenceId     | **long integer.** The ID of the action or event that triggered the transaction causing the hold. |
 | productId       | **integer.** The ID of the product on this account's side of the transaction. For example, in a dollars-for-BitCoin transaction, one side will have the product Dollar and the other side will have the product BitCoin. Use **GetProduct** to return information about a product based on its ID. |
 | balance         | **real.** The balance in the account after the transaction.  |
-| timeStamp       | **long integer.** Time at which the transaction took place, in POSIX format and UTC time zone. |
+| timeStamp       | **long integer.** Time at which the transaction took place, in POSIX format and UTC time zone. Epoch milliseconds. |
 
 

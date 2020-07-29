@@ -22,8 +22,7 @@ Once reported, you can follow the trade using **GetAccountTrades** or **GetTrade
     "limitPrice":5000.0,
     "omsId": 0,
     "lockedIn":true,
-    "timestamp":158153615438
-    
+    "timestamp":158153615438   
 }
 ```
 
@@ -60,6 +59,7 @@ Once reported, you can follow the trade using **GetAccountTrades** or **GetTrade
 | accountId      | **integer.** The ID of the account making the report of the block trade. |
 | side           | **integer.** A number that represents the side of the transaction associated with accountId. One of:<br />0 Buy<br />1 Sell<br />2 Short<br />3 Unknown (error condition) |
 | counterPartyId | **string.** The badge of the other party in the off-market trade. |
+| clientOrderId  | **integer.** If the Gateway Setting "OtcRequireCounterParty" is false, the caller can exclude *counterPartyId* and include *clientOrderId* to hit a working block trade order. |
 | quantity       | **real.** The quantity on the instrument that was traded.    |
 | limitPrice     | **real.** The price at which to execute the block trade.     |
 | omsId          | **integer.** The ID of the Order Management System where the block trade is to be reported. |

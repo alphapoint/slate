@@ -57,6 +57,8 @@ The **SubscribeLevel1** response and *Level1UpdateEvent* both provide the same i
   "CurrentDayVolume": 3516.31668185,
   "CurrentDayNumTrades": 8529,
   "CurrentDayPxChange": 173.93,
+  "CurrentNotional": 0.0,
+  "Rolling24HrNotional": 0.0,
   "Rolling24HrVolume": 4319.63870783,
   "Rolling24NumTrades": 10585,
   "Rolling24HrPxChange": -0.4165607307408487,
@@ -81,6 +83,8 @@ The **SubscribeLevel1** response and *Level1UpdateEvent* both provide the same i
 | CurrentDayVolume     | **real**. The unit volume of the instrument traded either during a session with openings and closings or in 24-hour markets, the period from UTC Midnight to UTC Midnight. |
 | CurrentDayNumTrades  | **integer**. The number of trades during the current day, either during a session with openings and closings or in 24-hour markets, the period from UTC Midnight to UTC Midnight. |
 | CurrentDayPxChange   | **real**. Current day price change, either during a trading session or UTC Midnight to UTC midnight. |
+| CurrentNotional            | **decimal.** Current day quote volume - resets at UTC Midnight. |
+| Rolling24HrNotional        | **decimal.** Rolling 24 hours quote volume. |
 | Rolling24HrVolume    | **real**. Unit volume of the instrument during the past 24 hours, regardless of time zone. Recalculates continuously. |
 | Rolling24HrNumTrades | **integer**. Number of trades during the past 24 hours, regardless of time zone. Recalculates continuously. |
 | Rolling24HrPxChange  | **real**. Price change during the past 24 hours, regardless of time zone. Recalculates continuously. |

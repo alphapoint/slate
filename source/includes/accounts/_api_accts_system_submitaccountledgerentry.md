@@ -21,7 +21,8 @@ Submits a ledger entry.
     "counterPartyId": 0,
     "transactionType": 0,
     "transactionReferenceType": 0,
-    "accountChangeReason": 0
+    "accountChangeReason": 0,
+    "PreventNegatives": true
 }
 ```
 Some key-value pairs are required. The rest are optional.
@@ -42,6 +43,7 @@ Some key-value pairs are required. The rest are optional.
 | transactionType          | **integer.** A number representing the type of transaction for this ledger entry. One of<br />**1** Fee<br />**2** Trade<br />**3** Other<br />**4** Reverse<br />**5** Hold<br />**6** Rebate<br />**7** MarginAcquisition<br />**8** MarginRelinquish |
 | transactionReferenceType | **integer.** A number representing the type of action or event that caused the ledger entry. One of:<br />**1** Trade<br />**2** Deposit<br />**3** Withdraw<br />**4** Transfer<br />**5** OrderHold<br />**6** WithdrawHold<br />**7** DepositHold<br />**8** MarginHold<br />**9** ManualHold<br />**10** ManualEntry<br />**11** MarginAcquisition<br />**12** MarginRelinquish<br />**13** MarginQuoteHold |
 | accountChangeReason      | **integer.** The reason you are making this ledger adjustment. One of:<br />**0** Unknown<br />**1** OrderPlaced<br />**2** OrderCancelled<br />**3** OrderExecution<br />**4** Deposit<br />**5** Withdraw<br />**6** Admin<br />**7** Fee<br />**8** OrderModified<br />**9** Manual<br />**10** Rebate<br />**11** Transfer<br />**12** MarginQuotePlaced |
+| PreventNegatives         | **Boolean.** Instructs the OMS to reject this request if the resulting balance of the account will be negative. |
 
 ### Response
 
@@ -54,7 +56,8 @@ Some key-value pairs are required. The rest are optional.
     "enteredBy": 0,
     "comments": "",
     "oneSidedTransaction": 0,
-    "accountLedgerEntryId": 0
+    "accountLedgerEntryId": 0,
+    "timestamp": 158153615438
 }
 ```
 The Response is a confirmation of the ledger entry values.
@@ -69,3 +72,4 @@ The Response is a confirmation of the ledger entry values.
 | comments             | **string.** Any comment previously entered about the ledger entry. |
 | oneSidedTransaction  | **byte.** Used for a manual entry when the user must make either a deposit or a withdrawal entry. |
 | AccountLedgerEntryId | **long integer.** The ID of this ledger entry.               |
+| timestamp            | **long integer.** epoch milliseconds. |
