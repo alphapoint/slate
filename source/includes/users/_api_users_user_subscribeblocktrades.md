@@ -1,28 +1,26 @@
-## GetOrderStatus
+## SubscribeBlockTrades
 
 **Category:** User<br />
-**Permissions:** Operator, Trading<br />
+**Permissions:** Trading, Manual Trader<br />
 **Call Type:** Synchronous
 
-Retrieves the status information for a single order.
+Retrieves the Open Trade Reports, only Block Trades, for the given instrumentid. ReceiveTime in POSIX format X 1000 (milliseconds since 1 January 1970). Identifying information of counterparty is removed. 
 
-A user with Trading permission can retrieve status information for accounts and orders with which the user is associated; a user with Operator permission can retreive status information for any account or order ID.
+**SubscribeBlockTrades** returns the response documented here for your immediate information, then subscribes the session to subsequent **BlockTradeDataUpdateEvent** messages.
 
 ### Request
 
 ```json
 {
-  "omsId": 0,
-  "accountId": 0,
-  "orderId": 0,
+	"OMSId": 1,
+	"InstrumentId": 1
 }
 ```
 
-| Key       | Value                                                        |
-| --------- | ------------------------------------------------------------ |
-| omsId     | **Integer.** The ID of the Order Management System on which the order was placed. |
-| accountId | **integer.** The ID of the account under which the order was placed. |
-| orderId   | **integer.** The ID of the order whose status will be returned. |
+| Key           | Value                                                        |
+| ---------------- | ------------------------------------------------------------ |
+| OMSId            | **integer**. The ID of the Order Management System on which the instrument is traded. |
+| InstrumentId     | **long integer**. The ID of the instrument whose trades will be reported. |
 
 ### Response
 
@@ -63,7 +61,8 @@ A user with Trading permission can retrieve status information for accounts and 
 ]
 ```
 
-The call **GetOrderStatus** returns an array containing both buy-side and a sell-side open orders for the named account. The call returns a Resource Not Found error with error code 104 if not found due to it not being processed by the system or an incorrect combination of account/order id.
+The response returns an array of trades. The keys of each trade are numbers to reduce payload traffic.
+
 
 | Key                               | Value                                                        |
 | --------------------------------- | ------------------------------------------------------------ |
@@ -76,8 +75,8 @@ The call **GetOrderStatus** returns an array containing both buy-side and a sell
 | orderType                         | **string.** Describes the type of order this is. One of:<br />**0** Unknown (an error condition)<br />**1** Market order<br />**2** Limit<br />**3** StopMarket<br />**4** StopLimit<br />**5** TrailingStopMarket<br />**6** TrailingStopLimit<br />**7** BlockTrade |
 | ClientOrderId                     | **integer.** An ID supplied by the client to identify the order (like a purchase order number). The *ClientOrderId* defaults to 0 if not supplied.                       |
 | OrderState                        | **string.** The current state of the order. One of:<br />**0** Unknown<br />**1** Working<br />**2** Rejected<br />**3** Canceled<br />**4** Expired<br />**5** Fully Executed.                           |
-| ReceiveTime                       | **long integer.** Time stamp of the order in POSIX format x 1000 (milliseconds since 1/1/1970 in UTC time zone).   |
-| ReceiveTimeTicks                  | **long integer.** Time stamp of the order Microsoft Ticks format and UTC time zone. **Note:** Microsoft Ticks format is usually provided as a string. Here it is provided as a long integer.   |
+| ReceiveTime                       | **long integer.** Time stamp of the order in POSIX format.   |
+| ReceiveTimeTicks                  | **long integer.** Time stamp of the order in POSIX format.   |
 | OrigQuantity                      | **real.** If the open order has been changed or partially filled, this value shows the original quantity of the order.  |
 | QuantityExecuted                  | **real.** If the open order has been at least partially executed, this value shows the amount that has been executed.  |
 | AvgPrice                          | **real.** The average executed price for the instrument in the order.   |
@@ -96,4 +95,3 @@ The call **GetOrderStatus** returns an array containing both buy-side and a sell
 | IsLockedIn                        | **Boolean.** For a block trade, if both parties to the block trade agree that one of the parties will report the trade for both sides, this value is *true.* Othersise, *false.*  |
 | CancelReason                      | **string.** If this order has been canceled, this string holds the cancelation reason.  |
 | OMSId                             | **integer.** The ID of the Order Management System on which the order took place.  |
-

@@ -29,7 +29,8 @@ Retrieves a single ledger entry for an account by the ID of the ledger entry. Yo
     "EnteredBy": 0,
     "Comments": null,
     "OneSidedTransaction": 0,
-    "AccountLedgerEntryId": 0
+    "AccountLedgerEntryId": 0,
+    "timestamp": 158153615438
 }
 ```
 
@@ -45,5 +46,4 @@ The response is list of fields describing the ledger entry.
 | Comments                  | **string.** Any comment previously entered about the ledger entry. |
 | oneSidedTransaction       | **byte.** Used for a manual entry when the user must make either a deposit or a withdrawal entry. |
 | AccountLedgerEntryId      | **long integer.** The ID of this ledger entry.                     |
-
-
+| timestamp                 | **long integer.** epoch milliseconds. |

@@ -8,7 +8,7 @@ Users with Withdraw permission can get a withdraw template type suitable only fo
 
 ### Request
 
-```
+```json
 {
     "OMSId": 1,
     "ProductId": 1
@@ -29,6 +29,7 @@ The system "knows" what Account Provider templates are suitable to your account 
     "TemplateTypes": [
         "Standard"
     ],
+    "AccountProviderName": "",
     "result": false,
     "errormsg": "",
     "statuscode": 0 
@@ -38,6 +39,7 @@ The system "knows" what Account Provider templates are suitable to your account 
 | Key           | Value                                                        |
 | ------------- | ------------------------------------------------------------ |
 | TemplateTypes | **array of strings.** An array of the names of the templates that are appropriate to the withdrawal of your asset, account, and Order Management System. If the call was unsuccessful, *TemplateTypes* may return an empty array. |
+| AccountProviderName | **string.** The name of the account provider for the template. |
 | result        | **Boolean.** If the call has been successfully received by the Order Management System, returns *true;* otherwise returns *false.* |
 | errormsg      | **string.** A successful receipt of the call returns *null.* The *errormsg* key for an unsuccessful call can return:<br />Not Authorized (errorcode 20)<br />Invalid Request (errorcode 100)<br />Operation Failed (errorcode 101)<br />Server Error (errorcode 102)<br />Resource Not Found (errorcode 104)<br />Operation Not Supported (errorcode 106) |
 | errorcode     | **integer.** A successful receipt of the call returns 0. An unsuccessful receipt of the call returns one of the *errorcodes* shown in the *errormsg* list. |

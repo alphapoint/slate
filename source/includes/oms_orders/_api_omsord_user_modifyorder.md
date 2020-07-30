@@ -15,7 +15,6 @@ Reduces an order’s quantity without losing priority in the order book. An orde
   "OMSId": 0,
   "OrderId": 0,
   "InstrumentId": 0,
-  "PreviousOrderRevision": 0,
   "Quantity": 0 
 }
 ```
@@ -25,7 +24,6 @@ Reduces an order’s quantity without losing priority in the order book. An orde
 | OMSId                 | **integer.** The ID of the Order Management System where the original order was placed. |
 | OrderId               | **long integer.** The ID of the order to be modified. The ID was supplied by the server when the order was created. |
 | InstrumentId          | **integer.** The ID of the instrument traded in the order.   |
-| PreviousOrderRevision | **integer.** The order revision number at the time you make the modification order. This ensures that you have the latest order state at the time you make the request. |
 | Quantity              | **real.** The new quantity of the order. This value can only be reduced from a previous quantity. |
 
 ### Response

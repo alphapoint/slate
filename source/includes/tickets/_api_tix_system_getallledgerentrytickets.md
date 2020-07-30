@@ -40,7 +40,8 @@ The values for *OMSId* is required; the key-value pairs *StartIndex* and *Limit*
         "DR_Amt": 0.0,
         "enteredBy": 0.0,
         "comments": "",
-        "onsSidedTransaction": false
+        "onsSidedTransaction": false,
+        "timestamp": 158153615438
     },
 ]
 ```
@@ -57,5 +58,5 @@ The Response returns an array of ledger entries matching the criteria set in the
 | DR_Amt           | **real.** The Debit amount of the ledger entry. |
 | comments     | **string.** The Comments entered at time of creation. |
 | onsSidedTransaction       | **boolean.** One-sided (false by default). |
-
+| timestamp | **long integer.** epoch milliseconds. |
 

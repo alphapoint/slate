@@ -13,7 +13,8 @@ The user must have Operator permission to issue **GetAllWithdrawTickets.** A sim
     "OMSId": 1,
     "OperatorId": 1,
     "StartIndex": 0,
-    "Limit": 1
+    "Limit": 1,
+    "IncludeComments": true
 }
 ```
 
@@ -25,6 +26,7 @@ The key-value pairs *StartIndex* and *Limit* are optional. The oldest ticket is 
 | OperatorId | **integer.** REQUIRED The ID of the admin (operator) requesting **GetAllWithdrawTickets.** |
 | StartIndex | **integer.** OPTIONAL The location in the series of withdrawal tickets at which to begin returning tickets. Tickets are returned from that location towards ticket *0* (the oldest ticket). If you do not include a *StartIndex* key and value in the request, all tickets will be returned (subject to the value of *Limit*.) |
 | Limit      | **integer.** OPTIONAL The count of withdrawal tickets you want returned. For example, if you set the value of *Limit* to 50, a maximum of 50 withdrawal tickets will be returned. That maximum may be further restricted by the position of *StartIndex.* For example, if your *StartIndex* is only ten tickets from ticket *0*, and you include a *Limit* value of 50, you're still only going to get ten tickets. |
+| IncludeComments | **Boolean.** OPTIONAL Include or exclude ticket comments in 'Comments' field of each ticket in response. Useful for performance reasons. |
 
 ### Response
 
@@ -116,17 +118,17 @@ The key-value pairs *StartIndex* and *Limit* are optional. The oldest ticket is 
 
 ```json
 "Comments":"[
-        	{
-            "commentId": 0,
-            "enteredBy": 0,
-            "enteredDateTime": "0001-01-01T00:00:00",
-            "comment": "",
-            "operatorId": 0,
-            "omsId": 0,
-            "ticketCode": "",
-            "ticketId": 0
-            }
-        ]",
+    {
+        "commentId": 0,
+        "enteredBy": 0,
+        "enteredDateTime": "0001-01-01T00:00:00",
+        "comment": "",
+        "operatorId": 0,
+        "omsId": 0,
+        "ticketCode": "",
+        "ticketId": 0
+    }
+]",
 ```
 
 Comments appear as an array.
@@ -148,15 +150,15 @@ Comments appear as an array.
 
 ```json
 "Attachments":"[
-			{
-            "attachmentId": 0,
-            "submittedByUserId": 0,
-            "submittedByUserName": "",
-            "uploadDate": "0001-01-01T00:00:00",
-            "uploadIP": "",
-            "ticketNumber": 0
-       		}
-		]",
+	{
+        "attachmentId": 0,
+        "submittedByUserId": 0,
+        "submittedByUserName": "",
+        "uploadDate": "0001-01-01T00:00:00",
+        "uploadIP": "",
+        "ticketNumber": 0
+    }
+]",
 ```
 
 Any attachments appear as an array.

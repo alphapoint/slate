@@ -13,7 +13,7 @@ You can optionally include the key-value pair *RequestedKeys*, which currently c
     "OMSId": 1,
     "StartIndex": 0,
     "Limit": 100,
-    "RequestedKeys": [ "firmid", "FirmName" ]
+    "RequestedKeys": [ "firmid", "FirmName", "fsRegId" ]
 }
 ```
 
@@ -22,7 +22,7 @@ You can optionally include the key-value pair *RequestedKeys*, which currently c
 | OMSId         | **Integer.** The ID of the Order Management System on which the accounts operate. |
 | StartIndex    | **integer.** The account ID at which to begin returning account information. The returns from the call begin at the value of *StartIndex* and move toward higher numbers. For example, if you have 100 accounts on an Exchange numbered 1&ndash;100 and set the value of *StartIndex* to 50, the accounts returned will be numbered 50 and higher. |
 | Limit         | **integer.** The number of accounts to return in the Response array. For example, if you set the value of *Limit* to 50, you will return up to 50 accounts (you may return fewer if there are fewer accounts to return). |
-| RequestedKeys | **array of strings.** OPTIONAL Tells the system to return accounts that include values for the keys *firmId* and *firmName* (some accounts may not include values for these keys). In the current version of AlphaPoint Exchange, *firmId* and *firmName* are the only keys that can be used in this way. |
+| RequestedKeys | **array of strings.** OPTIONAL Tells the system to return accounts that include values for the keys *firmId* and *firmName* (some accounts may not include values for these keys). In the current version of AlphaPoint Exchange, *firmId*, *firmName* and *fsRegId* are the only keys that can be used in this way. fsRegId key values will be in *firmId*. |
 
 ### Response
 

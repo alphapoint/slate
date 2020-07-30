@@ -1,28 +1,24 @@
-## GetOrderStatus
+## GetAllOpenTradeReports
 
-**Category:** User<br />
-**Permissions:** Operator, Trading<br />
+**Category:** User <br />
+**Permissions:** Operator, Trading, AccountReadOnly, Manual Trader <br />
 **Call Type:** Synchronous
 
-Retrieves the status information for a single order.
-
-A user with Trading permission can retrieve status information for accounts and orders with which the user is associated; a user with Operator permission can retreive status information for any account or order ID.
+Retrieves the Open Trade Reports, only Block Trades, for the given **InstrumentId**. ReceiveTime in POSIX format X 1000 (milliseconds since 1 January 1970). Identifying information of counter party is removed
 
 ### Request
 
 ```json
-{
-  "omsId": 0,
-  "accountId": 0,
-  "orderId": 0,
+{ 
+  "OMSId": 1,
+  "InstrumentId": 1
 }
 ```
 
 | Key       | Value                                                        |
 | --------- | ------------------------------------------------------------ |
-| omsId     | **Integer.** The ID of the Order Management System on which the order was placed. |
-| accountId | **integer.** The ID of the account under which the order was placed. |
-| orderId   | **integer.** The ID of the order whose status will be returned. |
+| OMSId     | **integer.** The ID of the Order Management System on which the instrument is defined. |
+| InstrumentId | **integer.** The ID of the instrument for which open trade information will be returned. |
 
 ### Response
 
@@ -63,7 +59,7 @@ A user with Trading permission can retrieve status information for accounts and 
 ]
 ```
 
-The call **GetOrderStatus** returns an array containing both buy-side and a sell-side open orders for the named account. The call returns a Resource Not Found error with error code 104 if not found due to it not being processed by the system or an incorrect combination of account/order id.
+The call **GetAllOpenTradeReports** returns an array containing block trades for the requested instrument. The call returns an empty array if there are no open trades for the instrument.
 
 | Key                               | Value                                                        |
 | --------------------------------- | ------------------------------------------------------------ |
@@ -76,8 +72,8 @@ The call **GetOrderStatus** returns an array containing both buy-side and a sell
 | orderType                         | **string.** Describes the type of order this is. One of:<br />**0** Unknown (an error condition)<br />**1** Market order<br />**2** Limit<br />**3** StopMarket<br />**4** StopLimit<br />**5** TrailingStopMarket<br />**6** TrailingStopLimit<br />**7** BlockTrade |
 | ClientOrderId                     | **integer.** An ID supplied by the client to identify the order (like a purchase order number). The *ClientOrderId* defaults to 0 if not supplied.                       |
 | OrderState                        | **string.** The current state of the order. One of:<br />**0** Unknown<br />**1** Working<br />**2** Rejected<br />**3** Canceled<br />**4** Expired<br />**5** Fully Executed.                           |
-| ReceiveTime                       | **long integer.** Time stamp of the order in POSIX format x 1000 (milliseconds since 1/1/1970 in UTC time zone).   |
-| ReceiveTimeTicks                  | **long integer.** Time stamp of the order Microsoft Ticks format and UTC time zone. **Note:** Microsoft Ticks format is usually provided as a string. Here it is provided as a long integer.   |
+| ReceiveTime                       | **long integer.** Time stamp of the order in POSIX format.   |
+| ReceiveTimeTicks                  | **long integer.** Time stamp of the order in POSIX format.   |
 | OrigQuantity                      | **real.** If the open order has been changed or partially filled, this value shows the original quantity of the order.  |
 | QuantityExecuted                  | **real.** If the open order has been at least partially executed, this value shows the amount that has been executed.  |
 | AvgPrice                          | **real.** The average executed price for the instrument in the order.   |

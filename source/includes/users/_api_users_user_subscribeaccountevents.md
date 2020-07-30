@@ -53,7 +53,13 @@ When you call **SubscribeAccountEvents**, you subscribe to all of the following 
 	"PendingDeposits":0, //Total Deposits Pending for the specified product. [Decimal]
 	"PendingWithdraws":0, //Total Withdrawals Pending for the specified product. [Decimal]
 	"TotalDayDeposits":0, //The total 24-hour deposits for the specified product. UTC. [Dec]
-	"TotalDayWithdraws":0 //The total 24-hour withdraws for the specified product. UTC [Dec]
+	"TotalDayWithdraws":0, //The total 24-hour withdraws for the specified product. UTC [Dec]
+	"NotionalHoldAmount": 0.0,
+	"NotionalRate": 0.0,
+	"TotalDayDepositNotional": 0.0,
+	"TotalMonthDepositNotional": 0.0,
+	"TotalDayWithdrawNotional": 0.0,
+	"TotalMonthWithdrawNotional": 0.0
 }
 ```
 **Trigger:** The balance in your account changes.
@@ -222,7 +228,11 @@ When you call **SubscribeAccountEvents**, you subscribe to all of the following 
 		// The Counterparty of the trade. The counterparty is always 
 		// the clearing account. [Integer]
 	"OrderTradeRevision":1, //Usually 1 
-	"Direction":"NoChange" //"Uptick", "Downtick", "NoChange"
+	"Direction":"NoChange", //"Uptick", "Downtick", "NoChange"
+	"CounterPartyClientUserId": 0, // [Integer] Indicates counterparty source of trade (OMS, Remarketer, FIX)
+	"NotionalProductId": 0, // [Integer] Notional product
+	"NotionalRate": 0.0, // Notional rate from base currency at time of trade [Decimal] 
+	"NotionalValue": 0.0 // Notional value in base currency of venue at time of trade [Decimal]
 }
 ```
 

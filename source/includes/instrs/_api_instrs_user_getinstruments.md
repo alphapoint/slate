@@ -36,7 +36,14 @@ Retrieves a list of instruments available on the exchange. An instrument is a pa
         "sessionStatusDateTime": "0001-01-01T00:00:00",
         "selfTradePrevention": false,
         "quantityIncrement": 0.0,
-        "priceIncrement": 0.0
+        "priceIncrement": 0.0,
+        "priceCollarIndexDifference": 0.0,
+        "priceCollarConvertToOtcEnabled": false,
+        "priceCollarConvertToOtcClientUserId": 1,
+        "priceCollarConvertToOtcAccountId": 0,
+        "priceCollarConvertToOtcThreshold": 0.0,
+        "otcConvertSizeEnabled": false,
+        "otcConvertSizeThreshold": 0.0,
     },
 ]
 ```
@@ -62,4 +69,10 @@ The response for **GetInstruments** is an array of objects listing all the instr
 | selfTradePrevention   | **Boolean.** An account that is trading with itself still incurs fees. If this instrument prevents an account from trading the instrument with itself, the value returns *true*; otherwise defaults to *false*. |
 | quantityIncrement     | **real.** The smallest tradeable increment of the instrument. For example, for BTCUSD, the quantity increment might be 0.0005, but for ETHUSD, the quantity increment might be 50. |
 | priceIncrement        | **real.** The amount by which the instrument can rise or fall in the market.  |
-
+| priceCollarIndexDifference | **decimal.** The percent different from the index price that an order is allowed to execute at. Anything falling outside of the index price +/- (1 + PriceCollarIndexDifference) will be collared |
+| priceCollarConvertToOtcEnabled | **bool.** Turns on/off conversion of collared orders to block trades |
+| priceCollarConvertToOtcClientUserId | **int.** Internal System UserId to assign the collared otc orders to. Should alwaays be 1 in current implementation (default) |
+| priceCollarConvertToOtcAccountId | **int.** Account Id to assign the collared orders to. This will effectively be a liability account that will need to have working block trades managed by operator. |
+| priceCollarConvertToOtcThreshold | **decimal.** Threshold of remaining size of order to convert to block trade. If collared order does not have remaining quantity above this threshold the remainder will be cancelled. |
+| otcConvertSizeEnabled | **bool.** Turns on/off auto conversion of 'large' limit orders converted to block trade orders upon receipt by the matching engine |
+| otcConvertSizeThreshold | **decimal.** Threshold to convert limit order quantity to block trade automatically for discovery by block trade market participants |
