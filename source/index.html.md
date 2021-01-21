@@ -217,7 +217,7 @@ Any query APIs that return these objects now have the below new fields and respo
 | NotionalHoldAmount| **decimal.** Cross Product Amount on Hold from open orders |
 | NotionalRate | **decimal.** Current notional rate from base currency |
 | TotalDayDepositNotional | **decimal.** Total Calendar Day Deposit Notional |
-| TotalMonthDepositNotional | **deicmal.** Total Calendar Month Deposit Notional |
+| TotalMonthDepositNotional | **decimal.** Total Calendar Month Deposit Notional |
 | TotalDayWithdrawNotional | **decimal.** Total Calendar Day Withdraw Notional |
 | TotalMonthWithdrawNotional | **decimal.** Total Calendar Month Withdraw Notional |
 
@@ -253,7 +253,7 @@ Any query APIs that return these objects now have the below new fields and respo
 | Key                 | Value                                                        |
 | ------------------- | ------------------------------------------------------------ |
 | TotalDayDepositNotional | **decimal.** Total Calendar Day Deposit Notional |
-| TotalMonthDepositNotional | **deicmal.** Total Calendar Month Deposit Notional |
+| TotalMonthDepositNotional | **decimal.** Total Calendar Month Deposit Notional |
 | TotalDayWithdrawNotional | **decimal.** Total Calendar Day Withdraw Notional |
 | TotalMonthWithdrawNotional | **decimal.** Total Calendar Month Withdraw Notional |
 

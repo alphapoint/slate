@@ -100,7 +100,7 @@ The response returns an array of one or more positions for the account. This exa
 | notionalHoldAmount         | **decimal.** Cross Product Amount on Hold from open orders |
 | notionalRate               | **decimal.** Current notional rate from base currency |
 | totalDayDepositNotional    | **decimal.** Total Calendar Day Deposit Notional |
-| totalMonthDepositNotional  | **deicmal.** Total Calendar Month Deposit Notional |
+| totalMonthDepositNotional  | **decimal.** Total Calendar Month Deposit Notional |
 | totalDayWithdrawNotional   | **decimal.** Total Calendar Day Withdraw Notional |
 | totalMonthWithdrawNotional | **decimal.** Total Calendar Month Withdraw Notional |
 
